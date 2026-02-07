@@ -31,6 +31,9 @@ const Hero: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Using the specific GitHub Raw URL for the Kora Shield asset
+  const heroImageSrc = "https://raw.githubusercontent.com/cortopassi/kora-ai/main/IMG/kora-shield.png";
+
   return (
     <section className="relative w-full min-h-[90vh] flex items-center justify-center overflow-hidden bg-brand-deepBlue text-white pt-24 md:pt-20 pb-12">
       {/* Mature Corporate Background - Clean Solid Base */}
@@ -90,7 +93,7 @@ const Hero: React.FC = () => {
             <div className="absolute inset-0 bg-brand-cyan/20 blur-[60px] rounded-full z-0 transform scale-90"></div>
             
             <img 
-              src="IMG/kora-shield.png" 
+              src={heroImageSrc}
               alt="Kora Shield Icon - Inteligência Aplicada" 
               className="w-full h-full object-contain drop-shadow-2xl relative z-10 hover:scale-[1.02] transition-transform duration-700 ease-in-out"
               onError={(e) => {
