@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kora | Inteligência Aplicada</title>
+    <meta name="description" content="Soluções digitais orientadas por Inteligência Artificial para apoiar decisões reais de negócio.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://kora.ai/" />
+    <meta property="og:title" content="Kora | Inteligência Aplicada" />
+    <meta property="og:description" content="Soluções digitais orientadas por Inteligência Artificial para apoiar decisões reais de negócio." />
+    <meta property="og:image" content="IMG/kora-shield.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="Kora | Inteligência Aplicada" />
+    <meta property="twitter:description" content="Soluções digitais orientadas por Inteligência Artificial para apoiar decisões reais de negócio." />
+    <meta property="twitter:image" content="IMG/kora-shield.png" />
+
+    <!-- Favicon: Using a generic shield emoji data URI to ensure it loads without external dependencies -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>" type="image/svg+xml">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                deepBlue: '#0A2463', // Primary
+                cyan: '#00B4D8',     // Secondary
+                lightBlue: '#90E0EF', // Accent
+                darkNavy: '#03045E', // Support
+                gray: '#6C757D',     // Neutral / Secondary Text
+                text: '#424242',     // Updated Body Text per CSS request
+                black: '#000000',
+              }
+            },
+            fontFamily: {
+              sans: ['Open Sans', 'sans-serif'],
+              heading: ['Montserrat', 'sans-serif'],
+            },
+            maxWidth: {
+              'container': '1200px',
+            },
+            spacing: {
+              'section': '80px',
+              'card-padding': '24px',
+              'gutter': '24px',
+            },
+            borderRadius: {
+              'brand': '4px',
+            },
+            fontSize: {
+              'h1': ['48px', { lineHeight: '1.2', fontWeight: '700' }],
+              'h2': ['32px', { lineHeight: '1.3', fontWeight: '600' }],
+              'h3': ['24px', { lineHeight: '1.4', fontWeight: '600' }],
+              'body': ['16px', { lineHeight: '1.5', fontWeight: '400' }],
+            },
+            backgroundImage: {
+              'gradient-primary': 'linear-gradient(135deg, #03045E 0%, #0A2463 50%, #00B4D8 100%)',
+              'gradient-secondary': 'linear-gradient(90deg, #00B4D8 0%, #90E0EF 100%)',
+            },
+            animation: {
+              'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+            },
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      :root {
+        --primary-deep-blue: #0A2463;
+        --primary-cyan: #00B4D8;
+        --secondary-light-blue: #90E0EF;
+        --secondary-dark-navy: #03045E;
+        
+        --gradient-primary: linear-gradient(135deg, #03045E 0%, #0A2463 50%, #00B4D8 100%);
+        --gradient-secondary: linear-gradient(90deg, #00B4D8 0%, #90E0EF 100%);
+      }
+
+      body {
+        font-family: 'Open Sans', sans-serif;
+        background-color: #FFFFFF;
+        color: #424242;
+      }
+      
+      h1 {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        color: #0A2463;
+      }
+
+      h2, h3, h4, h5, h6 {
+        font-family: 'Montserrat', sans-serif;
+      }
+      
+      .glass-nav {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
