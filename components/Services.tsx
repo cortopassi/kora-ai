@@ -5,18 +5,21 @@ const Services: React.FC = () => {
   const services = [
     {
       title: "Presença Digital Inteligente",
+      subtitle: "Ativos digitais de alta performance.",
       target: "Para pequenos negócios",
       description: "Estruturação de canais digitais otimizados por IA para maximizar conversão e eficiência operacional com baixo overhead técnico.",
       icon: <Layers className="text-brand-cyan" size={32} />
     },
     {
       title: "Produto Digital com IA",
+      subtitle: "Tecnologia proprietária como vantagem competitiva.",
       target: "Para empresas em crescimento",
       description: "Desenvolvimento e evolução de software proprietário, integrando modelos de linguagem e análise de dados diretamente no fluxo de valor do produto.",
       icon: <Zap className="text-brand-cyan" size={32} />
     },
     {
       title: "Consultoria em IA e Decisão",
+      subtitle: "Segurança e inteligência na estratégia corporativa.",
       target: "Para empresas estruturadas",
       description: "Diagnóstico e implementação de governança de dados e ferramentas de IA para apoiar o C-Level em tomadas de decisão complexas e estratégicas.",
       icon: <BrainCircuit className="text-brand-cyan" size={32} />
@@ -40,7 +43,12 @@ const Services: React.FC = () => {
               <div className="mb-6 transform transition-transform duration-300 group-hover:scale-110 origin-left">
                 {service.icon}
               </div>
-              <h3 className="font-heading text-h3 text-brand-darkNavy mb-2 group-hover:text-brand-deepBlue transition-colors">{service.title}</h3>
+              <h3 className="font-heading text-h3 text-brand-darkNavy mb-1 group-hover:text-brand-deepBlue transition-colors">{service.title}</h3>
+              
+              <p className="font-sans text-sm font-medium text-brand-gray mb-4">
+                {service.subtitle}
+              </p>
+
               <span className="text-xs font-heading font-semibold text-brand-deepBlue bg-brand-lightBlue/30 px-2 py-1 inline-block rounded-sm w-fit mb-4 uppercase tracking-wider">
                 {service.target}
               </span>

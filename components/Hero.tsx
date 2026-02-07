@@ -31,8 +31,8 @@ const Hero: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Strict requirement: Use the specific GitHub Raw URL for the Kora Shield asset
-  const heroImageSrc = "https://raw.githubusercontent.com/cortopassi/kora-ai/refs/heads/main/IMG/kora-shield.png";
+  // Corrected GitHub Raw URL (removed 'refs/heads/')
+  const heroImageSrc = "https://raw.githubusercontent.com/cortopassi/kora-ai/main/IMG/kora-shield.png";
 
   return (
     <section className="relative w-full min-h-[90vh] flex items-center justify-center overflow-hidden bg-brand-deepBlue text-white pt-24 md:pt-20 pb-12">
@@ -90,12 +90,13 @@ const Hero: React.FC = () => {
           className="flex justify-center items-center relative will-change-transform mt-12 md:mt-0"
         >
           {/* 
-            Dimensions Strategy:
-            - Mobile: w-[240px] (Reduced size to center below text without overwhelming)
-            - Tablet: md:w-[420px] (Balanced)
-            - Desktop: lg:w-[580px] (Increased to ~45-50% width for protagonism)
+            Dimensions Strategy (Adjusted):
+            - Mobile: w-[240px]
+            - Tablet (md): w-[400px]
+            - Laptop (lg): w-[480px] (Slightly reduced to prevent clipping on 1024px screens)
+            - Desktop (xl): w-[560px] (Full size for wide screens)
           */}
-          <div className="relative w-[240px] h-[240px] md:w-[420px] md:h-[420px] lg:w-[580px] lg:h-[580px] animate-fade-in-up">
+          <div className="relative w-[240px] h-[240px] md:w-[400px] md:h-[400px] lg:w-[480px] lg:h-[480px] xl:w-[560px] xl:h-[560px] animate-fade-in-up">
             {/* Background Glow */}
             <div className="absolute inset-0 bg-brand-cyan/20 blur-[60px] rounded-full z-0 transform scale-90"></div>
             
