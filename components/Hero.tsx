@@ -31,8 +31,8 @@ const Hero: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Using the specific GitHub Raw URL for the Kora Shield asset
-  const heroImageSrc = "https://raw.githubusercontent.com/cortopassi/kora-ai/main/IMG/kora-shield.png";
+  // Strict requirement: Use the specific GitHub Raw URL for the Kora Shield asset
+  const heroImageSrc = "https://raw.githubusercontent.com/cortopassi/kora-ai/refs/heads/main/IMG/kora-shield.png";
 
   return (
     <section className="relative w-full min-h-[90vh] flex items-center justify-center overflow-hidden bg-brand-deepBlue text-white pt-24 md:pt-20 pb-12">
@@ -52,8 +52,9 @@ const Hero: React.FC = () => {
         className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-brand-darkNavy/40 rounded-full blur-[120px] pointer-events-none will-change-transform" 
       />
       
-      <div className="max-w-container w-full mx-auto px-6 relative z-10 grid md:grid-cols-2 gap-12 items-center">
-        <div className="space-y-8 order-2 md:order-1">
+      <div className="max-w-container w-full mx-auto px-6 relative z-10 grid md:grid-cols-2 gap-12 lg:gap-8 items-center">
+        {/* Text Content - Order 1 naturally (Top on mobile, Left on Desktop) */}
+        <div className="space-y-8">
           <div className="space-y-4">
             <h1 className="font-heading text-h1 text-white relative z-10 tracking-tight">
               Kora
@@ -83,12 +84,18 @@ const Hero: React.FC = () => {
           </div>
         </div>
 
-        {/* Hero Visual - Image Replacement */}
+        {/* Hero Visual - Real Image Asset - Order 2 naturally (Bottom on mobile, Right on Desktop) */}
         <div 
           ref={parallaxRef}
-          className="flex justify-center items-center relative order-1 md:order-2 will-change-transform mb-8 md:mb-0"
+          className="flex justify-center items-center relative will-change-transform mt-12 md:mt-0"
         >
-          <div className="relative w-[280px] h-[280px] md:w-[380px] md:h-[380px] lg:w-[480px] lg:h-[480px] animate-fade-in-up">
+          {/* 
+            Dimensions Strategy:
+            - Mobile: w-[240px] (Reduced size to center below text without overwhelming)
+            - Tablet: md:w-[420px] (Balanced)
+            - Desktop: lg:w-[580px] (Increased to ~45-50% width for protagonism)
+          */}
+          <div className="relative w-[240px] h-[240px] md:w-[420px] md:h-[420px] lg:w-[580px] lg:h-[580px] animate-fade-in-up">
             {/* Background Glow */}
             <div className="absolute inset-0 bg-brand-cyan/20 blur-[60px] rounded-full z-0 transform scale-90"></div>
             
@@ -96,22 +103,6 @@ const Hero: React.FC = () => {
               src={heroImageSrc}
               alt="Kora Shield Icon - Inteligência Aplicada" 
               className="w-full h-full object-contain drop-shadow-2xl relative z-10 hover:scale-[1.02] transition-transform duration-700 ease-in-out"
-              onError={(e) => {
-                 // Fallback to text shield if image fails to load
-                 e.currentTarget.style.display = 'none';
-                 const parent = e.currentTarget.parentElement;
-                 if (parent) {
-                    const fallback = document.createElement('div');
-                    fallback.innerHTML = '🛡️';
-                    fallback.style.fontSize = '150px';
-                    fallback.style.display = 'flex';
-                    fallback.style.justifyContent = 'center';
-                    fallback.style.alignItems = 'center';
-                    fallback.style.width = '100%';
-                    fallback.style.height = '100%';
-                    parent.appendChild(fallback);
-                 }
-              }}
             />
           </div>
         </div>
