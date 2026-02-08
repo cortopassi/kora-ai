@@ -4,21 +4,21 @@ import { ArrowLeft, ArrowRight, Quote } from 'lucide-react';
 const testimonials = [
   {
     id: 1,
-    text: "A Kora transformou nossa visão de dados em algo tangível. O ROI foi claro desde o primeiro mês de operação, eliminando gargalos que nem sabíamos que existiam.",
+    text: "A Kora trouxe uma visão de agilidade que conectou nossos times técnicos diretamente aos objetivos estratégicos (OKRs). A eficiência operacional mudou drasticamente.",
     author: "Ricardo Mendes",
-    role: "CEO, TechFin Solutions"
+    role: "Diretor de Operações"
   },
   {
     id: 2,
-    text: "Eles não apenas entregam software, entregam inteligência de negócio. A arquitetura de dados proposta foi um divisor de águas para nossa escala operacional.",
+    text: "Encontrar especialistas em SAP que também entendem de produtos digitais modernos é raro. A Kora integrou nossa ERP legada com novas soluções SaaS de forma impecável.",
     author: "Juliana Costa",
-    role: "CTO, Varejo Enterprise"
+    role: "CIO, Varejo Enterprise"
   },
   {
     id: 3,
-    text: "Profissionalismo e profundidade técnica. Finalmente uma parceira que entende que IA não é mágica, é engenharia robusta aplicada a problemas reais.",
+    text: "Os Product Managers da Kora assumiram a frente dos nossos produtos e trouxeram clareza para o roadmap. Atuaram como verdadeiros sócios do negócio.",
     author: "André Silva",
-    role: "Head de Inovação, Indústria 4.0"
+    role: "Founder, Fintech B2B"
   }
 ];
 
@@ -58,8 +58,8 @@ const Testimonials: React.FC = () => {
       <div className="max-w-container mx-auto px-6 relative z-10">
         <div className="mb-16 md:mb-24 flex items-end justify-between">
           <div>
-            <span className="text-brand-primary text-sm font-bold uppercase tracking-wider mb-2 block">Resultados Reais</span>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-white tracking-tight">O que dizem nossos parceiros</h2>
+            <span className="text-brand-primary text-sm font-bold uppercase tracking-wider mb-2 block">Parceria Real</span>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-white tracking-tight">Quem confia na Kora</h2>
           </div>
           
           {/* Desktop Navigation */}

@@ -15,17 +15,17 @@ const Hero: React.FC = () => {
           <div className="lg:col-span-7 space-y-10">
             <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm animate-fade-in">
               <span className="w-2 h-2 rounded-full bg-brand-primary animate-pulse" />
-              <span className="text-sm font-medium text-brand-text tracking-wide">Inteligência para Negócios</span>
+              <span className="text-sm font-medium text-brand-text tracking-wide">Soluções Digitais de Ponta a Ponta</span>
             </div>
 
             <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-bold text-white tracking-tighter leading-[1.05] animate-slide-up">
-              Dados que <br />
-              <span className="text-brand-muted">constroem</span> <br />
-              <span className="text-gradient-agency">o futuro.</span>
+              Resolvemos seus <br />
+              <span className="text-brand-muted">desafios</span> <br />
+              <span className="text-gradient-agency">digitais.</span>
             </h1>
 
             <p className="font-sans text-lg md:text-xl text-brand-muted max-w-lg leading-relaxed animate-slide-up" style={{animationDelay: '0.2s'}}>
-              Transformamos complexidade técnica em vantagem competitiva. Soluções de IA sob medida para empresas que lideram.
+              Trazemos resultados reais para sua empresa. Do desenvolvimento de <strong>Apps e Sites</strong> à <strong>Gestão Ágil</strong>, passando por <strong>SAP</strong> e estratégias de <strong>Growth</strong>. A expertise que você precisa para entrar ou escalar no digital.
             </p>
 
             <div className="flex flex-wrap gap-4 pt-4 animate-slide-up" style={{animationDelay: '0.4s'}}>
@@ -35,14 +35,14 @@ const Hero: React.FC = () => {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 bg-white text-black px-8 py-4 text-base font-bold rounded-full hover:bg-brand-primary hover:text-white transition-all duration-300 min-w-[180px]"
               >
-                Vamos conversar
+                Falar com consultor
                 <ArrowRight size={18} />
               </a>
               <button 
                 onClick={() => document.getElementById('servicos')?.scrollIntoView({behavior: 'smooth'})}
                 className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white border border-white/10 rounded-full hover:bg-white/5 transition-all min-w-[180px]"
               >
-                Nossas soluções
+                O que fazemos
               </button>
             </div>
           </div>
@@ -62,15 +62,15 @@ const Hero: React.FC = () => {
                 />
               </div>
 
-              {/* Decorative floating pills */}
+              {/* Decorative floating pills - Updated text */}
               <div className="absolute -right-8 top-20 bg-[#1A1A1A] border border-white/10 px-4 py-3 rounded-xl shadow-xl animate-bounce" style={{animationDuration: '3s'}}>
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 rounded-lg bg-brand-primary/20 flex items-center justify-center">
                     <div className="w-2 h-2 bg-brand-primary rounded-full" />
                   </div>
                   <div>
-                    <div className="h-2 w-16 bg-white/20 rounded-full mb-1" />
-                    <div className="h-2 w-10 bg-white/10 rounded-full" />
+                    <div className="text-xs font-bold text-white">Digital Results</div>
+                    <div className="text-[10px] text-brand-muted">Full Cycle</div>
                   </div>
                 </div>
               </div>
