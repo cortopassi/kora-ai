@@ -31,9 +31,6 @@ const Hero: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Corrected GitHub Raw URL (removed 'refs/heads/')
-  const heroImageSrc = "https://raw.githubusercontent.com/cortopassi/kora-ai/main/IMG/kora-shield.png";
-
   return (
     <section className="relative w-full min-h-[90vh] flex items-center justify-center overflow-hidden bg-brand-deepBlue text-white pt-24 md:pt-20 pb-12">
       {/* Mature Corporate Background - Clean Solid Base */}
@@ -100,10 +97,10 @@ const Hero: React.FC = () => {
             {/* Background Glow */}
             <div className="absolute inset-0 bg-brand-cyan/20 blur-[60px] rounded-full z-0 transform scale-90"></div>
             
-            <img 
-              src={heroImageSrc}
-              alt="Kora Shield Icon - Inteligência Aplicada" 
-              className="w-full h-full object-contain drop-shadow-2xl relative z-10 hover:scale-[1.02] transition-transform duration-700 ease-in-out"
+            <img
+              src="https://cdn.jsdelivr.net/gh/cortopassi/kora-ai@main/public-assets/kora-shield.png"
+              alt="Kora Inteligência Aplicada"
+              className="w-full h-full object-contain"
             />
           </div>
         </div>
