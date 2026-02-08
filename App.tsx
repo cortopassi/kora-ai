@@ -1,10 +1,12 @@
 import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import Clients from './components/Clients';
 import ValueProposition from './components/ValueProposition';
 import Services from './components/Services';
 import Experience from './components/Experience';
 import Methodology from './components/Methodology';
+import Testimonials from './components/Testimonials';
 import FooterCTA from './components/FooterCTA';
 import FloatingCTA from './components/FloatingCTA';
 import ScrollToTop from './components/ScrollToTop';
@@ -15,10 +17,12 @@ const App: React.FC = () => {
       <Navbar />
       <main className="flex-grow w-full">
         <Hero />
+        <Clients />
         <ValueProposition />
         <Services />
         <Experience />
         <Methodology />
+        <Testimonials />
         <FooterCTA />
       </main>
       <FloatingCTA />

@@ -61,6 +61,7 @@
               'fade-in': 'fadeIn 1s ease-out forwards',
               'slide-up': 'slideUp 0.8s ease-out forwards',
               'float': 'float 6s ease-in-out infinite',
+              'scroll': 'scroll 30s linear infinite',
             },
             keyframes: {
               fadeIn: {
@@ -74,6 +75,10 @@
               float: {
                 '0%, 100%': { transform: 'translateY(0)' },
                 '50%': { transform: 'translateY(-15px)' },
+              },
+              scroll: {
+                '0%': { transform: 'translateX(0)' },
+                '100%': { transform: 'translateX(-50%)' },
               }
             }
           }
