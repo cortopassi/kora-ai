@@ -1,41 +1,37 @@
 import React from 'react';
-import { MessageCircle, ArrowRight } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 
 const FooterCTA: React.FC = () => {
   return (
-    <footer id="contato" className="bg-[#010208] pt-section pb-12 border-t border-brand-border">
-      <div className="max-w-4xl mx-auto px-6 text-center">
-        <h2 className="font-heading font-bold text-4xl md:text-6xl text-white mb-8 tracking-tight">
-          Pronto para elevar o nível?
-        </h2>
-        <p className="font-sans text-xl text-brand-muted mb-12 max-w-2xl mx-auto">
-          Sem pressão de vendas. Apenas uma conversa profissional para entender se podemos ajudar seu negócio a escalar com inteligência.
-        </p>
+    <footer id="contato" className="py-24 bg-[#0A0A0A] border-t border-brand-border">
+      <div className="max-w-container mx-auto px-6 text-center">
         
-        <div className="flex flex-col items-center gap-6 mb-20">
-          <a 
+        <h2 className="font-heading text-5xl md:text-7xl lg:text-[6rem] font-bold text-white tracking-tighter leading-none mb-12">
+          Vamos construir <br />
+          <span className="text-brand-muted">o próximo passo?</span>
+        </h2>
+
+        <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-24">
+           <a 
             href="https://wa.me/5511998644004" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="group relative inline-flex items-center justify-center gap-4 bg-brand-cyan text-brand-bg px-10 py-5 text-lg font-heading font-bold rounded-full hover:bg-white transition-all shadow-[0_0_40px_rgba(0,180,216,0.3)] hover:shadow-[0_0_60px_rgba(255,255,255,0.4)] overflow-hidden"
+            className="group inline-flex items-center gap-3 bg-white text-black px-8 py-5 text-lg font-bold rounded-full hover:bg-brand-primary hover:text-white transition-all duration-300"
           >
-            <span className="relative z-10 flex items-center gap-3">
-              <MessageCircle className="w-6 h-6" />
-              Iniciar conversa agora
-            </span>
+            Iniciar Projeto
+            <ArrowUpRight className="transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
+          </a>
+          <a href="mailto:contato@kora.ai" className="text-brand-muted hover:text-white font-medium transition-colors px-6 py-4">
+            contato@kora.ai
           </a>
         </div>
 
-        <div className="pt-12 border-t border-brand-border/30 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="flex items-center gap-3">
-              <span className="font-heading font-bold text-2xl text-white">
-                Kora
-              </span>
-              <span className="text-brand-border">|</span>
-              <span className="font-sans text-xs text-brand-muted uppercase tracking-widest">Inteligência Aplicada</span>
-            </div>
-            
-            <p className="text-brand-muted text-sm">&copy; {new Date().getFullYear()} Kora AI. Todos os direitos reservados.</p>
+        <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/5 gap-4">
+           <p className="text-xs text-brand-muted">© {new Date().getFullYear()} Kora AI. All rights reserved.</p>
+           <div className="flex gap-6">
+             <span className="text-xs text-brand-muted hover:text-white cursor-pointer">Privacy</span>
+             <span className="text-xs text-brand-muted hover:text-white cursor-pointer">Terms</span>
+           </div>
         </div>
       </div>
     </footer>

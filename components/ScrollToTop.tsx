@@ -6,8 +6,7 @@ const ScrollToTop: React.FC = () => {
 
   useEffect(() => {
     const toggleVisibility = () => {
-      // Show button when page is scrolled down 300px
-      if (window.scrollY > 300) {
+      if (window.scrollY > 500) {
         setIsVisible(true);
       } else {
         setIsVisible(false);
@@ -28,12 +27,12 @@ const ScrollToTop: React.FC = () => {
   return (
     <button
       onClick={scrollToTop}
-      className={`hidden md:block fixed z-40 bottom-8 right-8 bg-brand-card text-white p-3 rounded-full shadow-lg hover:bg-brand-cyan hover:text-brand-bg transition-all duration-300 border border-brand-border ${
+      className={`hidden md:flex fixed z-40 bottom-8 right-8 bg-[#1A1A1A] text-white p-3 rounded-2xl border border-white/5 hover:bg-white hover:text-black transition-all duration-300 ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
       }`}
       aria-label="Voltar ao topo"
     >
-      <ArrowUp className="w-6 h-6" />
+      <ArrowUp size={20} />
     </button>
   );
 };

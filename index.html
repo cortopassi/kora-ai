@@ -11,7 +11,6 @@
     <meta property="og:url" content="https://kora.ai/" />
     <meta property="og:title" content="Kora | Inteligência Aplicada" />
     <meta property="og:description" content="Soluções digitais orientadas por Inteligência Artificial para apoiar decisões reais de negócio." />
-    <!-- Using official CDN URL -->
     <meta property="og:image" content="https://cdn.jsdelivr.net/gh/cortopassi/kora-ai@main/public-assets/kora-shield.png" />
 
     <!-- Twitter -->
@@ -20,61 +19,61 @@
     <meta property="twitter:description" content="Soluções digitais orientadas por Inteligência Artificial para apoiar decisões reais de negócio." />
     <meta property="twitter:image" content="https://cdn.jsdelivr.net/gh/cortopassi/kora-ai@main/public-assets/kora-shield.png" />
 
-    <!-- Favicon: Using the institutional asset from CDN -->
+    <!-- Favicon -->
     <link rel="icon" href="https://cdn.jsdelivr.net/gh/cortopassi/kora-ai@main/public-assets/kora-shield.png" type="image/png">
     <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/cortopassi/kora-ai@main/public-assets/kora-shield.png">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <script>
       tailwind.config = {
         theme: {
           extend: {
             colors: {
               brand: {
-                bg: '#020410',       // Ultra dark navy/black
-                card: '#0A0F1F',     // Slightly lighter for cards
-                deepBlue: '#0A2463', // Primary
-                cyan: '#00B4D8',     // Secondary Glow
-                lightBlue: '#90E0EF', // Accent
-                border: 'rgba(255, 255, 255, 0.08)',
-                text: '#E2E8F0',     // Light text
-                muted: '#94A3B8',    // Muted text
+                bg: '#050505',       // Matte Black
+                surface: '#0F0F0F',  // Dark Grey for cards
+                surfaceHighlight: '#1A1A1A', // Lighter grey for hovers
+                primary: '#2952FF',  // Digital Blue (Vibrant)
+                accent: '#E0E7FF',   // Soft White/Blue
+                border: '#262626',   // Subtle border
+                text: '#F3F4F6',     // High contrast text
+                muted: '#A1A1AA',    // Zinc 400
               }
             },
             fontFamily: {
               sans: ['Inter', 'sans-serif'],
-              heading: ['Montserrat', 'sans-serif'],
+              heading: ['Manrope', 'sans-serif'], // Changing to Manrope for that modern agency look
             },
             maxWidth: {
-              'container': '1280px',
+              'container': '1200px',
             },
             spacing: {
-              'section': '100px',
+              'section': '120px',
             },
             borderRadius: {
-              'brand': '12px',
+              'brand': '24px', // Softer, larger corners
               'pill': '9999px',
             },
-            backgroundImage: {
-              'gradient-glow': 'radial-gradient(circle at center, rgba(0, 180, 216, 0.15) 0%, rgba(2, 4, 16, 0) 70%)',
-              'grid-pattern': "url(\"data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E\")",
-            },
             animation: {
-              'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
-              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'fade-in': 'fadeIn 1s ease-out forwards',
+              'slide-up': 'slideUp 0.8s ease-out forwards',
               'float': 'float 6s ease-in-out infinite',
             },
             keyframes: {
-              fadeInUp: {
-                '0%': { opacity: '0', transform: 'translateY(20px)' },
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              slideUp: {
+                '0%': { opacity: '0', transform: 'translateY(40px)' },
                 '100%': { opacity: '1', transform: 'translateY(0)' },
               },
               float: {
                 '0%, 100%': { transform: 'translateY(0)' },
-                '50%': { transform: 'translateY(-20px)' },
+                '50%': { transform: 'translateY(-15px)' },
               }
             }
           }
@@ -84,51 +83,43 @@
     <style>
       body {
         font-family: 'Inter', sans-serif;
-        background-color: #020410;
-        color: #E2E8F0;
+        background-color: #050505;
+        color: #F3F4F6;
         overflow-x: hidden;
       }
       
-      /* Smooth scrolling for anchor links */
       html {
         scroll-behavior: smooth;
       }
 
-      /* Custom Scrollbar */
+      /* Clean Scrollbar */
       ::-webkit-scrollbar {
-        width: 8px;
+        width: 6px;
       }
       ::-webkit-scrollbar-track {
-        background: #020410;
+        background: #050505;
       }
       ::-webkit-scrollbar-thumb {
-        background: #1e293b;
-        border-radius: 4px;
+        background: #333;
+        border-radius: 3px;
       }
       ::-webkit-scrollbar-thumb:hover {
-        background: #00B4D8;
+        background: #555;
       }
 
-      /* Utility for text gradients */
-      .text-gradient {
-        background: linear-gradient(135deg, #FFFFFF 0%, #90E0EF 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
-      
-      .text-gradient-blue {
-        background: linear-gradient(135deg, #90E0EF 0%, #00B4D8 100%);
+      /* Text Gradients */
+      .text-gradient-agency {
+        background: linear-gradient(to right, #ffffff, #94a3b8);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
       }
 
-      .glass-card {
-        background: rgba(10, 15, 31, 0.6);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.08);
+      .glass-panel {
+        background: rgba(15, 15, 15, 0.6);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.05);
       }
     </style>
   <script type="importmap">
@@ -144,8 +135,6 @@
 </head>
 <body>
   <div id="root"></div>
-
-  <!-- Mount React App -->
   <script type="module" src="/index.tsx"></script>
 </body>
 </html>

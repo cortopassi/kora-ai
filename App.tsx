@@ -11,9 +11,9 @@ import ScrollToTop from './components/ScrollToTop';
 
 const App: React.FC = () => {
   return (
-    <div className="min-h-screen flex flex-col w-full bg-brand-bg text-brand-text selection:bg-brand-cyan selection:text-brand-bg">
+    <div className="min-h-screen flex flex-col w-full bg-brand-bg text-brand-text selection:bg-brand-cyan selection:text-brand-bg overflow-x-hidden">
       <Navbar />
-      <main className="flex-grow">
+      <main className="flex-grow w-full">
         <Hero />
         <ValueProposition />
         <Services />

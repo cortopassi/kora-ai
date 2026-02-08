@@ -1,70 +1,74 @@
 import React from 'react';
-import { Layers, Zap, BrainCircuit, ArrowUpRight } from 'lucide-react';
+import { Boxes, Terminal, LineChart, MoveRight } from 'lucide-react';
 
 const Services: React.FC = () => {
   const services = [
     {
-      title: "Presença Digital Inteligente",
-      subtitle: "Para pequenos negócios",
-      description: "Estruturação de canais digitais otimizados por IA para maximizar conversão e eficiência operacional com baixo overhead técnico.",
-      icon: <Layers className="text-white" size={32} />
+      title: "Presença Digital",
+      description: "Sites e sistemas web de alta performance focados em conversão.",
+      tags: ["Performance", "SEO", "Design"],
+      icon: <Boxes className="text-white" size={24} />
     },
     {
-      title: "Produto Digital com IA",
-      subtitle: "Para empresas em crescimento",
-      description: "Desenvolvimento e evolução de software proprietário, integrando LLMs e análise de dados diretamente no fluxo de valor.",
-      icon: <Zap className="text-white" size={32} />
+      title: "Produtos de IA",
+      description: "Desenvolvimento de software proprietário integrado com LLMs.",
+      tags: ["SaaS", "Automação", "LLMs"],
+      icon: <Terminal className="text-white" size={24} />
     },
     {
-      title: "Consultoria em Decisão",
-      subtitle: "Para empresas estruturadas",
-      description: "Diagnóstico e implementação de governança de dados e ferramentas de IA para apoiar o C-Level em tomadas de decisão complexas.",
-      icon: <BrainCircuit className="text-white" size={32} />
+      title: "Consultoria de Dados",
+      description: "Análise preditiva e estruturação de governança de dados.",
+      tags: ["Analytics", "Strategy", "BI"],
+      icon: <LineChart className="text-white" size={24} />
     }
   ];
 
   return (
-    <section className="py-section bg-brand-bg relative">
-      {/* Background decorative blob */}
-      <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-brand-deepBlue/20 blur-[120px] rounded-full -translate-y-1/2 pointer-events-none" />
-
-      <div className="max-w-container mx-auto px-6 relative z-10">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+    <section id="servicos" className="py-section bg-brand-bg border-t border-brand-border/30 relative overflow-hidden">
+      <div className="max-w-container mx-auto px-6">
+        
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
           <div>
-            <span className="font-sans font-semibold text-sm text-brand-cyan uppercase tracking-widest">Atuação</span>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold mt-2 text-white">Como impulsionamos<br/>o seu negócio</h2>
+            <h2 className="font-heading text-4xl md:text-5xl font-bold text-white tracking-tight mb-4">
+              Expertise <span className="text-brand-muted">Digital</span>
+            </h2>
+            <p className="font-sans text-brand-muted max-w-md">
+              Não vendemos apenas código. Entregamos infraestrutura intelectual para sua empresa escalar.
+            </p>
           </div>
-          <p className="text-brand-muted max-w-sm text-sm md:text-base">
-            Soluções modulares adaptadas ao estágio de maturidade da sua empresa.
-          </p>
+          <a href="https://wa.me/5511998644004" className="hidden md:flex items-center gap-2 text-white font-medium hover:text-brand-primary transition-colors group">
+            Ver detalhes <MoveRight size={20} className="transition-transform group-hover:translate-x-1" />
+          </a>
         </div>
 
         <div className="grid md:grid-cols-3 gap-6">
           {services.map((service, index) => (
             <div 
               key={index} 
-              className="group glass-card p-8 rounded-brand hover:border-brand-cyan/50 transition-all duration-500 hover:-translate-y-2 flex flex-col h-full relative overflow-hidden"
+              className="group relative bg-brand-surface rounded-brand p-8 border border-brand-border hover:border-brand-primary/50 transition-all duration-500 overflow-hidden"
             >
-              {/* Gradient overlay on hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-brand-cyan/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              
-              <div className="relative z-10">
-                <div className="w-14 h-14 bg-brand-deepBlue/50 border border-brand-border rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
-                  {service.icon}
+              <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity transform group-hover:scale-110 duration-700">
+                {service.icon}
+              </div>
+
+              <div className="relative z-10 flex flex-col h-full justify-between min-h-[280px]">
+                <div>
+                   <div className="w-12 h-12 bg-brand-surfaceHighlight rounded-full flex items-center justify-center mb-6 border border-white/5 group-hover:bg-brand-primary group-hover:text-white transition-colors duration-300">
+                    {service.icon}
+                  </div>
+                  <h3 className="font-heading text-2xl font-bold text-white mb-3">{service.title}</h3>
+                  <p className="font-sans text-brand-muted leading-relaxed mb-8">
+                    {service.description}
+                  </p>
                 </div>
                 
-                <div className="flex justify-between items-start mb-2">
-                  <h3 className="font-heading text-xl font-bold text-white">{service.title}</h3>
-                  <ArrowUpRight className="text-brand-muted group-hover:text-brand-cyan opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0" size={20} />
+                <div className="flex flex-wrap gap-2">
+                  {service.tags.map((tag, i) => (
+                    <span key={i} className="px-3 py-1 bg-white/5 border border-white/5 rounded-full text-xs font-medium text-brand-muted">
+                      {tag}
+                    </span>
+                  ))}
                 </div>
-                
-                <span className="text-xs font-semibold text-brand-cyan mb-4 block">
-                  {service.subtitle}
-                </span>
-                
-                <p className="font-sans text-brand-muted text-sm leading-relaxed">
-                  {service.description}
-                </p>
               </div>
             </div>
           ))}

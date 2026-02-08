@@ -2,26 +2,30 @@ import React from 'react';
 
 const ValueProposition: React.FC = () => {
   return (
-    <section id="proposta" className="py-section bg-brand-bg relative border-t border-brand-border">
+    <section className="py-section bg-brand-bg relative">
       <div className="max-w-container mx-auto px-6">
-        <div className="grid md:grid-cols-12 gap-12 items-start">
-          <div className="md:col-span-5">
-            <h2 className="font-heading text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight">
-              Clareza, <br />
-              <span className="text-brand-muted">Critério e</span> <br />
-              <span className="text-brand-cyan">Resultado.</span>
-            </h2>
-          </div>
-          <div className="md:col-span-7 space-y-8">
-            <div className="glass-card p-8 rounded-brand">
-              <p className="font-sans text-lg text-brand-text leading-relaxed">
-                A Kora não vende tecnologia pela tecnologia. Atuamos na interseção entre <strong className="text-white">estratégia de negócio</strong> e <strong className="text-white">engenharia de software</strong>, utilizando IA como ferramenta para estruturar decisões robustas.
-              </p>
+        <div className="bg-[#101010] rounded-[40px] p-8 md:p-16 border border-brand-border relative overflow-hidden">
+          {/* Decorative gradients */}
+          <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-brand-primary/5 rounded-full blur-[100px] pointer-events-none" />
+          
+          <div className="grid md:grid-cols-2 gap-12 md:gap-24 items-center relative z-10">
+            <div>
+               <span className="inline-block py-1 px-3 rounded-full bg-brand-primary/10 text-brand-primary text-xs font-bold uppercase tracking-wider mb-6">
+                 Manifesto
+               </span>
+               <h2 className="font-heading text-3xl md:text-5xl font-bold text-white tracking-tight leading-tight mb-6">
+                 Menos hype, <br />
+                 mais <span className="text-brand-primary">resultado</span>.
+               </h2>
+               <div className="h-1 w-20 bg-brand-border rounded-full"></div>
             </div>
-            
-            <div className="pl-6 border-l-2 border-brand-cyan/30">
-              <p className="font-sans text-lg text-brand-muted">
-                Nosso foco é eliminar o ruído do mercado e entregar soluções que resolvam problemas reais, automatizando processos e fornecendo insights preditivos.
+
+            <div className="space-y-6">
+              <p className="font-sans text-lg text-brand-muted leading-relaxed">
+                O mercado está saturado de promessas vazias sobre Inteligência Artificial. Na Kora, nós removemos o ruído.
+              </p>
+              <p className="font-sans text-lg text-white font-medium leading-relaxed">
+                Atuamos na interseção pragmática entre <span className="text-brand-primary">estratégia de negócio</span> e <span className="text-brand-primary">engenharia de software</span>. Sem mágica. Apenas arquitetura robusta e dados bem estruturados.
               </p>
             </div>
           </div>
