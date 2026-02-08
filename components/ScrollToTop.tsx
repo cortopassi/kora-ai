@@ -25,10 +25,12 @@ const ScrollToTop: React.FC = () => {
     });
   };
 
+  // Updated className to be 'hidden' by default and 'md:block' (visible) only on medium screens and up.
+  // Also removed mobile positioning classes since it's hidden on mobile.
   return (
     <button
       onClick={scrollToTop}
-      className={`fixed z-40 bottom-6 left-6 md:bottom-8 md:right-8 bg-brand-cyan text-white p-3 rounded-full shadow-lg hover:bg-brand-lightBlue transition-all duration-300 border border-white/20 ${
+      className={`hidden md:block fixed z-40 bottom-8 right-8 bg-brand-cyan text-white p-3 rounded-full shadow-lg hover:bg-brand-lightBlue transition-all duration-300 border border-white/20 ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
       }`}
       aria-label="Voltar ao topo"
