@@ -1,109 +1,74 @@
-import React, { useEffect, useRef } from 'react';
-import { ArrowRight } from 'lucide-react';
+import React from 'react';
+import { ArrowRight, ChevronDown } from 'lucide-react';
 
 const Hero: React.FC = () => {
-  const parallaxRef = useRef<HTMLDivElement>(null);
-  const bgRef1 = useRef<HTMLDivElement>(null);
-  const bgRef2 = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrolled = window.scrollY;
-      
-      // Main visual - Shield (Mid ground)
-      // Only apply parallax on larger screens to prevent mobile jitter
-      if (window.innerWidth > 768 && parallaxRef.current) {
-        parallaxRef.current.style.transform = `translateY(${scrolled * 0.12}px)`;
-      }
-
-      // Top right blob (Background far)
-      if (bgRef1.current) {
-        bgRef1.current.style.transform = `translateY(${scrolled * 0.05}px)`;
-      }
-
-      // Bottom left blob (Background near)
-      if (bgRef2.current) {
-        bgRef2.current.style.transform = `translateY(${scrolled * 0.08}px)`;
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
-    <section className="relative w-full min-h-[90vh] flex items-center justify-center overflow-hidden bg-brand-deepBlue text-white pt-24 md:pt-20 pb-12">
-      {/* Mature Corporate Background - Clean Solid Base */}
-      <div className="absolute inset-0 bg-brand-deepBlue" />
+    <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-brand-bg pt-24 pb-12">
+      {/* Background Effects */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-20 pointer-events-none" />
       
-      {/* Subtle Gradient for depth */}
-      <div className="absolute inset-0 bg-gradient-to-b from-brand-deepBlue via-brand-deepBlue to-[#051540]" />
+      {/* Glow Spots */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-brand-deepBlue/30 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-brand-cyan/10 blur-[100px] rounded-full pointer-events-none" />
       
-      {/* Ambient Lighting */}
-      <div 
-        ref={bgRef1}
-        className="absolute top-[-10%] right-[-5%] w-[800px] h-[800px] bg-brand-cyan/5 rounded-full blur-[150px] pointer-events-none will-change-transform" 
-      />
-      <div 
-        ref={bgRef2}
-        className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-brand-darkNavy/40 rounded-full blur-[120px] pointer-events-none will-change-transform" 
-      />
-      
-      <div className="max-w-container w-full mx-auto px-6 relative z-10 grid md:grid-cols-2 gap-12 lg:gap-8 items-center">
-        {/* Text Content - Order 1 naturally (Top on mobile, Left on Desktop) */}
-        <div className="space-y-8">
-          <div className="space-y-4">
-            <h1 className="font-heading text-h1 text-white relative z-10 tracking-tight">
-              Kora
+      <div className="max-w-container w-full mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+        
+        {/* Text Content */}
+        <div className="space-y-8 order-2 lg:order-1 text-center lg:text-left">
+          <div className="space-y-2">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-card border border-brand-border mb-4">
+              <div className="w-2 h-2 rounded-full bg-brand-cyan animate-pulse"></div>
+              <span className="text-xs font-medium text-brand-lightBlue uppercase tracking-wider">AI for Business</span>
+            </div>
+            
+            <h1 className="font-heading text-5xl md:text-7xl font-bold text-white tracking-tight leading-[1.1]">
+              Inteligência <br />
+              <span className="text-gradient-blue">Aplicada.</span>
             </h1>
-            <p className="font-heading text-[32px] md:text-[40px] font-semibold text-white/90 tracking-tight relative z-10 leading-tight">
-              Inteligência aplicada <br />
-              <span className="text-brand-lightBlue">às decisões de negócio.</span>
-            </p>
           </div>
           
-          <div className="h-px w-16 bg-brand-cyan/50 my-8 relative z-10" />
-          
-          <p className="font-sans text-body text-slate-300 max-w-lg relative z-10 leading-relaxed">
-            Construímos soluções fundamentadas em dados e IA para empresas que buscam eficiência operacional e clareza estratégica.
+          <p className="font-sans text-lg md:text-xl text-brand-muted max-w-lg mx-auto lg:mx-0 leading-relaxed">
+            Construímos soluções fundamentadas em dados e IA para empresas que buscam <span className="text-white">eficiência operacional</span> e <span className="text-white">clareza estratégica</span>.
           </p>
 
-          <div className="pt-6 relative z-10">
+          <div className="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
             <a 
               href="https://wa.me/5511998644004" 
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-white text-brand-deepBlue px-8 py-4 text-body font-heading font-semibold rounded-brand hover:bg-brand-lightBlue transition-all group shadow-lg"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-brand-cyan text-brand-bg px-8 py-4 text-base font-heading font-bold rounded-lg hover:bg-brand-lightBlue hover:scale-105 transition-all shadow-[0_0_30px_rgba(0,180,216,0.3)]"
             >
-              Falar no WhatsApp
-              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+              Falar com especialista
+              <ArrowRight size={20} />
             </a>
+            
+            <button 
+              onClick={() => document.getElementById('proposta')?.scrollIntoView({behavior: 'smooth'})}
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-heading font-semibold text-white border border-brand-border rounded-lg hover:bg-white/5 transition-all"
+            >
+              Conhecer soluções
+            </button>
           </div>
         </div>
 
-        {/* Hero Visual - Real Image Asset - Order 2 naturally (Bottom on mobile, Right on Desktop) */}
-        <div 
-          ref={parallaxRef}
-          className="flex justify-center items-center relative will-change-transform mt-12 md:mt-0"
-        >
-          {/* 
-            Dimensions Strategy (Adjusted):
-            - Mobile: w-[240px]
-            - Tablet (md): w-[400px]
-            - Laptop (lg): w-[480px] (Slightly reduced to prevent clipping on 1024px screens)
-            - Desktop (xl): w-[560px] (Full size for wide screens)
-          */}
-          <div className="relative w-[240px] h-[240px] md:w-[400px] md:h-[400px] lg:w-[480px] lg:h-[480px] xl:w-[560px] xl:h-[560px] animate-fade-in-up">
-            {/* Background Glow */}
-            <div className="absolute inset-0 bg-brand-cyan/20 blur-[60px] rounded-full z-0 transform scale-90"></div>
+        {/* Hero Visual */}
+        <div className="order-1 lg:order-2 flex justify-center items-center relative">
+          <div className="relative w-[300px] h-[300px] md:w-[500px] md:h-[500px] animate-float">
+            {/* Inner Glow */}
+            <div className="absolute inset-0 bg-brand-cyan/20 blur-[80px] rounded-full z-0"></div>
             
             <img
               src="https://cdn.jsdelivr.net/gh/cortopassi/kora-ai@main/public-assets/kora-shield.png"
               alt="Kora Inteligência Aplicada"
-              className="w-full h-full object-contain"
+              className="w-full h-full object-contain relative z-10 drop-shadow-[0_20px_50px_rgba(0,180,216,0.3)]"
             />
           </div>
         </div>
+      </div>
+      
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce opacity-50">
+        <ChevronDown className="text-white w-6 h-6" />
       </div>
     </section>
   );

@@ -1,40 +1,41 @@
 import React from 'react';
-import { MessageCircle } from 'lucide-react';
+import { MessageCircle, ArrowRight } from 'lucide-react';
 
 const FooterCTA: React.FC = () => {
   return (
-    <footer id="contato" className="bg-brand-darkNavy py-section border-t border-brand-deepBlue/50">
+    <footer id="contato" className="bg-[#010208] pt-section pb-12 border-t border-brand-border">
       <div className="max-w-4xl mx-auto px-6 text-center">
-        <h2 className="font-heading font-bold text-[32px] md:text-h1 text-white mb-6 tracking-tight">
-          Vamos conversar sobre o seu negócio.
+        <h2 className="font-heading font-bold text-4xl md:text-6xl text-white mb-8 tracking-tight">
+          Pronto para elevar o nível?
         </h2>
-        <p className="font-sans text-[18px] md:text-[20px] text-slate-300 mb-10 max-w-2xl mx-auto">
-          Sem compromisso, sem pressão de vendas. Apenas uma conversa profissional para entender se podemos ajudar.
+        <p className="font-sans text-xl text-brand-muted mb-12 max-w-2xl mx-auto">
+          Sem pressão de vendas. Apenas uma conversa profissional para entender se podemos ajudar seu negócio a escalar com inteligência.
         </p>
         
-        <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-16">
+        <div className="flex flex-col items-center gap-6 mb-20">
           <a 
             href="https://wa.me/5511998644004" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="w-full md:w-auto flex items-center justify-center gap-3 bg-white text-brand-deepBlue px-8 py-4 text-lg font-heading font-semibold rounded-brand hover:bg-brand-lightBlue transition-all shadow-lg"
+            className="group relative inline-flex items-center justify-center gap-4 bg-brand-cyan text-brand-bg px-10 py-5 text-lg font-heading font-bold rounded-full hover:bg-white transition-all shadow-[0_0_40px_rgba(0,180,216,0.3)] hover:shadow-[0_0_60px_rgba(255,255,255,0.4)] overflow-hidden"
           >
-            <MessageCircle className="w-5 h-5" />
-            Iniciar conversa no WhatsApp
+            <span className="relative z-10 flex items-center gap-3">
+              <MessageCircle className="w-6 h-6" />
+              Iniciar conversa agora
+            </span>
           </a>
         </div>
 
-        <div className="pt-8 border-t border-brand-deepBlue/30 flex flex-col items-center gap-6">
-            {/* Typographic Logo Version (Matching Navbar style but White for contrast) */}
-            <span className="font-heading font-bold text-[26px] text-white tracking-tight leading-none">
-              Kora
-            </span>
-            
-            <div className="text-slate-400 text-sm flex flex-col md:flex-row justify-center items-center gap-4">
-              <p>&copy; {new Date().getFullYear()} Kora AI. Todos os direitos reservados.</p>
-              <p className="hidden md:block text-brand-deepBlue/50">•</p>
-              <p className="font-heading text-xs text-brand-lightBlue/80 uppercase tracking-widest">Inteligência Aplicada</p>
+        <div className="pt-12 border-t border-brand-border/30 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="flex items-center gap-3">
+              <span className="font-heading font-bold text-2xl text-white">
+                Kora
+              </span>
+              <span className="text-brand-border">|</span>
+              <span className="font-sans text-xs text-brand-muted uppercase tracking-widest">Inteligência Aplicada</span>
             </div>
+            
+            <p className="text-brand-muted text-sm">&copy; {new Date().getFullYear()} Kora AI. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>
