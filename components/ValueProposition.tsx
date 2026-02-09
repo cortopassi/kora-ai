@@ -14,18 +14,18 @@ const ValueProposition: React.FC = () => {
                  Abordagem Kora
                </span>
                <h2 className="font-heading text-3xl md:text-5xl font-bold text-white tracking-tight leading-tight mb-6">
-                 Entendemos o seu <br />
-                 <span className="text-brand-primary">momento</span>.
+                 A tecnologia é o meio. <br />
+                 <span className="text-brand-primary">O negócio é o fim.</span>
                </h2>
                <div className="h-1 w-20 bg-brand-border rounded-full"></div>
             </div>
 
             <div className="space-y-6">
               <p className="font-sans text-lg text-brand-muted leading-relaxed">
-                Não importa se você precisa lançar um novo produto, escalar vendas ou organizar processos internos. Nós resolvemos.
+                Não começamos pelo código, mas pelo entendimento do problema. Atuamos desde a organização de processos em pequenos negócios até a escala de produtos digitais em grandes corporações.
               </p>
               <p className="font-sans text-lg text-white font-medium leading-relaxed">
-                Trazemos a bagagem de grandes corporações para o seu negócio. Seja construindo um App, otimizando o Marketing ou implementando Agilidade, a Kora é a parceira que entrega <span className="text-brand-primary">resultados digitais</span> concretos.
+                Independente da complexidade — seja otimizar a operação de um comércio local ou integrar sistemas legados SAP em multinacionais — trazemos clareza, método e a <span className="text-brand-primary">tecnologia adequada ao seu contexto</span>.
               </p>
             </div>
           </div>

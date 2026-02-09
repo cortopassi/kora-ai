@@ -4,19 +4,19 @@ import { ArrowLeft, ArrowRight, Quote } from 'lucide-react';
 const testimonials = [
   {
     id: 1,
-    text: "A Kora trouxe uma visão de agilidade que conectou nossos times técnicos diretamente aos objetivos estratégicos (OKRs). A eficiência operacional mudou drasticamente.",
+    text: "A Kora não tentou apenas nos vender software. Eles entenderam nosso gargalo operacional primeiro. A solução implementada otimizou nosso tempo em 40% com uma tecnologia que já tínhamos.",
     author: "Ricardo Mendes",
     role: "Diretor de Operações"
   },
   {
     id: 2,
-    text: "Encontrar especialistas em SAP que também entendem de produtos digitais modernos é raro. A Kora integrou nossa ERP legada com novas soluções SaaS de forma impecável.",
+    text: "Precisávamos modernizar nossa gestão SAP e criar uma interface amigável para o cliente final. A Kora conectou o mundo corporativo complexo com a agilidade de uma startup.",
     author: "Juliana Costa",
     role: "CIO, Varejo Enterprise"
   },
   {
     id: 3,
-    text: "Os Product Managers da Kora assumiram a frente dos nossos produtos e trouxeram clareza para o roadmap. Atuaram como verdadeiros sócios do negócio.",
+    text: "Como fundadores, precisávamos de mais do que 'braço' técnico. A Kora trouxe inteligência de produto e estratégia de crescimento que foram vitais para nossa escala.",
     author: "André Silva",
     role: "Founder, Fintech B2B"
   }
@@ -58,7 +58,7 @@ const Testimonials: React.FC = () => {
       <div className="max-w-container mx-auto px-6 relative z-10">
         <div className="mb-16 md:mb-24 flex items-end justify-between">
           <div>
-            <span className="text-brand-primary text-sm font-bold uppercase tracking-wider mb-2 block">Parceria Real</span>
+            <span className="text-brand-primary text-sm font-bold uppercase tracking-wider mb-2 block">Parceria de Verdade</span>
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-white tracking-tight">Quem confia na Kora</h2>
           </div>
           
