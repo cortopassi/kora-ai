@@ -56,7 +56,7 @@ const Hero: React.FC = () => {
               <div className="absolute inset-4 bg-[#0A0A0A] rounded-[32px] border border-white/5 flex items-center justify-center overflow-hidden shadow-2xl">
                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-brand-primary/20 to-transparent opacity-50"></div>
                  <img
-                  src="https://cdn.jsdelivr.net/gh/cortopassi/kora-ai@main/public-assets/kora-shield.png"
+                  src="https://github.com/cortopassi/kora-ai/blob/main/IMG/kora-shield2.png?raw=true"
                   alt="Kora Shield"
                   className="w-[80%] h-[80%] object-contain relative z-10 drop-shadow-2xl"
                 />
