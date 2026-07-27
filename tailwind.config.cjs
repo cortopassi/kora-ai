@@ -4,6 +4,8 @@ module.exports = {
     './index.html',
     './*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
+    './sites/**/*.html',
+    './sites/**/*.{ts,tsx}',
   ],
   theme: {
     extend: {
@@ -22,6 +24,8 @@ module.exports = {
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
         heading: ['Manrope', 'sans-serif'],
+        display: ['Bricolage Grotesque', 'sans-serif'],
+        serifdemo: ['Fraunces', 'serif'],
       },
       maxWidth: {
         container: '1200px',

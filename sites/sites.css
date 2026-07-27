@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Páginas /sites — tema claro, independente do global da home */
+html { scroll-behavior: smooth; }
+body { font-family: 'Instrument Sans', sans-serif; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
