@@ -21,17 +21,13 @@ const FooterCTA: React.FC = () => {
             Falar com Consultor
             <ArrowUpRight className="transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
           </a>
-          <a href="mailto:contato@kora.ai" className="text-brand-muted hover:text-white font-medium transition-colors px-6 py-4">
-            contato@kora.ai
+          <a href="mailto:contato@kora-ia.com" className="text-brand-muted hover:text-white font-medium transition-colors px-6 py-4">
+            contato@kora-ia.com
           </a>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/5 gap-4">
-           <p className="text-xs text-brand-muted">© {new Date().getFullYear()} Kora AI. All rights reserved.</p>
-           <div className="flex gap-6">
-             <span className="text-xs text-brand-muted hover:text-white cursor-pointer">Privacy</span>
-             <span className="text-xs text-brand-muted hover:text-white cursor-pointer">Terms</span>
-           </div>
+        <div className="flex justify-center items-center pt-8 border-t border-white/5">
+           <p className="text-xs text-brand-muted">© {new Date().getFullYear()} Kora AI. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>

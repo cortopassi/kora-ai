@@ -1,0 +1,87 @@
+# KORA — contexto do projeto
+
+Site institucional da KORA, consultoria de inteligência de negócios
+(Agilidade, Dados, SAP, produtos digitais). Domínio: `kora-ia.com`.
+
+## Stack
+
+Vite 6 + React 19 + TypeScript. **Tailwind 3 compilado no build**
+(`tailwind.config.cjs` + `postcss.config.cjs` + `index.css`) — não usar
+mais `cdn.tailwindcss.com`. Ícones: lucide-react.
+
+```bash
+npm install
+npm run dev      # porta 3000
+npm run build    # valida antes de qualquer commit
+npx tsc --noEmit
+```
+
+O tema da marca (cores `brand-*`, fontes, animações) vive em
+`tailwind.config.cjs`. Estilos globais (scrollbar, `.text-gradient-agency`,
+`.glass-panel`) vivem em `index.css`, importado pelo `index.tsx`.
+
+## Regras que vieram de bug real
+
+Cada uma dessas custou tempo. Não repita.
+
+**Imagens vivem em `public/`, nunca em `IMG/`.**
+O Vite só copia `public/` para o build. Arquivo na raiz não chega em produção.
+
+**Nunca crie ou edite binário por texto.**
+`IMG/kora-shield.png` foi destruído assim: o PNG passou por uma conversão
+UTF-8 e 758 mil bytes viraram caractere de substituição. Irrecuperável.
+Imagem entra por upload binário ou `git add`, nunca por copiar e colar.
+
+**Nada de chave em `define` no `vite.config.ts`.**
+Tudo que passa por `define` é escrito literalmente no JS publicado. O projeto
+já vazou `GEMINI_API_KEY` assim. O mesmo vale para qualquer variável com
+prefixo `VITE_`: elas vão para o navegador por design.
+
+**Não hotlinke imagem de terceiro.**
+Wikimedia e afins bloqueiam na origem — as logos apareciam como alt text.
+Logo de marca registrada também é risco jurídico. Marca de terceiro se
+representa como wordmark em texto.
+
+**Prova social é real ou não existe.**
+Os depoimentos do repositório eram placeholder gerado (nomes e cargos
+genéricos, sem empresa). A seção está desligada pela flag `DEPOIMENTOS_REAIS`
+em `components/Testimonials.tsx`. Só ligue com nome e empresa verificáveis.
+
+**`og:image` abaixo de 300 KB, 1200×630, URL absoluta.**
+Acima disso o WhatsApp mostra o card sem preview. A prospecção da KORA é
+por WhatsApp, então isso é requisito operacional, não detalhe.
+
+**Toda `<img>` nova recebe `width` e `height`.**
+Sem dimensões intrínsecas o navegador não reserva espaço e o layout pula
+durante o carregamento.
+
+## Linguagem
+
+A faixa de marcas diz **"Experiência do time em"** — Magalu, Brasilprev,
+Samsung, Wellhub, Dafiti, Prefeitura de Santos, Zurich são lugares onde o
+time atuou, **não clientes da KORA**. Nunca reescreva isso de forma que
+sugira relação comercial.
+
+## Trabalho em andamento
+
+Uma página `/sites` para vender landing pages one-page a negócios locais
+(clínicas veterinárias em Peruíbe, Itanhaém e Mongaguá são o primeiro alvo).
+
+Regras dessa página:
+
+- Linguagem do dono de clínica de bairro, não linguagem de CTO. A home fala
+  com diretor de tecnologia; a `/sites` fala com quem atende o próprio telefone
+- A KORA assina embaixo como fiadora, não é a vitrine
+- Produto é one-page: sem catálogo, sem estoque, sem agendamento, sem
+  transação. Se pedir isso, virou software e a margem morreu
+- Conversão termina em WhatsApp, sempre
+
+## Backlog conhecido
+
+- Confirmar se a caixa `contato@kora-ia.com` existe de fato (falha em
+  silêncio — leads podem estar sumindo)
+- Subir os originais em `public/`: `kora-shield.png`, `kora-og.png`
+  (1200×630, < 300 KB), `favicon.png`
+- Se quiser páginas reais de Privacidade/Termos no futuro (os links mortos
+  foram removidos do rodapé), criar conteúdo e rota — recomendável ter
+  política de privacidade quando o GTM/analytics estiver ativo

@@ -22,7 +22,20 @@ const testimonials = [
   }
 ];
 
+/**
+ * DESLIGADO ATÉ TER DEPOIMENTO REAL.
+ *
+ * Os três depoimentos abaixo são placeholder gerado — nomes genéricos,
+ * cargos genéricos, nenhuma empresa identificável. Prova social inventada
+ * é o único erro desta lista que destrói confiança de forma irreversível.
+ *
+ * Troque por depoimentos reais (com nome e empresa) e vire para true.
+ */
+const DEPOIMENTOS_REAIS = false;
+
 const Testimonials: React.FC = () => {
+  if (!DEPOIMENTOS_REAIS) return null;
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
 
