@@ -113,7 +113,7 @@ const SitesPage: React.FC = () => {
             {
               icone: Search,
               titulo: 'Ser encontrado',
-              texto: 'Quem precisa de veterinário procura no Google. Sem site, quem aparece é a clínica do concorrente.',
+              texto: 'Quem precisa de veterinário procura no Google. Seu site já sai montado pra essa busca — a gente mostra como logo abaixo.',
             },
             {
               icone: ShieldCheck,
@@ -137,8 +137,76 @@ const SitesPage: React.FC = () => {
         </div>
       </section>
 
+      {/* SEO — aparecer no Google */}
+      <section className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-20 lg:grid-cols-2">
+        <div>
+          <p className="mb-3 text-sm font-bold uppercase tracking-widest text-teal-700">
+            Feito pra aparecer no Google
+          </p>
+          <h2 className="font-display text-3xl font-extrabold tracking-tight md:text-4xl">
+            Seu cliente digita "veterinário em Peruíbe". Quem ele encontra?
+          </h2>
+          <p className="mt-5 max-w-[54ch] text-lg leading-relaxed text-stone-600">
+            A maioria dos sites baratos é bonita só por fora: o Google não
+            entende o que tem dentro, e a página nunca aparece pra ninguém. O
+            seu já sai montado pra busca — é isso que transforma site em
+            cliente.
+          </p>
+          <ul className="mt-6 space-y-4">
+            {[
+              'Título e descrição escritos com as palavras que seu cliente procura, com o nome da sua cidade',
+              'Página leve e rápida — o Google prioriza site que abre na hora, ainda mais no celular',
+              'Estrutura que o Google lê: endereço, horário e serviços marcados do jeito que o buscador entende',
+              'Pronto pra ligar no seu Perfil da Empresa no Google, o mapinha que aparece nas buscas da região',
+            ].map((item) => (
+              <li key={item} className="flex items-start gap-3">
+                <span className="mt-0.5 flex h-6 w-6 flex-none items-center justify-center rounded-full bg-teal-700 text-white">
+                  <Check size={14} aria-hidden="true" />
+                </span>
+                <span className="leading-relaxed text-stone-700">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Mock de resultado de busca */}
+        <div aria-hidden="true" className="select-none">
+          <div className="rounded-3xl border border-stone-200 bg-white p-6 shadow-xl shadow-teal-900/5 md:p-8">
+            <div className="flex items-center gap-3 rounded-full border border-stone-200 px-5 py-3">
+              <Search size={18} className="flex-none text-stone-400" />
+              <span className="truncate text-stone-700">veterinário em peruíbe</span>
+            </div>
+            <div className="mt-6 rounded-2xl border-2 border-teal-700 bg-teal-700/5 p-5">
+              <div className="flex items-center gap-2">
+                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-teal-700 text-[10px] font-bold text-white">
+                  MM
+                </span>
+                <div className="min-w-0">
+                  <p className="truncate text-xs font-semibold text-stone-700">Clínica Maré Mansa</p>
+                  <p className="truncate text-[11px] text-stone-400">maremansa.com.br</p>
+                </div>
+              </div>
+              <p className="mt-2 font-semibold text-teal-900">
+                Clínica Veterinária em Peruíbe | Maré Mansa
+              </p>
+              <p className="mt-1 text-sm leading-snug text-stone-600">
+                Consultas, vacinas, banho e tosa com hora marcada. Atendemos
+                Peruíbe e região. Fale agora pelo WhatsApp.
+              </p>
+            </div>
+            <div className="mt-4 space-y-3 px-1 opacity-50">
+              <div className="h-3 w-3/4 rounded-full bg-stone-200" />
+              <div className="h-3 w-2/3 rounded-full bg-stone-200" />
+              <div className="h-3 w-4/5 rounded-full bg-stone-200" />
+            </div>
+          </div>
+          <p className="mt-3 text-center text-xs text-stone-400">Simulação ilustrativa de resultado de busca</p>
+        </div>
+      </section>
+
       {/* O que entra / o que não é */}
-      <section className="mx-auto max-w-6xl px-5 py-20">
+      <section className="border-t border-stone-200 bg-white">
+        <div className="mx-auto max-w-6xl px-5 py-20">
         <h2 className="font-display text-3xl font-extrabold tracking-tight md:text-4xl">
           O que entra no seu site
         </h2>
@@ -182,10 +250,11 @@ const SitesPage: React.FC = () => {
             </p>
           </div>
         </div>
+        </div>
       </section>
 
       {/* Como funciona — sequência real, então numeração faz sentido */}
-      <section className="border-y border-stone-200 bg-white">
+      <section className="border-y border-stone-200 bg-stone-50">
         <div className="mx-auto max-w-6xl px-5 py-20">
           <h2 className="font-display text-3xl font-extrabold tracking-tight md:text-4xl">
             Como funciona

@@ -40,7 +40,11 @@ prefixo `VITE_`: elas vão para o navegador por design.
 **Não hotlinke imagem de terceiro.**
 Wikimedia e afins bloqueiam na origem — as logos apareciam como alt text.
 Logo de marca registrada também é risco jurídico. Marca de terceiro se
-representa como wordmark em texto.
+representa como wordmark em texto. Exceção consciente: fotos de banco
+com licença livre via `images.unsplash.com` (CDN feito pra embed, licença
+comercial sem atribuição), usadas na demo de /sites — as URLs ficam
+centralizadas em `FOTOS` no componente pra facilitar trocar por arquivos
+locais em `public/sites/` se quisermos independência total.
 
 **Prova social é real ou não existe.**
 Os depoimentos do repositório eram placeholder gerado (nomes e cargos
