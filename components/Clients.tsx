@@ -55,9 +55,30 @@ const Marca: React.FC<{ marca: Marca }> = ({ marca }) => {
   );
 };
 
-const Clients: React.FC = () => {
-  const trilha = [...MARCAS, ...MARCAS, ...MARCAS];
+/**
+ * Um grupo completo de marcas. A esteira renderiza DOIS grupos idênticos
+ * e anima translateX(-50%): quando o primeiro grupo sai inteiro, o segundo
+ * está exatamente onde o primeiro começou — loop sem salto. Por isso:
+ * nada de padding na faixa animada e nada de terceira cópia (era isso que
+ * fazia a esteira "pular" a cada volta).
+ */
+const Grupo: React.FC<{ ariaHidden?: boolean }> = ({ ariaHidden }) => (
+  <div
+    aria-hidden={ariaHidden || undefined}
+    className="flex shrink-0 items-center gap-12 pr-12 md:gap-24 md:pr-24"
+  >
+    {MARCAS.map((marca) => (
+      <div
+        key={marca.nome}
+        className="flex h-[52px] min-w-[104px] items-center justify-center md:min-w-[120px]"
+      >
+        <Marca marca={marca} />
+      </div>
+    ))}
+  </div>
+);
 
+const Clients: React.FC = () => {
   return (
     <section className="py-14 bg-brand-bg border-b border-brand-border/30 overflow-hidden relative">
       <div className="max-w-container mx-auto px-6 mb-9 text-center">
@@ -66,19 +87,14 @@ const Clients: React.FC = () => {
         </p>
       </div>
 
-      <div className="absolute top-0 bottom-0 left-0 w-24 bg-gradient-to-r from-brand-bg to-transparent z-10 pointer-events-none" />
-      <div className="absolute top-0 bottom-0 right-0 w-24 bg-gradient-to-l from-brand-bg to-transparent z-10 pointer-events-none" />
+      {/* Máscaras de borda: mais estreitas no mobile pra não engolir metade da tela */}
+      <div className="absolute top-0 bottom-0 left-0 w-10 md:w-24 bg-gradient-to-r from-brand-bg to-transparent z-10 pointer-events-none" />
+      <div className="absolute top-0 bottom-0 right-0 w-10 md:w-24 bg-gradient-to-l from-brand-bg to-transparent z-10 pointer-events-none" />
 
-      <div className="flex w-full overflow-hidden">
-        <div className="flex gap-16 md:gap-24 items-center animate-scroll min-w-full pl-24">
-          {trilha.map((marca, i) => (
-            <div
-              key={`${marca.nome}-${i}`}
-              className="flex items-center justify-center min-w-[120px] h-[52px]"
-            >
-              <Marca marca={marca} />
-            </div>
-          ))}
+      <div className="flex w-full overflow-hidden group">
+        <div className="flex w-max items-center animate-scroll [animation-duration:28s] md:[animation-duration:45s] group-hover:[animation-play-state:paused]">
+          <Grupo />
+          <Grupo ariaHidden />
         </div>
       </div>
     </section>
