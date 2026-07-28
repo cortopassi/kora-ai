@@ -26,7 +26,7 @@ const Navbar: React.FC = () => {
           flex items-center justify-between px-6 py-4 rounded-full
           transition-all duration-500 ease-in-out
           ${scrolled 
-            ? 'bg-[#0F0F0F]/80 backdrop-blur-xl border border-white/5 shadow-2xl' 
+            ? 'bg-[#0A1526]/85 backdrop-blur-xl border border-white/5 shadow-2xl' 
             : 'bg-transparent border border-transparent'}
         `}>
           {/* Logo */}
@@ -36,7 +36,7 @@ const Navbar: React.FC = () => {
           </a>
           
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-1 bg-[#1A1A1A]/50 p-1 rounded-full border border-white/5">
+          <div className="hidden md:flex items-center gap-1 bg-[#16283F]/60 p-1 rounded-full border border-white/5">
             {['Serviços', 'Método', 'Contato'].map((item) => (
                <button 
                 key={item}

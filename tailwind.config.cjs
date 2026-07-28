@@ -13,14 +13,14 @@ module.exports = {
     extend: {
       colors: {
         brand: {
-          bg: '#050505',       // Matte Black
-          surface: '#0F0F0F',  // Dark Grey for cards
-          surfaceHighlight: '#1A1A1A', // Lighter grey for hovers
-          primary: '#2952FF',  // Digital Blue (Vibrant)
-          accent: '#E0E7FF',   // Soft White/Blue
-          border: '#262626',   // Subtle border
-          text: '#F3F4F6',     // High contrast text
-          muted: '#A1A1AA',    // Zinc 400
+          bg: '#0A1526',       // Navy profundo
+          surface: '#0F1E33',  // Navy dos cards
+          surfaceHighlight: '#16283F', // Hover
+          primary: '#2F6BFF',  // Azul de acao
+          accent: '#DCE8FF',   // Azul claro
+          border: '#1E3350',   // Borda sutil
+          text: '#F1F5F9',     // Texto principal
+          muted: '#8FA5C0',    // Texto secundario
         },
       },
       fontFamily: {
