@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowUp } from 'lucide-react';
+import { smoothScrollTo } from './smoothScroll';
 
 const ScrollToTop: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -18,16 +19,13 @@ const ScrollToTop: React.FC = () => {
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
+    smoothScrollTo(0);
   };
 
   return (
     <button
       onClick={scrollToTop}
-      className={`hidden md:flex fixed z-40 bottom-8 right-8 bg-[#1A1A1A] text-white p-3 rounded-2xl border border-white/5 hover:bg-white hover:text-black transition-all duration-300 ${
+      className={`hidden md:flex fixed z-40 bottom-8 right-8 bg-brand-surfaceHighlight text-white p-3 rounded-2xl border border-white/5 hover:bg-white hover:text-black transition-all duration-300 ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
       }`}
       aria-label="Voltar ao topo"
