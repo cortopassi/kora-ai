@@ -11,6 +11,7 @@ Arquivos esperados:
 - brasilprev.svg
 - wellhub.svg
 - dafiti.svg
+- porto-seguro.svg
 
 (samsung.svg entra junto com o lote, já obtido do acervo simple-icons.
 Zurich fica em texto por decisão; Prefeitura de Santos saiu da faixa.)
