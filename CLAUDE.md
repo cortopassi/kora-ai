@@ -1,7 +1,7 @@
 # KORA — contexto do projeto
 
 Site institucional da KORA, consultoria de inteligência de negócios
-(Agilidade, Dados, SAP, produtos digitais). Domínio: `kora-ia.com`.
+(Processos, Dados, SAP, Produtos Digitais). Domínio: `kora-ia.com`.
 
 ## Stack
 

@@ -6,8 +6,8 @@ const Services: React.FC = () => {
   const services = [
     {
       title: "Eficiência Operacional",
-      description: "Organização e otimização de fluxos de trabalho. Usamos Agilidade Organizacional para reduzir desperdícios e conectar a operação aos objetivos estratégicos (OKRs), gerando ganho de tempo e receita.",
-      tags: ["Mapeamento", "Agile", "Processos"],
+      description: "Organização e otimização de fluxos de trabalho. Mapeamos e redesenhamos processos para reduzir desperdícios e conectar a operação aos objetivos estratégicos (OKRs), gerando ganho de tempo e receita.",
+      tags: ["Mapeamento", "OKRs", "Processos"],
       icon: <GitMerge className="text-white" size={24} />
     },
     {
@@ -23,8 +23,8 @@ const Services: React.FC = () => {
       icon: <Database className="text-white" size={24} />
     },
     {
-      title: "Estratégia & Crescimento",
-      description: "Visão de produto e mercado. Atuamos na gestão de produtos digitais e em estratégias de Marketing (Growth/SEO) para garantir que sua solução não apenas exista, mas cresça e venda.",
+      title: "Produtos & Crescimento",
+      description: "Gestão de produtos digitais de ponta a ponta, com bagagem de Product Management em bancos, marketplaces e saúde — mais estratégias de Growth/SEO para que sua solução não apenas exista, mas cresça e venda.",
       tags: ["Product Management", "SEO", "Growth"],
       icon: <TrendingUp className="text-white" size={24} />
     }

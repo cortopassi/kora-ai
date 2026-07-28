@@ -29,6 +29,9 @@ const MARCAS: Marca[] = [
   { nome: 'Wellhub', arquivo: '/logos/wellhub.svg' },
   { nome: 'Dafiti', arquivo: '/logos/dafiti.svg' },
   { nome: 'Porto Seguro', arquivo: '/logos/porto-seguro.svg' },
+  { nome: 'Itaú', arquivo: '/logos/itau.svg' },
+  { nome: 'ZAP Imóveis', arquivo: '/logos/zap-imoveis.svg' },
+  { nome: 'Albert Einstein', arquivo: '/logos/albert-einstein.svg' },
   { nome: 'Zurich' },
 ];
 

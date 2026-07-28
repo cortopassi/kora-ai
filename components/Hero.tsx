@@ -25,7 +25,7 @@ const Hero: React.FC = () => {
             </h1>
 
             <p className="font-sans text-lg md:text-xl text-brand-muted max-w-lg leading-relaxed animate-slide-up" style={{animationDelay: '0.2s'}}>
-              Transformamos dores operacionais em inteligência competitiva. Começamos pelo entendimento do seu negócio para aplicar a tecnologia ideal — seja em <strong>Agilidade</strong>, <strong>Dados</strong>, <strong>SAP</strong> ou <strong>Produtos Digitais</strong>.
+              Transformamos dores operacionais em inteligência competitiva. Começamos pelo entendimento do seu negócio para aplicar a tecnologia ideal — seja em <strong>Processos</strong>, <strong>Dados</strong>, <strong>SAP</strong> ou <strong>Produtos Digitais</strong>.
             </p>
 
             <div className="flex flex-wrap gap-4 pt-4 animate-slide-up" style={{animationDelay: '0.4s'}}>
