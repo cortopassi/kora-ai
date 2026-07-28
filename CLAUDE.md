@@ -62,10 +62,15 @@ Samsung, Wellhub, Dafiti, Prefeitura de Santos, Zurich são lugares onde o
 time atuou, **não clientes da KORA**. Nunca reescreva isso de forma que
 sugira relação comercial.
 
-## Trabalho em andamento
+## Página /sites (no ar)
 
-Uma página `/sites` para vender landing pages one-page a negócios locais
-(clínicas veterinárias em Peruíbe, Itanhaém e Mongaguá são o primeiro alvo).
+Página de venda de landing pages one-page a negócios locais, em
+`sites/` (Vite multipágina: `/sites` e `/sites/demo`). Primeiro alvo:
+clínicas veterinárias de Peruíbe, Itanhaém e Mongaguá.
+
+Preço publicado: **R$ 1.199 de montagem + R$ 199/mês** (mensalidade cobre
+domínio, hospedagem e ajustes simples). A demo é a Clínica Maré Mansa,
+fictícia e rotulada, com `noindex`.
 
 Regras dessa página:
 
