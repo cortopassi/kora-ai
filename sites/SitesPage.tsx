@@ -58,7 +58,7 @@ const SitesPage: React.FC = () => {
       <section className="mx-auto grid max-w-6xl items-center gap-14 px-5 pb-16 pt-10 lg:grid-cols-2 lg:gap-8 lg:pb-24 lg:pt-20">
         <div>
           <p className="mb-4 inline-block rounded-full bg-teal-700/10 px-4 py-1.5 text-sm font-semibold text-teal-800">
-            Peruíbe · Itanhaém · Mongaguá
+            Sites para negócios locais
           </p>
           <h1 className="font-display text-4xl font-extrabold leading-[1.08] tracking-tight md:text-6xl">
             Quando alguém procura veterinário na sua cidade, sua clínica aparece?
