@@ -1,0 +1,7 @@
+{
+  "redirects": [
+    { "source": "/site", "destination": "/sites/", "permanent": true },
+    { "source": "/site/", "destination": "/sites/", "permanent": true },
+    { "source": "/sites", "destination": "/sites/", "permanent": true }
+  ]
+}
