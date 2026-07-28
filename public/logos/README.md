@@ -17,6 +17,7 @@ Arquivos esperados:
 - albert-einstein.svg
 - autopass.svg
 - bunge.svg
+- pagbank.svg
 
 (samsung.svg entra junto com o lote, já obtido do acervo simple-icons.
 Zurich e Prefeitura de Santos saíram da faixa.)
