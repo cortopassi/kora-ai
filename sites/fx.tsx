@@ -81,3 +81,89 @@ export function useParallax<T extends HTMLElement>(fator = 0.18) {
 
   return ref;
 }
+
+/**
+ * Tilt 3D sutil que acompanha o cursor. Desktop apenas (pointer: fine)
+ * e desligado sob prefers-reduced-motion. A transição CSS suaviza o
+ * acompanhamento e devolve o card ao repouso na saída.
+ */
+export const Tilt: React.FC<{
+  children: React.ReactNode;
+  max?: number;
+  className?: string;
+}> = ({ children, max = 4, className = '' }) => {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (!window.matchMedia('(pointer: fine)').matches) return;
+
+    let raf = 0;
+    const mover = (e: MouseEvent) => {
+      if (raf) return;
+      raf = requestAnimationFrame(() => {
+        raf = 0;
+        const r = el.getBoundingClientRect();
+        const px = (e.clientX - r.left) / r.width - 0.5;
+        const py = (e.clientY - r.top) / r.height - 0.5;
+        el.style.transform = `perspective(700px) rotateX(${(-py * max).toFixed(2)}deg) rotateY(${(px * max).toFixed(2)}deg) translateY(-4px)`;
+      });
+    };
+    const sair = () => {
+      if (raf) cancelAnimationFrame(raf);
+      raf = 0;
+      el.style.transform = '';
+    };
+    el.addEventListener('mousemove', mover);
+    el.addEventListener('mouseleave', sair);
+    return () => {
+      el.removeEventListener('mousemove', mover);
+      el.removeEventListener('mouseleave', sair);
+      if (raf) cancelAnimationFrame(raf);
+    };
+  }, [max]);
+
+  return (
+    <div ref={ref} className={`transition-transform duration-300 ease-out will-change-transform ${className}`}>
+      {children}
+    </div>
+  );
+};
+
+/** Barra fina de progresso de leitura no topo da página. */
+export const ScrollProgress: React.FC = () => {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    let raf = 0;
+    const aplicar = () => {
+      raf = 0;
+      const doc = document.documentElement;
+      const maximo = doc.scrollHeight - window.innerHeight;
+      el.style.transform = `scaleX(${maximo > 0 ? window.scrollY / maximo : 0})`;
+    };
+    const onScroll = () => {
+      if (!raf) raf = requestAnimationFrame(aplicar);
+    };
+    aplicar();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+      if (raf) cancelAnimationFrame(raf);
+    };
+  }, []);
+
+  return (
+    <div
+      ref={ref}
+      aria-hidden="true"
+      className="fixed left-0 right-0 top-0 z-[60] h-[2px] origin-left scale-x-0 bg-brand-primary"
+    />
+  );
+};

@@ -10,10 +10,12 @@ import Testimonials from './components/Testimonials';
 import FooterCTA from './components/FooterCTA';
 import FloatingCTA from './components/FloatingCTA';
 import ScrollToTop from './components/ScrollToTop';
+import { ScrollProgress } from './sites/fx';
 
 const App: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col w-full bg-brand-bg text-brand-text selection:bg-brand-cyan selection:text-brand-bg overflow-x-hidden">
+      <ScrollProgress />
       <Navbar />
       <main className="flex-grow w-full">
         <Hero />

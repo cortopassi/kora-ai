@@ -1,5 +1,7 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
+import { Tilt } from '../sites/fx';
+import { smoothScrollToId } from './smoothScroll';
 
 const Hero: React.FC = () => {
   return (
@@ -33,14 +35,14 @@ const Hero: React.FC = () => {
                 href="https://wa.me/5511998644004"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-white text-black px-8 py-4 text-base font-bold rounded-full hover:bg-brand-primary hover:text-white transition-all duration-300 min-w-[180px]"
+                className="inline-flex items-center justify-center gap-2 bg-white text-black px-8 py-4 text-base font-bold rounded-full hover:bg-brand-primary hover:text-white active:scale-[0.98] transition-all duration-300 min-w-[180px]"
               >
                 Falar com consultor
                 <ArrowRight size={18} />
               </a>
               <button 
-                onClick={() => document.getElementById('servicos')?.scrollIntoView({behavior: 'smooth'})}
-                className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white border border-white/10 rounded-full hover:bg-white/5 transition-all min-w-[180px]"
+                onClick={() => smoothScrollToId('servicos')}
+                className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white border border-white/10 rounded-full hover:bg-white/5 active:scale-[0.98] transition-all min-w-[180px]"
               >
                 Como atuamos
               </button>
@@ -53,7 +55,8 @@ const Hero: React.FC = () => {
               {/* Card Container for Shield - giving it a 'product' feel */}
               <div className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent rounded-[40px] border border-white/5 backdrop-blur-sm -rotate-6 transform transition-transform duration-700 hover:rotate-0"></div>
               
-              <div className="absolute inset-4 bg-[#081120] rounded-[32px] border border-white/5 flex items-center justify-center overflow-hidden shadow-2xl">
+              <Tilt max={3} className="absolute inset-4">
+              <div className="w-full h-full bg-[#081120] rounded-[32px] border border-white/5 flex items-center justify-center overflow-hidden shadow-2xl">
                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-brand-primary/20 to-transparent opacity-50"></div>
                  <img
                   src="/kora-shield.png"
@@ -64,6 +67,7 @@ const Hero: React.FC = () => {
                   className="w-[80%] h-[80%] object-contain relative z-10 drop-shadow-2xl"
                 />
               </div>
+              </Tilt>
 
               {/* Decorative floating pills - Updated text */}
               <div className="absolute -right-8 top-20 bg-brand-surfaceHighlight border border-white/10 px-4 py-3 rounded-xl shadow-xl animate-bounce" style={{animationDuration: '3s'}}>
