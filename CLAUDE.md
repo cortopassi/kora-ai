@@ -75,6 +75,14 @@ produtos-crescimento. Cada uma com meta/og/canonical próprios. Os cards
 de Serviços da home linkam para elas. Mesma regra do case: sem cliente
 citado como cliente e sem número inventado.
 
+## Case Agilímetro (no ar)
+
+`cases/agilimetro/`: case do SaaS próprio de métricas de engenharia
+(agilimetro.com). Capacidades podem ser citadas (Jira, DORA, Visão
+Executiva, Sprint Review, Health Radar, OKRs); clientes e números NÃO —
+inclusive os que existem. Linkado da atuação produtos-crescimento.
+CTA primário: WhatsApp; secundário: agilimetro.com.
+
 ## Página /sites (no ar)
 
 Página de venda de landing pages one-page a negócios locais, em

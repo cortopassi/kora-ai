@@ -19,6 +19,7 @@ export type Atuacao = {
   paraQuem: string;
   metaTitle: string;
   metaDescription: string;
+  caseLink?: { href: string; rotulo: string };
 };
 
 export const ATUACOES: Record<string, Atuacao> = {
@@ -134,6 +135,7 @@ export const ATUACOES: Record<string, Atuacao> = {
     ],
     paraQuem:
       'Empresas construindo ou destravando um produto digital, e fundadores que precisam de senioridade de produto sem contratar um head em tempo integral.',
+    caseLink: { href: '/cases/agilimetro/', rotulo: 'Veja um produto que construímos e operamos: o Agilímetro' },
     metaTitle: 'Gestão de Produtos Digitais, Growth e SEO | KORA',
     metaDescription: 'Product Management com bagagem em bancos, marketplaces e saúde: discovery, roadmap, métricas e estratégias de crescimento para o seu produto digital.',
   },

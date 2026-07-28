@@ -121,6 +121,15 @@ const AtuacaoPage: React.FC<{ atuacao: Atuacao }> = ({ atuacao }) => {
             <p className="mt-14 text-brand-muted leading-relaxed max-w-[60ch] border-l-2 border-brand-primary pl-6">
               <span className="text-brand-text font-medium">Para quem é:</span> {atuacao.paraQuem}
             </p>
+            {atuacao.caseLink && (
+              <a
+                href={atuacao.caseLink.href}
+                className="group mt-8 inline-flex items-center gap-2 font-semibold text-brand-primary hover:brightness-125 transition"
+              >
+                {atuacao.caseLink.rotulo}
+                <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />
+              </a>
+            )}
           </Reveal>
         </div>
       </section>
