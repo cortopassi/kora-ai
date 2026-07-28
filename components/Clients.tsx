@@ -11,8 +11,12 @@ import React, { useState } from 'react';
  *   magalu.svg · brasilprev.svg · samsung.svg
  *   wellhub.svg · dafiti.svg · prefeitura-santos.svg · zurich.svg
  *
- * Use SVG ou PNG com fundo transparente. O filtro deixa tudo em tom
- * uniforme, então logo colorida fica coerente com o resto da página.
+ * Use SVG ou PNG com fundo transparente.
+ *
+ * Sem loading="lazy" de propósito: a imagem precisa TENTAR carregar de
+ * imediato para o onError disparar e o texto assumir. Com lazy, as marcas
+ * fora da tela ficam como caixa vazia de 112px na esteira até o navegador
+ * decidir buscá-las — buraco visível numa faixa que rola sozinha.
  */
 
 type Marca = { nome: string; arquivo: string };
@@ -42,7 +46,7 @@ const Marca: React.FC<{ marca: Marca }> = ({ marca }) => {
     <img
       src={marca.arquivo}
       alt={marca.nome}
-      loading="lazy"
+      decoding="async"
       width={140}
       height={40}
       onError={() => setFalhou(true)}
