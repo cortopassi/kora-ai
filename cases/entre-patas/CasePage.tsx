@@ -7,9 +7,11 @@ import {
   Settings2,
   Database,
   ArrowUpRight,
+  ArrowLeft,
   MessageCircle,
   Heart,
 } from 'lucide-react';
+import { Reveal } from '../../sites/fx';
 
 /**
  * Case Entre Patas.
@@ -69,9 +71,11 @@ const CasePage: React.FC = () => {
         <div className="max-w-container mx-auto px-6 py-5 flex items-center justify-between">
           <a
             href="/"
-            className="font-heading font-bold text-lg tracking-tight hover:text-brand-primary transition-colors"
+            aria-label="Voltar para a página inicial"
+            className="group inline-flex items-center gap-2 text-sm font-semibold text-brand-muted hover:text-brand-text transition-colors"
           >
-            Kora
+            <ArrowLeft size={16} className="transition-transform group-hover:-translate-x-1" aria-hidden="true" />
+            Voltar <span className="hidden sm:inline">pra home</span>
           </a>
           <a
             href="/sites/"
@@ -84,19 +88,19 @@ const CasePage: React.FC = () => {
 
       {/* ── hero ─────────────────────────────────────── */}
       <section className="max-w-container mx-auto px-6 pt-20 pb-16 md:pt-28 md:pb-24">
-        <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-brand-primary mb-8">
+        <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-brand-primary mb-8 animate-fade-in">
           <span className="w-1.5 h-1.5 rounded-full bg-brand-primary" />
           Case · trabalho voluntário
         </p>
 
-        <h1 className="font-display font-extrabold text-4xl md:text-6xl leading-[1.02] tracking-tight max-w-[19ch] mb-8">
+        <h1 className="font-display font-extrabold text-4xl md:text-6xl leading-[1.02] tracking-tight max-w-[19ch] mb-8 animate-slide-up">
           Uma ONG de Peruíbe que{' '}
           <span className="text-brand-primary">
             atualiza o próprio site
           </span>
         </h1>
 
-        <p className="text-lg md:text-xl text-brand-muted max-w-[58ch] leading-relaxed">
+        <p className="text-lg md:text-xl text-brand-muted max-w-[58ch] leading-relaxed animate-slide-up" style={{ animationDelay: '0.15s' }}>
           O Entre Patas resgata e encaminha cães e gatos para adoção no litoral
           sul de São Paulo. Precisava de presença na internet — e, mais do que
           isso, de autonomia para mantê-la sem depender de ninguém.
@@ -158,10 +162,10 @@ const CasePage: React.FC = () => {
         </p>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {CONSTRUIDO.map(({ icone: Icone, titulo, texto }) => (
+          {CONSTRUIDO.map(({ icone: Icone, titulo, texto }, i) => (
+            <Reveal key={titulo} delay={(i % 3) * 100} className="h-full">
             <div
-              key={titulo}
-              className="bg-brand-surface border border-brand-border rounded-brand p-7 hover:border-brand-primary/40 transition-colors"
+              className="h-full bg-brand-surface border border-brand-border rounded-brand p-7 hover:border-brand-primary/40 transition-colors"
             >
               <Icone
                 className="w-5 h-5 text-brand-primary mb-5"
@@ -173,6 +177,7 @@ const CasePage: React.FC = () => {
               </h3>
               <p className="text-sm text-brand-muted leading-relaxed">{texto}</p>
             </div>
+            </Reveal>
           ))}
         </div>
       </section>
@@ -185,7 +190,8 @@ const CasePage: React.FC = () => {
           </h2>
 
           <div className="grid md:grid-cols-2 gap-6">
-            <article className="bg-brand-bg border border-brand-border rounded-brand p-8 md:p-10">
+            <Reveal className="h-full">
+            <article className="h-full bg-brand-bg border border-brand-border rounded-brand p-8 md:p-10">
               <div className="flex items-center gap-3 mb-6">
                 <Search
                   className="w-5 h-5 text-brand-primary"
@@ -211,8 +217,10 @@ const CasePage: React.FC = () => {
                 alguém.
               </p>
             </article>
+            </Reveal>
 
-            <article className="bg-brand-bg border border-brand-border rounded-brand p-8 md:p-10">
+            <Reveal delay={120} className="h-full">
+            <article className="h-full bg-brand-bg border border-brand-border rounded-brand p-8 md:p-10">
               <div className="flex items-center gap-3 mb-6">
                 <ShieldCheck
                   className="w-5 h-5 text-brand-primary"
@@ -237,12 +245,14 @@ const CasePage: React.FC = () => {
                 código, antes de qualquer incidente, faz parte do trabalho.
               </p>
             </article>
+            </Reveal>
           </div>
         </div>
       </section>
 
       {/* ── estado atual, honesto ────────────────────── */}
       <section className="max-w-container mx-auto px-6 py-20 md:py-28">
+        <Reveal>
         <div className="border-l-2 border-brand-primary pl-8 md:pl-10 max-w-[62ch]">
           <h2 className="font-display font-bold text-2xl md:text-3xl tracking-tight mb-5">
             Onde o projeto está
@@ -258,11 +268,13 @@ const CasePage: React.FC = () => {
             campo, e serão deles quando existirem.
           </p>
         </div>
+        </Reveal>
       </section>
 
       {/* ── cta ──────────────────────────────────────── */}
       <section className="border-t border-brand-border/40">
         <div className="max-w-container mx-auto px-6 py-20 md:py-28 text-center">
+          <Reveal>
           <h2 className="font-display font-extrabold text-3xl md:text-5xl tracking-tight leading-tight mb-6 max-w-[20ch] mx-auto">
             Seu negócio precisa de algo assim?
           </h2>
@@ -289,6 +301,7 @@ const CasePage: React.FC = () => {
               Chamar no WhatsApp
             </a>
           </div>
+          </Reveal>
         </div>
       </section>
 

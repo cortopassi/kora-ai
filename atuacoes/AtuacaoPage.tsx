@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUpRight, MessageCircle, Check } from 'lucide-react';
+import { ArrowUpRight, ArrowLeft, MessageCircle, Check } from 'lucide-react';
 import { Reveal, Tilt } from '../sites/fx';
 import type { Atuacao } from './data';
 
@@ -16,8 +16,13 @@ const AtuacaoPage: React.FC<{ atuacao: Atuacao }> = ({ atuacao }) => {
       {/* Topo */}
       <header className="border-b border-brand-border/40">
         <div className="max-w-container mx-auto px-6 py-5 flex items-center justify-between">
-          <a href="/" className="font-heading font-bold text-lg tracking-tight hover:text-brand-primary transition-colors">
-            Kora
+          <a
+            href="/"
+            aria-label="Voltar para a página inicial"
+            className="group inline-flex items-center gap-2 text-sm font-semibold text-brand-muted hover:text-brand-text transition-colors"
+          >
+            <ArrowLeft size={16} className="transition-transform group-hover:-translate-x-1" aria-hidden="true" />
+            Voltar <span className="hidden sm:inline">pra home</span>
           </a>
           <a
             href={zapComContexto}
@@ -33,17 +38,17 @@ const AtuacaoPage: React.FC<{ atuacao: Atuacao }> = ({ atuacao }) => {
 
       {/* Hero */}
       <section className="max-w-container mx-auto px-6 pt-20 pb-16 md:pt-28">
-        <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-brand-primary mb-8">
+        <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-brand-primary mb-8 animate-fade-in">
           <Icone size={14} aria-hidden="true" />
           Atuação Kora
         </p>
-        <h1 className="font-heading font-bold text-4xl md:text-6xl leading-[1.05] tracking-tight max-w-[18ch] mb-6">
+        <h1 className="font-heading font-bold text-4xl md:text-6xl leading-[1.05] tracking-tight max-w-[18ch] mb-6 animate-slide-up">
           {atuacao.titulo}
         </h1>
-        <p className="font-heading text-xl md:text-2xl text-brand-primary font-semibold mb-8 max-w-[38ch]">
+        <p className="font-heading text-xl md:text-2xl text-brand-primary font-semibold mb-8 max-w-[38ch] animate-slide-up" style={{ animationDelay: '0.15s' }}>
           {atuacao.promessa}
         </p>
-        <p className="text-lg text-brand-muted max-w-[62ch] leading-relaxed">{atuacao.resumo}</p>
+        <p className="text-lg text-brand-muted max-w-[62ch] leading-relaxed animate-slide-up" style={{ animationDelay: '0.3s' }}>{atuacao.resumo}</p>
       </section>
 
       {/* Dores */}

@@ -30,6 +30,15 @@ html {
   background: #2F6BFF;
 }
 
+/* Animações de entrada: 'both' aplica o frame inicial durante o delay,
+   evitando o flash de conteúdo antes da animação começar. Sob
+   prefers-reduced-motion a animação inteira é removida e o conteúdo
+   fica visível normalmente. */
+.animate-fade-in,
+.animate-slide-up {
+  animation-fill-mode: both;
+}
+
 /* Text Gradients */
 .text-gradient-agency {
   background: linear-gradient(to right, #ffffff, #94a3b8);
