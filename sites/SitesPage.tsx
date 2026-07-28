@@ -9,6 +9,7 @@ import {
   ArrowRight,
   ChevronDown,
 } from 'lucide-react';
+import { Reveal } from './fx';
 
 
 const PRECO_SETUP = 'R$ 1.199';
@@ -54,7 +55,7 @@ const SitesPage: React.FC = () => {
       </header>
 
       {/* Hero — split: texto à esquerda, celular com a demo à direita */}
-      <section className="mx-auto grid max-w-6xl items-center gap-12 px-5 pb-20 pt-14 lg:grid-cols-2 lg:gap-8 lg:pt-20">
+      <section className="mx-auto grid max-w-6xl items-center gap-14 px-5 pb-16 pt-10 lg:grid-cols-2 lg:gap-8 lg:pb-24 lg:pt-20">
         <div>
           <p className="mb-4 inline-block rounded-full bg-teal-700/10 px-4 py-1.5 text-sm font-semibold text-teal-800">
             Peruíbe · Itanhaém · Mongaguá
@@ -84,22 +85,24 @@ const SitesPage: React.FC = () => {
           <a
             href="/sites/demo/"
             aria-label="Abrir o site de exemplo da Clínica Maré Mansa"
-            className="group relative block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal-700"
+            className="group relative block animate-float pb-5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal-700"
+            style={{ animationDuration: '7s' }}
           >
-            <div className="w-[290px] rounded-[42px] border-[10px] border-stone-900 bg-stone-900 shadow-2xl shadow-teal-900/20 transition-transform duration-300 group-hover:-translate-y-1">
-              <div className="overflow-hidden rounded-[32px] bg-white">
+            <div className="w-[290px] rounded-[44px] border-[10px] border-stone-900 bg-stone-900 shadow-2xl shadow-teal-900/25 transition-transform duration-300 group-hover:-translate-y-1">
+              <div className="relative h-[585px] w-[270px] overflow-hidden rounded-[34px] bg-white">
+                <div className="absolute left-1/2 top-2 z-10 h-5 w-24 -translate-x-1/2 rounded-full bg-stone-900" aria-hidden="true" />
                 <iframe
                   src="/sites/demo/"
                   title="Prévia do site de exemplo"
                   loading="lazy"
                   tabIndex={-1}
                   aria-hidden="true"
-                  className="pointer-events-none h-[560px] w-[270px] origin-top-left scale-[0.675]"
-                  style={{ width: '400px', height: '830px' }}
+                  className="pointer-events-none origin-top-left"
+                  style={{ width: '390px', height: '845px', transform: 'scale(0.6923)' }}
                 />
               </div>
             </div>
-            <span className="absolute -bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-stone-900 px-4 py-1.5 text-xs font-semibold text-white">
+            <span className="absolute bottom-0 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-stone-900 px-4 py-1.5 text-xs font-semibold text-white">
               Toque para ver o exemplo
             </span>
           </a>
@@ -125,21 +128,21 @@ const SitesPage: React.FC = () => {
               titulo: 'Cliente no seu WhatsApp',
               texto: 'Nada de formulário ou e-mail. A pessoa toca num botão e a conversa já começa no seu celular.',
             },
-          ].map(({ icone: Icone, titulo, texto }) => (
-            <div key={titulo}>
+          ].map(({ icone: Icone, titulo, texto }, i) => (
+            <Reveal key={titulo} delay={i * 120}>
               <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-teal-700/10 text-teal-800">
                 <Icone size={24} aria-hidden="true" />
               </div>
               <h2 className="font-display text-xl font-bold">{titulo}</h2>
               <p className="mt-2 leading-relaxed text-stone-600">{texto}</p>
-            </div>
+            </Reveal>
           ))}
         </div>
       </section>
 
       {/* SEO — aparecer no Google */}
       <section className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-20 lg:grid-cols-2">
-        <div>
+        <Reveal>
           <p className="mb-3 text-sm font-bold uppercase tracking-widest text-teal-700">
             Feito pra aparecer no Google
           </p>
@@ -167,12 +170,21 @@ const SitesPage: React.FC = () => {
               </li>
             ))}
           </ul>
-        </div>
+        </Reveal>
 
         {/* Mock de resultado de busca */}
-        <div aria-hidden="true" className="select-none">
+        <Reveal delay={150} className="select-none">
+        <div aria-hidden="true">
           <div className="rounded-3xl border border-stone-200 bg-white p-6 shadow-xl shadow-teal-900/5 md:p-8">
-            <div className="flex items-center gap-3 rounded-full border border-stone-200 px-5 py-3">
+            <p className="mb-4 text-center font-sans text-3xl font-medium tracking-tight">
+              <span className="text-[#4285F4]">G</span>
+              <span className="text-[#EA4335]">o</span>
+              <span className="text-[#FBBC05]">o</span>
+              <span className="text-[#4285F4]">g</span>
+              <span className="text-[#34A853]">l</span>
+              <span className="text-[#EA4335]">e</span>
+            </p>
+            <div className="flex items-center gap-3 rounded-full border border-stone-200 px-5 py-3 shadow-sm">
               <Search size={18} className="flex-none text-stone-400" />
               <span className="truncate text-stone-700">veterinário em peruíbe</span>
             </div>
@@ -202,6 +214,7 @@ const SitesPage: React.FC = () => {
           </div>
           <p className="mt-3 text-center text-xs text-stone-400">Simulação ilustrativa de resultado de busca</p>
         </div>
+        </Reveal>
       </section>
 
       {/* O que entra / o que não é */}
@@ -274,10 +287,14 @@ const SitesPage: React.FC = () => {
                 texto: 'Publicamos no seu endereço e o botão de WhatsApp começa a trabalhar pra você.',
               },
             ].map(({ titulo, texto }, i) => (
-              <li key={titulo} className="relative rounded-2xl border border-stone-200 bg-stone-50 p-6">
+              <li key={titulo}>
+                <Reveal delay={i * 120} className="h-full">
+                <div className="relative h-full rounded-2xl border border-stone-200 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-teal-900/5">
                 <span className="font-display text-4xl font-extrabold text-teal-700/30">{i + 1}</span>
                 <h3 className="mt-2 font-display text-xl font-bold">{titulo}</h3>
                 <p className="mt-2 leading-relaxed text-stone-600">{texto}</p>
+                </div>
+                </Reveal>
               </li>
             ))}
           </ol>
@@ -286,7 +303,8 @@ const SitesPage: React.FC = () => {
 
       {/* Preço */}
       <section className="mx-auto max-w-6xl px-5 py-20">
-        <div className="mx-auto max-w-2xl rounded-3xl border-2 border-teal-700 bg-white p-8 text-center md:p-12">
+        <Reveal>
+        <div className="mx-auto max-w-2xl rounded-3xl border-2 border-teal-700 bg-white p-8 text-center md:p-12 shadow-xl shadow-teal-900/5">
           <h2 className="font-display text-3xl font-extrabold tracking-tight">Quanto custa</h2>
           <div className="mt-8 flex flex-col items-center justify-center gap-6 sm:flex-row sm:gap-12">
             <div>
@@ -310,6 +328,7 @@ const SitesPage: React.FC = () => {
             <CtaWhats grande>Combinar pelo WhatsApp</CtaWhats>
           </div>
         </div>
+        </Reveal>
       </section>
 
       {/* FAQ */}

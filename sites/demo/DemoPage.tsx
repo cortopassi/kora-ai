@@ -12,6 +12,7 @@ import {
   Waves,
   Quote,
 } from 'lucide-react';
+import { Reveal, useParallax } from '../fx';
 
 /**
  * SITE DE EXEMPLO — clínica fictícia usada como demonstração do produto
@@ -56,6 +57,8 @@ const BotaoZap: React.FC<{ children: React.ReactNode; claro?: boolean }> = ({ ch
 );
 
 const DemoPage: React.FC = () => {
+  const heroRef = useParallax<HTMLImageElement>(0.16);
+  const ctaRef = useParallax<HTMLImageElement>(0.14);
   return (
     <div className="min-h-[100dvh] bg-white text-stone-900 antialiased">
       {/* Faixa de exemplo — sempre visível */}
@@ -86,15 +89,18 @@ const DemoPage: React.FC = () => {
       </nav>
 
       {/* Hero com foto */}
-      <header className="relative">
-        <img
-          src={FOTOS.hero}
-          alt="Veterinária segurando um cachorro no colo com carinho"
-          width={1400}
-          height={900}
-          fetchPriority="high"
-          className="h-[440px] w-full object-cover md:h-[520px]"
-        />
+      <header className="relative overflow-hidden">
+        <div className="h-[440px] w-full md:h-[520px]">
+          <img
+            ref={heroRef}
+            src={FOTOS.hero}
+            alt="Veterinária segurando um cachorro no colo com carinho"
+            width={1400}
+            height={900}
+            fetchPriority="high"
+            className="h-full w-full object-cover will-change-transform"
+          />
+        </div>
         <div className="absolute inset-0 bg-gradient-to-t from-emerald-950/90 via-emerald-950/40 to-emerald-950/10" />
         <div className="absolute inset-x-0 bottom-0">
           <div className="mx-auto max-w-4xl px-5 pb-10 md:pb-14">
@@ -119,6 +125,7 @@ const DemoPage: React.FC = () => {
 
       {/* Sobre */}
       <section className="mx-auto grid max-w-4xl items-center gap-8 px-5 py-16 md:grid-cols-2 md:gap-12">
+        <Reveal>
         <img
           src={FOTOS.sobre}
           alt="Veterinário ao lado de um cachorro na clínica"
@@ -127,7 +134,8 @@ const DemoPage: React.FC = () => {
           loading="lazy"
           className="h-[340px] w-full rounded-3xl object-cover md:h-[420px]"
         />
-        <div>
+        </Reveal>
+        <Reveal delay={120}>
           <p className="text-sm font-bold uppercase tracking-widest text-emerald-700">Nossa clínica</p>
           <h2 className="mt-2 font-serifdemo text-3xl font-bold text-emerald-950">
             Aqui seu pet é recebido pelo nome
@@ -157,7 +165,7 @@ const DemoPage: React.FC = () => {
               </li>
             ))}
           </ul>
-        </div>
+        </Reveal>
       </section>
 
       {/* Serviços com fotos */}
@@ -197,9 +205,12 @@ const DemoPage: React.FC = () => {
                 nome: 'Exames',
                 desc: 'Coleta na própria clínica e resultado rápido, explicado numa linguagem que você entende.',
               },
-            ].map(({ img, alt, icone: Icone, nome, desc }) => (
-              <article key={nome} className="overflow-hidden rounded-3xl bg-white">
-                <img src={img} alt={alt} width={800} height={520} loading="lazy" className="h-44 w-full object-cover" />
+            ].map(({ img, alt, icone: Icone, nome, desc }, i) => (
+              <Reveal key={nome} delay={i * 100} className="h-full">
+              <article className="group h-full overflow-hidden rounded-3xl bg-white transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-emerald-950/40">
+                <div className="h-44 overflow-hidden">
+                  <img src={img} alt={alt} width={800} height={520} loading="lazy" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                </div>
                 <div className="p-5">
                   <h3 className="flex items-center gap-2 font-serifdemo text-xl font-bold text-emerald-950">
                     <Icone size={20} className="text-emerald-700" aria-hidden="true" />
@@ -208,6 +219,7 @@ const DemoPage: React.FC = () => {
                   <p className="mt-2 text-sm leading-relaxed text-stone-600">{desc}</p>
                 </div>
               </article>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -215,6 +227,7 @@ const DemoPage: React.FC = () => {
 
       {/* Depoimento */}
       <section className="mx-auto max-w-4xl px-5 py-16">
+        <Reveal>
         <figure className="rounded-3xl border border-emerald-900/10 bg-emerald-50/60 p-8 md:p-10">
           <Quote size={32} className="text-emerald-700/40" aria-hidden="true" />
           <blockquote className="mt-4 font-serifdemo text-2xl font-semibold leading-snug text-emerald-950 md:text-3xl">
@@ -226,6 +239,7 @@ const DemoPage: React.FC = () => {
             <span className="ml-2 text-sm font-normal text-stone-400">(depoimento ilustrativo)</span>
           </figcaption>
         </figure>
+        </Reveal>
       </section>
 
       {/* Horário e endereço */}
@@ -261,15 +275,18 @@ const DemoPage: React.FC = () => {
       </section>
 
       {/* CTA final com foto */}
-      <section className="relative">
-        <img
-          src={FOTOS.ctaFinal}
-          alt="Cachorro feliz na grama"
-          width={1400}
-          height={800}
-          loading="lazy"
-          className="h-[340px] w-full object-cover"
-        />
+      <section className="relative overflow-hidden">
+        <div className="h-[340px] w-full">
+          <img
+            ref={ctaRef}
+            src={FOTOS.ctaFinal}
+            alt="Cachorro feliz na grama"
+            width={1400}
+            height={800}
+            loading="lazy"
+            className="h-full w-full object-cover will-change-transform"
+          />
+        </div>
         <div className="absolute inset-0 bg-emerald-950/70" />
         <div className="absolute inset-0 flex items-center justify-center px-5 text-center">
           <div>
