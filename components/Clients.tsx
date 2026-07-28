@@ -19,22 +19,22 @@ import React, { useState } from 'react';
  * decidir buscá-las — buraco visível numa faixa que rola sozinha.
  */
 
-type Marca = { nome: string; arquivo: string };
+type Marca = { nome: string; arquivo?: string };
 
+/** Sem `arquivo` = wordmark em texto por decisão, não por fallback. */
 const MARCAS: Marca[] = [
   { nome: 'Magalu', arquivo: '/logos/magalu.svg' },
   { nome: 'Brasilprev', arquivo: '/logos/brasilprev.svg' },
   { nome: 'Samsung', arquivo: '/logos/samsung.svg' },
   { nome: 'Wellhub', arquivo: '/logos/wellhub.svg' },
   { nome: 'Dafiti', arquivo: '/logos/dafiti.svg' },
-  { nome: 'Prefeitura de Santos', arquivo: '/logos/prefeitura-santos.svg' },
-  { nome: 'Zurich', arquivo: '/logos/zurich.svg' },
+  { nome: 'Zurich' },
 ];
 
 const Marca: React.FC<{ marca: Marca }> = ({ marca }) => {
   const [falhou, setFalhou] = useState(false);
 
-  if (falhou) {
+  if (!marca.arquivo || falhou) {
     return (
       <span className="font-heading text-xl md:text-2xl font-bold tracking-tight text-white/45 hover:text-white/90 transition-colors duration-300 whitespace-nowrap">
         {marca.nome}

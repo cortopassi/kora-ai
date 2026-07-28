@@ -9,11 +9,11 @@ Arquivos esperados:
 
 - magalu.svg
 - brasilprev.svg
-- samsung.svg
 - wellhub.svg
 - dafiti.svg
-- prefeitura-santos.svg
-- zurich.svg
+
+(samsung.svg entra junto com o lote, já obtido do acervo simple-icons.
+Zurich fica em texto por decisão; Prefeitura de Santos saiu da faixa.)
 
 Suba por upload binário (app/site do GitHub ou `git add`) — nunca por
 copiar e colar conteúdo, como registrado no CLAUDE.md.
