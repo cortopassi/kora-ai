@@ -8,24 +8,28 @@ const Services: React.FC = () => {
       title: "Eficiência Operacional",
       description: "Organização e otimização de fluxos de trabalho. Mapeamos e redesenhamos processos para reduzir desperdícios e conectar a operação aos objetivos estratégicos (OKRs), gerando ganho de tempo e receita.",
       tags: ["Mapeamento", "OKRs", "Processos"],
+      href: "/atuacoes/eficiencia-operacional/",
       icon: <GitMerge className="text-white" size={24} />
     },
     {
       title: "Tecnologia & Desenvolvimento",
       description: "Construção de soluções digitais sob medida. Quando o software é a resposta, desenvolvemos Apps, Sites e Plataformas robustas para materializar a solução que o seu negócio precisa.",
       tags: ["Apps & Sites", "SaaS", "Custom Dev"],
+      href: "/atuacoes/tecnologia-desenvolvimento/",
       icon: <MonitorSmartphone className="text-white" size={24} />
     },
     {
       title: "Sistemas & Dados (SAP)",
       description: "Consultoria técnica especializada para ambientes corporativos. Integração de ERPs (SAP) com novas tecnologias e estruturação de dados para embasar a tomada de decisão executiva.",
       tags: ["SAP Experts", "Integrações", "Dados/IA"],
+      href: "/atuacoes/sistemas-dados-sap/",
       icon: <Database className="text-white" size={24} />
     },
     {
       title: "Produtos & Crescimento",
       description: "Gestão de produtos digitais de ponta a ponta, com bagagem de Product Management em bancos, marketplaces e saúde — mais estratégias de Growth/SEO para que sua solução não apenas exista, mas cresça e venda.",
       tags: ["Product Management", "SEO", "Growth"],
+      href: "/atuacoes/produtos-crescimento/",
       icon: <TrendingUp className="text-white" size={24} />
     }
   ];
@@ -72,12 +76,21 @@ const Services: React.FC = () => {
                   </p>
                 </div>
                 
-                <div className="flex flex-wrap gap-2 mt-auto">
-                  {service.tags.map((tag, i) => (
-                    <span key={i} className="px-2 py-1 bg-white/5 border border-white/5 rounded-full text-[10px] font-bold uppercase tracking-wider text-brand-muted">
-                      {tag}
-                    </span>
-                  ))}
+                <div className="mt-auto">
+                  <div className="flex flex-wrap gap-2 mb-5">
+                    {service.tags.map((tag, i) => (
+                      <span key={i} className="px-2 py-1 bg-white/5 border border-white/5 rounded-full text-[10px] font-bold uppercase tracking-wider text-brand-muted">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <a
+                    href={service.href}
+                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-muted group-hover:text-brand-primary transition-colors"
+                  >
+                    Ver detalhes
+                    <MoveRight size={15} className="transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                  </a>
                 </div>
               </div>
             </div>

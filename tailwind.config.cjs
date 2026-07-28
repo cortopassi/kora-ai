@@ -8,6 +8,8 @@ module.exports = {
     './sites/**/*.{ts,tsx}',
     './cases/**/*.html',
     './cases/**/*.{ts,tsx}',
+    './atuacoes/**/*.html',
+    './atuacoes/**/*.{ts,tsx}',
   ],
   theme: {
     extend: {
