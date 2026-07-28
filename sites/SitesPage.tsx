@@ -387,6 +387,12 @@ const SitesPage: React.FC = () => {
             <div className="flex flex-col items-start gap-3">
               <CtaWhats>Falar com a KORA</CtaWhats>
               <a
+                href="/cases/entre-patas/"
+                className="px-2 text-sm text-stone-400 underline underline-offset-4 transition-colors hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-500"
+              >
+                Veja um projeto completo que fizemos
+              </a>
+              <a
                 href="/"
                 className="px-2 text-sm text-stone-400 underline underline-offset-4 transition-colors hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-500"
               >

@@ -9,6 +9,7 @@ export default defineConfig({
         main: path.resolve(__dirname, 'index.html'),
         sites: path.resolve(__dirname, 'sites/index.html'),
         sitesDemo: path.resolve(__dirname, 'sites/demo/index.html'),
+        caseEntrePatas: path.resolve(__dirname, 'cases/entre-patas/index.html'),
       },
     },
   },
