@@ -1,5 +1,6 @@
 import React from 'react';
 import { MonitorSmartphone, GitMerge, Database, TrendingUp, MoveRight } from 'lucide-react';
+import { Reveal } from '../sites/fx';
 
 const Services: React.FC = () => {
   const services = [
@@ -33,6 +34,7 @@ const Services: React.FC = () => {
     <section id="servicos" className="py-section bg-brand-bg border-t border-brand-border/30 relative overflow-hidden">
       <div className="max-w-container mx-auto px-6">
         
+        <Reveal>
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
           <div>
             <h2 className="font-heading text-4xl md:text-5xl font-bold text-white tracking-tight mb-4">
@@ -46,12 +48,13 @@ const Services: React.FC = () => {
             Falar com um especialista <MoveRight size={20} className="transition-transform group-hover:translate-x-1" />
           </a>
         </div>
+        </Reveal>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => (
+            <Reveal key={index} delay={index * 100} className="h-full">
             <div 
-              key={index} 
-              className="group relative bg-brand-surface rounded-brand p-8 border border-brand-border hover:border-brand-primary/50 transition-all duration-500 overflow-hidden flex flex-col"
+              className="group relative h-full bg-brand-surface rounded-brand p-8 border border-brand-border hover:border-brand-primary/50 hover:-translate-y-1 transition-all duration-500 overflow-hidden flex flex-col"
             >
               <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity transform group-hover:scale-110 duration-700">
                 {service.icon}
@@ -77,6 +80,7 @@ const Services: React.FC = () => {
                 </div>
               </div>
             </div>
+            </Reveal>
           ))}
         </div>
       </div>

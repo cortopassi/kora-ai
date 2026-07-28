@@ -1,4 +1,5 @@
 import React from 'react';
+import { Reveal } from '../sites/fx';
 
 const Methodology: React.FC = () => {
   const steps = [
@@ -11,16 +12,19 @@ const Methodology: React.FC = () => {
   return (
     <section id="metodo" className="py-section bg-brand-bg">
       <div className="max-w-container mx-auto px-6">
+        <Reveal>
         <div className="mb-20">
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-white tracking-tight">Nosso Processo</h2>
           <p className="font-sans text-brand-muted mt-4 max-w-lg">
             Não vendemos ferramentas de prateleira. Construímos a resposta certa para a pergunta que o seu negócio está fazendo.
           </p>
         </div>
+        </Reveal>
 
         <div className="grid md:grid-cols-4 gap-8">
           {steps.map((step, index) => (
-            <div key={index} className="relative pt-8 border-t border-brand-border group hover:border-brand-primary transition-colors duration-500">
+            <Reveal key={index} delay={index * 120}>
+            <div className="relative pt-8 border-t border-brand-border group hover:border-brand-primary transition-colors duration-500">
               <span className="absolute -top-3 left-0 bg-brand-bg px-2 text-sm font-bold text-brand-muted group-hover:text-brand-primary transition-colors">
                 {step.number}
               </span>
@@ -30,6 +34,7 @@ const Methodology: React.FC = () => {
                 {step.text}
               </p>
             </div>
+            </Reveal>
           ))}
         </div>
       </div>

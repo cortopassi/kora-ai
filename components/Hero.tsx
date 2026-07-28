@@ -53,7 +53,7 @@ const Hero: React.FC = () => {
               {/* Card Container for Shield - giving it a 'product' feel */}
               <div className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent rounded-[40px] border border-white/5 backdrop-blur-sm -rotate-6 transform transition-transform duration-700 hover:rotate-0"></div>
               
-              <div className="absolute inset-4 bg-[#0A0A0A] rounded-[32px] border border-white/5 flex items-center justify-center overflow-hidden shadow-2xl">
+              <div className="absolute inset-4 bg-[#081120] rounded-[32px] border border-white/5 flex items-center justify-center overflow-hidden shadow-2xl">
                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-brand-primary/20 to-transparent opacity-50"></div>
                  <img
                   src="/kora-shield.png"
@@ -66,7 +66,7 @@ const Hero: React.FC = () => {
               </div>
 
               {/* Decorative floating pills - Updated text */}
-              <div className="absolute -right-8 top-20 bg-[#1A1A1A] border border-white/10 px-4 py-3 rounded-xl shadow-xl animate-bounce" style={{animationDuration: '3s'}}>
+              <div className="absolute -right-8 top-20 bg-brand-surfaceHighlight border border-white/10 px-4 py-3 rounded-xl shadow-xl animate-bounce" style={{animationDuration: '3s'}}>
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 rounded-lg bg-brand-primary/20 flex items-center justify-center">
                     <div className="w-2 h-2 bg-brand-primary rounded-full" />
