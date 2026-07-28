@@ -10,12 +10,9 @@ import {
   ChevronDown,
 } from 'lucide-react';
 
-/**
- * AJUSTAR ANTES DO MERGE: valores de preço são placeholder.
- * Confirmar com o Bruno os números reais de setup e mensalidade.
- */
-const PRECO_SETUP = 'R$ 750';
-const PRECO_MENSAL = 'R$ 90';
+
+const PRECO_SETUP = 'R$ 1.199';
+const PRECO_MENSAL = 'R$ 199';
 
 const ZAP = 'https://wa.me/5511998644004';
 const ZAP_PRINCIPAL = `${ZAP}?text=${encodeURIComponent('Oi! Quero um site para a minha clínica.')}`;
