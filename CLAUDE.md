@@ -66,6 +66,15 @@ Samsung, Wellhub, Dafiti, Prefeitura de Santos, Zurich são lugares onde o
 time atuou, **não clientes da KORA**. Nunca reescreva isso de forma que
 sugira relação comercial.
 
+## Páginas de atuação (no ar)
+
+Quatro páginas de detalhe em `atuacoes/{slug}/` (Vite multipágina), com
+template compartilhado `AtuacaoPage.tsx` e conteúdo em `atuacoes/data.ts`:
+eficiencia-operacional, tecnologia-desenvolvimento, sistemas-dados-sap,
+produtos-crescimento. Cada uma com meta/og/canonical próprios. Os cards
+de Serviços da home linkam para elas. Mesma regra do case: sem cliente
+citado como cliente e sem número inventado.
+
 ## Página /sites (no ar)
 
 Página de venda de landing pages one-page a negócios locais, em
