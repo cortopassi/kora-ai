@@ -32,7 +32,8 @@ const MARCAS: Marca[] = [
   { nome: 'Itaú', arquivo: '/logos/itau.svg' },
   { nome: 'ZAP Imóveis', arquivo: '/logos/zap-imoveis.svg' },
   { nome: 'Albert Einstein', arquivo: '/logos/albert-einstein.svg' },
-  { nome: 'Zurich' },
+  { nome: 'Autopass', arquivo: '/logos/autopass.svg' },
+  { nome: 'Bunge', arquivo: '/logos/bunge.svg' },
 ];
 
 const Marca: React.FC<{ marca: Marca }> = ({ marca }) => {

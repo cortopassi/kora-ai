@@ -15,9 +15,11 @@ Arquivos esperados:
 - itau.svg
 - zap-imoveis.svg
 - albert-einstein.svg
+- autopass.svg
+- bunge.svg
 
 (samsung.svg entra junto com o lote, já obtido do acervo simple-icons.
-Zurich fica em texto por decisão; Prefeitura de Santos saiu da faixa.)
+Zurich e Prefeitura de Santos saíram da faixa.)
 
 Suba por upload binário (app/site do GitHub ou `git add`) — nunca por
 copiar e colar conteúdo, como registrado no CLAUDE.md.
