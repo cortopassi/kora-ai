@@ -51,10 +51,17 @@ const Hero: React.FC = () => {
 
           {/* Right Visual — escudo sem moldura, com brilho radial e legenda ancorada */}
           <div className="lg:col-span-5 flex justify-center lg:justify-end relative">
-            <div className="relative w-[420px] h-[420px] md:w-[560px] md:h-[560px] max-w-full animate-float">
-              {/* Brilho radial: profundidade sem caixa */}
-              <div className="absolute inset-[12%] bg-brand-primary/20 blur-3xl rounded-full" aria-hidden="true"></div>
+            <div className="relative w-[420px] h-[420px] md:w-[560px] md:h-[560px] max-w-full animate-float overflow-visible">
+              {/* Brilho radial: profundidade sem caixa (ampliado junto com o scale do escudo) */}
+              <div className="absolute inset-[-22%] bg-brand-primary/20 blur-3xl rounded-full" aria-hidden="true"></div>
 
+              {/*
+                COMPENSAÇÃO, não correção: o PNG atual (public/kora-shield.png)
+                tem ~66% de margem transparente — o desenho ocupa só ~34% da
+                largura do arquivo. O scale-[1.9] compensa isso visualmente.
+                Se o arquivo for recortado/regerado sem a margem, REMOVA o
+                scale-[1.9] daqui e volte o brilho para inset-[12%].
+              */}
               <Tilt max={3} className="absolute inset-0">
                 <img
                   src="/kora-shield.png"
@@ -62,7 +69,7 @@ const Hero: React.FC = () => {
                   width={1024}
                   height={1024}
                   fetchPriority="high"
-                  className="w-full h-full object-contain relative z-10 drop-shadow-2xl"
+                  className="w-full h-full object-contain scale-[1.9] relative z-10 drop-shadow-2xl"
                 />
               </Tilt>
 
