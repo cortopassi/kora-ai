@@ -46,6 +46,8 @@ module.exports = {
         'slide-up': 'slideUp 0.8s ease-out forwards',
         float: 'float 6s ease-in-out infinite',
         scroll: 'scroll 30s linear infinite',
+        'shield-in': 'shieldIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards',
+        'glow-pulse': 'glowPulse 7s ease-in-out infinite',
       },
       keyframes: {
         fadeIn: {
@@ -63,6 +65,17 @@ module.exports = {
         scroll: {
           '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(-50%)' },
+        },
+        // Entrada do escudo do hero: só opacity e transform
+        shieldIn: {
+          '0%': { opacity: '0', transform: 'scale(0.92)' },
+          '100%': { opacity: '1', transform: 'scale(1)' },
+        },
+        // Respiração do brilho radial: só opacity (o blur fica estático).
+        // 7s de propósito: diferente dos 6s do float, pra não sincronizar.
+        glowPulse: {
+          '0%, 100%': { opacity: '0.7' },
+          '50%': { opacity: '1' },
         },
       },
     },

@@ -53,7 +53,7 @@ const Hero: React.FC = () => {
           <div className="lg:col-span-5 flex justify-center lg:justify-end relative">
             <div className="relative w-[420px] h-[420px] md:w-[560px] md:h-[560px] max-w-full animate-float overflow-visible">
               {/* Brilho radial: profundidade sem caixa (ampliado junto com o scale do escudo) */}
-              <div className="absolute inset-[-22%] bg-brand-primary/20 blur-3xl rounded-full" aria-hidden="true"></div>
+              <div className="absolute inset-[-22%] bg-brand-primary/20 blur-3xl rounded-full animate-glow-pulse will-change-[opacity]" aria-hidden="true"></div>
 
               {/*
                 COMPENSAÇÃO, não correção: o PNG atual (public/kora-shield.png)
@@ -63,14 +63,20 @@ const Hero: React.FC = () => {
                 scale-[1.9] daqui e volte o brilho para inset-[12%].
               */}
               <Tilt max={3} className="absolute inset-0">
-                <img
-                  src="/kora-shield.png"
-                  alt="Kora Shield"
-                  width={1024}
-                  height={1024}
-                  fetchPriority="high"
-                  className="w-full h-full object-contain scale-[1.9] relative z-10 drop-shadow-2xl"
-                />
+                {/* Wrapper da entrada: a animação vive aqui porque a <img>
+                    carrega o scale-[1.9] de compensação e o Tilt controla o
+                    próprio transform via JS — animar qualquer um dos dois
+                    criaria conflito de transform. */}
+                <div className="w-full h-full animate-shield-in will-change-[transform,opacity]">
+                  <img
+                    src="/kora-shield.png"
+                    alt="Kora Shield"
+                    width={1024}
+                    height={1024}
+                    fetchPriority="high"
+                    className="w-full h-full object-contain scale-[1.9] relative z-10 drop-shadow-2xl"
+                  />
+                </div>
               </Tilt>
 
               {/* Legenda do escudo */}
