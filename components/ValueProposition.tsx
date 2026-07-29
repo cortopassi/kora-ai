@@ -3,7 +3,7 @@ import { Reveal } from '../sites/fx';
 
 const ValueProposition: React.FC = () => {
   return (
-    <section className="py-section bg-brand-bg relative">
+    <section className="py-20 bg-brand-bg relative">
       <div className="max-w-container mx-auto px-6">
         <div className="bg-brand-surface rounded-[40px] p-8 md:p-16 border border-brand-border relative overflow-hidden">
           {/* Decorative gradients */}

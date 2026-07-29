@@ -35,7 +35,7 @@ const Services: React.FC = () => {
   ];
 
   return (
-    <section id="servicos" className="py-section bg-brand-bg border-t border-brand-border/30 relative overflow-hidden">
+    <section id="servicos" className="py-20 bg-brand-bg border-t border-brand-border/30 relative overflow-hidden">
       <div className="max-w-container mx-auto px-6">
         
         <Reveal>

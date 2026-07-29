@@ -10,7 +10,7 @@ const Methodology: React.FC = () => {
   ];
 
   return (
-    <section id="metodo" className="py-section bg-brand-bg">
+    <section id="metodo" className="py-20 bg-brand-bg">
       <div className="max-w-container mx-auto px-6">
         <Reveal>
         <div className="mb-20">

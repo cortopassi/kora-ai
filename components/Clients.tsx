@@ -98,7 +98,7 @@ const Clients: React.FC = () => {
       <div className="absolute top-0 bottom-0 right-0 w-10 md:w-24 bg-gradient-to-l from-brand-bg to-transparent z-10 pointer-events-none" />
 
       <div className="flex w-full overflow-hidden group">
-        <div className="flex w-max items-center animate-scroll [animation-duration:28s] md:[animation-duration:45s] group-hover:[animation-play-state:paused]">
+        <div className="flex w-max items-center animate-scroll [animation-delay:-13s] [animation-duration:28s] md:[animation-duration:45s] group-hover:[animation-play-state:paused]">
           <Grupo />
           <Grupo ariaHidden />
         </div>
