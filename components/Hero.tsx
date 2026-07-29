@@ -5,10 +5,10 @@ import { smoothScrollToId } from './smoothScroll';
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative w-full min-h-[95vh] flex items-center pt-32 pb-20 overflow-hidden bg-brand-bg">
+    <section className="relative w-full min-h-[95vh] flex items-center pt-32 pb-52 overflow-hidden bg-brand-bg">
       {/* Subtle Gradient Spot */}
       <div className="absolute top-[-20%] right-[-10%] w-[800px] h-[800px] bg-brand-primary/10 rounded-full blur-[150px] pointer-events-none" />
-      <div className="absolute bottom-[-10%] left-[-20%] w-[600px] h-[600px] bg-indigo-900/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-[15%] left-[-12%] w-[440px] h-[440px] bg-indigo-900/10 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-container w-full mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
