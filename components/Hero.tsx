@@ -49,28 +49,25 @@ const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Visual */}
+          {/* Right Visual — escudo sem moldura, com brilho radial e legenda ancorada */}
           <div className="lg:col-span-5 flex justify-center lg:justify-end relative">
-            <div className="relative w-[320px] h-[320px] md:w-[450px] md:h-[450px] animate-float">
-              {/* Card Container for Shield - giving it a 'product' feel */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent rounded-[40px] border border-white/5 backdrop-blur-sm -rotate-6 transform transition-transform duration-700 hover:rotate-0"></div>
-              
-              <Tilt max={3} className="absolute inset-4">
-              <div className="w-full h-full bg-[#081120] rounded-[32px] border border-white/5 flex items-center justify-center overflow-hidden shadow-2xl">
-                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-brand-primary/20 to-transparent opacity-50"></div>
-                 <img
+            <div className="relative w-[420px] h-[420px] md:w-[560px] md:h-[560px] max-w-full animate-float">
+              {/* Brilho radial: profundidade sem caixa */}
+              <div className="absolute inset-[12%] bg-brand-primary/20 blur-3xl rounded-full" aria-hidden="true"></div>
+
+              <Tilt max={3} className="absolute inset-0">
+                <img
                   src="/kora-shield.png"
                   alt="Kora Shield"
-                  width={512}
-                  height={512}
+                  width={1024}
+                  height={1024}
                   fetchPriority="high"
-                  className="w-[80%] h-[80%] object-contain relative z-10 drop-shadow-2xl"
+                  className="w-full h-full object-contain relative z-10 drop-shadow-2xl"
                 />
-              </div>
               </Tilt>
 
-              {/* Decorative floating pills - Updated text */}
-              <div className="absolute -right-8 top-20 bg-brand-surfaceHighlight border border-white/10 px-4 py-3 rounded-xl shadow-xl animate-bounce" style={{animationDuration: '3s'}}>
+              {/* Legenda do escudo */}
+              <div className="absolute left-1/2 -translate-x-[60%] bottom-0 translate-y-4 z-20 bg-brand-surfaceHighlight border border-white/10 px-4 py-3 rounded-xl shadow-xl">
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 rounded-lg bg-brand-primary/20 flex items-center justify-center">
                     <div className="w-2 h-2 bg-brand-primary rounded-full" />
