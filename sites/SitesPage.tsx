@@ -365,7 +365,12 @@ const SitesPage: React.FC = () => {
                     className="flex-none text-teal-700 transition-transform group-open:rotate-180"
                   />
                 </summary>
-                <p className="mt-3 leading-relaxed text-stone-600">{r}</p>
+                {/* Truque do grid-rows: <details> não anima height (0 -> auto),
+                    mas grid-template-rows 0fr -> 1fr anima. Semântica nativa
+                    preservada: leitor de tela, Ctrl+F e teclado seguem OK. */}
+                <div className="grid grid-rows-[0fr] transition-all duration-300 ease-out group-open:grid-rows-[1fr]">
+                  <p className="min-h-0 overflow-hidden pt-3 leading-relaxed text-stone-600">{r}</p>
+                </div>
               </details>
             ))}
           </div>
