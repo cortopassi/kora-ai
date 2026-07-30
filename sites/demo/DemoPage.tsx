@@ -57,16 +57,24 @@ const foto = (id: string, w: number) =>
  * COERÊNCIA: o depoimento fala de vira-lata caramelo. Vira-lata lê como
  * Peruíbe; cachorro de raça lê como banco de imagem gringo. Prefira SRD.
  *
+ * ATENÇÃO: estes IDs foram escolhidos lendo a descrição do fotógrafo, sem
+ * ver a imagem. Confira as cinco no navegador antes de considerar fechado.
+ *
  * COMO TROCAR: abra unsplash.com, ache a foto, copie o trecho do endereço
  * que começa com "photo-" e cole no lugar do ID. Se errar o ID, o cartão
  * mostra o ícone sobre fundo menta em vez de imagem quebrada.
  */
 const FOTOS = {
-  hero: foto('photo-1654895716780-b4664497420d', 1400),
-  consulta: foto('photo-1770836037793-95bdbf190f71', 800),
-  vacina: foto('photo-1770836037275-38b44e4b101f', 800), // TROCAR: mostra agulha
-  banho: foto('photo-1553688738-a278b9f063e0', 800),
-  exames: foto('photo-1770836037816-4445dbd449fd', 800),
+  // Eric Ward — "photo of man hugging tan dog". Abraço, cachorro caramelo.
+  hero: foto('photo-1522276498395-f4f68f7f8454', 1400),
+  // Khamkéo — "person touching brown dog sleeping on sofa". A calma depois.
+  consulta: foto('photo-1568365994964-f3ed699784fe', 800),
+  // Tonmoy Iftekhar — "small puppy being held by a person". O colo, não a agulha.
+  vacina: foto('photo-1641744094775-25e555ef943d', 800),
+  // Rico Van de Voorde — "woman holding black and white dog during daytime".
+  exames: foto('photo-1612728802087-d56c04cb141b', 800),
+  // Hayffield L — "brown pomeranian wearing pink towel". Pós-banho, na toalha.
+  banho: foto('photo-1611173622933-91942d394b04', 800),
 };
 
 const ZAP = `https://wa.me/5511998644004?text=${encodeURIComponent(
@@ -257,7 +265,7 @@ const SERVICOS = [
     titulo: 'Consulta',
     desc: 'Clínica geral para cães e gatos, com hora marcada ou encaixe no mesmo dia.',
     chips: ['Cães', 'Gatos', 'Hora marcada'],
-    alt: 'Veterinário examinando um cachorro pequeno',
+    alt: 'Mão acariciando um cachorro deitado, tranquilo',
   },
   {
     img: FOTOS.vacina,
@@ -265,7 +273,7 @@ const SERVICOS = [
     titulo: 'Vacinação',
     desc: 'Vacinas importadas, carteirinha em dia e lembrete da próxima dose.',
     chips: ['V8 e V10', 'Antirrábica', 'Carteirinha'],
-    alt: 'Aplicação de vacina em um gato',
+    alt: 'Filhote no colo de uma pessoa, calmo',
   },
   {
     img: FOTOS.exames,
@@ -273,15 +281,15 @@ const SERVICOS = [
     titulo: 'Exames',
     desc: 'Laboratório, ultrassom e raio-X no local, sem precisar ir pra outra cidade.',
     chips: ['Ultrassom', 'Raio-X', 'Sangue'],
-    alt: 'Equipamento de exame veterinário',
+    alt: 'Pessoa segurando um cachorro com cuidado',
   },
   {
     img: FOTOS.banho,
     icone: Scissors,
     titulo: 'Banho e tosa',
-    desc: 'Higiene e tosa com quem conhece o jeito do seu bicho.',
+    desc: 'Higiene e tosa com quem conhece o jeito do seu pet.',
     chips: ['Tosa higiênica', 'Hidratação'],
-    alt: 'Cachorro tomando banho em pet shop',
+    alt: 'Cachorro enrolado numa toalha depois do banho',
   },
 ];
 
@@ -301,8 +309,8 @@ const PASSOS = [
   {
     n: '03',
     icone: Heart,
-    titulo: 'Traz seu bicho',
-    desc: 'Atendimento sem correria, no tempo do animal. E acompanhamento depois.',
+    titulo: 'Traz seu pet',
+    desc: 'Atendimento sem correria, no tempo do pet. E acompanhamento depois.',
   },
 ];
 
@@ -379,7 +387,7 @@ const DemoPage: React.FC = () => {
       <section className="relative isolate overflow-hidden">
         <img
           src={FOTOS.hero}
-          alt="Veterinária segurando um cachorro no colo"
+          alt="Homem abraçando um cachorro caramelo"
           className="absolute inset-0 -z-10 h-full w-full object-cover"
         />
         {/* Dois gradientes de propósito. O horizontal protege a leitura do
@@ -399,12 +407,15 @@ const DemoPage: React.FC = () => {
           <Sobretitulo cor="claro">Clínica veterinária · Peruíbe-SP</Sobretitulo>
 
           <h1 className="max-w-[20ch] text-[2.15rem] font-bold leading-[1.08] tracking-tight text-white lg:text-6xl">
-            Cuidado de verdade pra quem você ama
+            Cuidado de verdade pro seu melhor amigo
           </h1>
 
+          {/* Divisão de trabalho: o título carrega o afeto, a linha de apoio
+              carrega o lugar. Proximidade é o único gancho que rede grande
+              não copia de uma clínica de bairro. */}
           <p className="mt-5 max-w-[46ch] text-[17px] leading-relaxed text-white/80 lg:text-lg">
-            Consultas, vacinas, exames e banho e tosa em Peruíbe. Atendimento no
-            mesmo dia quando é urgente — chama no WhatsApp que a gente resolve.
+            Clínica veterinária no coração de Peruíbe. Consultas, vacinas,
+            exames e banho e tosa — com atendimento hoje quando é urgente.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
