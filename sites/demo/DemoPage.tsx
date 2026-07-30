@@ -13,7 +13,6 @@ import {
   Siren,
   Navigation,
   Heart,
-  Phone,
 } from 'lucide-react';
 import { Reveal } from '../fx';
 
@@ -44,10 +43,28 @@ import { Reveal } from '../fx';
 const foto = (id: string, w: number) =>
   `https://images.unsplash.com/${id}?fm=jpg&q=75&w=${w}&auto=format&fit=crop`;
 
+/**
+ * TROCAR ESTAS FOTOS. Só o ID muda — o resto do código não.
+ *
+ * O QUE PROCURAR: contato gentil, luz quente, bicho relaxado, tutor e pet
+ * juntos, sala clara. Foto de clínica veterinária não vende procedimento,
+ * vende a calma depois dele.
+ *
+ * DO QUE FUGIR: agulha, gaiola, aço inox, focinheira, close de dente ou
+ * olho, animal com cara de susto. E escolha as quatro com temperatura de
+ * luz parecida — mistura de clínico frio com quente parece colagem.
+ *
+ * COERÊNCIA: o depoimento fala de vira-lata caramelo. Vira-lata lê como
+ * Peruíbe; cachorro de raça lê como banco de imagem gringo. Prefira SRD.
+ *
+ * COMO TROCAR: abra unsplash.com, ache a foto, copie o trecho do endereço
+ * que começa com "photo-" e cole no lugar do ID. Se errar o ID, o cartão
+ * mostra o ícone sobre fundo menta em vez de imagem quebrada.
+ */
 const FOTOS = {
   hero: foto('photo-1654895716780-b4664497420d', 1400),
   consulta: foto('photo-1770836037793-95bdbf190f71', 800),
-  vacina: foto('photo-1770836037275-38b44e4b101f', 800),
+  vacina: foto('photo-1770836037275-38b44e4b101f', 800), // TROCAR: mostra agulha
   banho: foto('photo-1553688738-a278b9f063e0', 800),
   exames: foto('photo-1770836037816-4445dbd449fd', 800),
 };
@@ -55,6 +72,17 @@ const FOTOS = {
 const ZAP = `https://wa.me/5511998644004?text=${encodeURIComponent(
   'Oi! Vi o site de exemplo da clínica e quero um igual pro meu negócio.'
 )}`;
+
+/**
+ * Rótulo tem que bater com o destino. Botão escrito "Ligar" que abre
+ * conversa queima confiança na hora — e confiança é tudo que essa página
+ * tem pra vender. Então aqui não existe botão de ligar: o mapa vai pro
+ * mapa, o resto vai pro WhatsApp.
+ *
+ * NA VERSÃO DE CLIENTE REAL: trocar por href={`tel:+55DDNNNNNNNNN`} com o
+ * telefone da clínica, e aí sim o rótulo "Ligar" fica honesto.
+ */
+const MAPA = 'https://www.google.com/maps/search/?api=1&query=Peru%C3%ADbe+SP';
 
 /* horários: 0=domingo … 6=sábado. null = fechado */
 const HORARIOS: (readonly [string, string] | null)[] = [
@@ -171,6 +199,46 @@ const Chip: React.FC<{ children: React.ReactNode }> = ({ children }) => (
     {children}
   </span>
 );
+
+/**
+ * Foto que falha vira ícone sobre fundo menta em vez de imagem quebrada.
+ * Mesma rede de segurança da faixa de marcas da home: ID errado do
+ * Unsplash não deixa buraco na página.
+ *
+ * Sem loading="lazy" de propósito — a imagem precisa TENTAR carregar para
+ * o onError disparar e o fallback assumir.
+ */
+const FotoServico: React.FC<{
+  src: string;
+  alt: string;
+  icone: React.ElementType;
+}> = ({ src, alt, icone: Icone }) => {
+  const [falhou, setFalhou] = React.useState(false);
+
+  if (falhou) {
+    return (
+      <div
+        className="flex h-40 w-full items-center justify-center bg-[#E4F5EB]"
+        role="img"
+        aria-label={alt}
+      >
+        <Icone size={40} className="text-[#157347]/45" aria-hidden="true" strokeWidth={1.5} />
+      </div>
+    );
+  }
+
+  return (
+    <img
+      src={src}
+      alt={alt}
+      decoding="async"
+      width={800}
+      height={320}
+      onError={() => setFalhou(true)}
+      className="h-40 w-full object-cover"
+    />
+  );
+};
 
 const Estrelas: React.FC = () => (
   <div className="mb-3 flex gap-0.5 text-[#E8842C]" aria-label="5 de 5 estrelas">
@@ -314,8 +382,16 @@ const DemoPage: React.FC = () => {
           alt="Veterinária segurando um cachorro no colo"
           className="absolute inset-0 -z-10 h-full w-full object-cover"
         />
+        {/* Dois gradientes de propósito. O horizontal protege a leitura do
+            texto à esquerda e libera a foto à direita; o vertical só acerta
+            o encaixe com a barra fixa. Antes era 85-95% em toda a área, o
+            que escondia a foto inteira — download sem nada em troca. */}
         <div
-          className="absolute inset-0 -z-10 bg-gradient-to-b from-[#0A2A47]/95 via-[#0A2A47]/85 to-[#0A2A47]/95"
+          className="absolute inset-0 -z-10 bg-gradient-to-r from-[#0A2A47]/95 via-[#0A2A47]/78 to-[#0A2A47]/40"
+          aria-hidden="true"
+        />
+        <div
+          className="absolute inset-0 -z-10 bg-gradient-to-b from-[#0A2A47]/70 via-transparent to-[#0A2A47]/80"
           aria-hidden="true"
         />
 
@@ -360,11 +436,13 @@ const DemoPage: React.FC = () => {
                 <div className="flex justify-center">
                   <CirculoIcone icone={Icone} />
                 </div>
+                {/* Unidade em linha própria: inline, "2.400+ atendimentos"
+                    brigava com o número e quebrava feio no celular. */}
                 <p className="text-4xl font-bold leading-none tracking-tight text-[#0A2A47]">
                   {numero}
-                  <span className="ml-1.5 text-base font-semibold text-[#5A6B75]">
-                    {unidade}
-                  </span>
+                </p>
+                <p className="mt-1.5 text-[13px] font-semibold uppercase tracking-wider text-[#5A6B75]">
+                  {unidade}
                 </p>
                 <p className="mt-2.5 text-[13px] leading-snug text-[#5A6B75]">{desc}</p>
               </div>
@@ -387,13 +465,7 @@ const DemoPage: React.FC = () => {
           {SERVICOS.map((s, i) => (
             <Reveal key={s.titulo} delay={i * 80} className="h-full">
               <article className="flex h-full flex-col overflow-hidden rounded-3xl bg-white ring-1 ring-[#E6EBE9]">
-                <img
-                  src={s.img}
-                  alt={s.alt}
-                  className="h-40 w-full object-cover"
-                  width={800}
-                  height={320}
-                />
+                <FotoServico src={s.img} alt={s.alt} icone={s.icone} />
                 <div className="flex flex-1 flex-col p-6">
                   <CirculoIcone icone={s.icone} />
                   <h3 className="text-lg font-bold text-[#0A2A47]">{s.titulo}</h3>
@@ -545,11 +617,11 @@ const DemoPage: React.FC = () => {
                 ))}
               </ul>
               <div className="mt-auto flex flex-col gap-3 pt-7 sm:flex-row">
-                <Pilula href={ZAP} tom="verde" icone={Navigation}>
+                <Pilula href={MAPA} tom="verde" icone={Navigation}>
                   Como chegar
                 </Pilula>
-                <Pilula href={ZAP} tom="branco" icone={Phone}>
-                  Ligar
+                <Pilula href={ZAP} tom="branco" icone={MessageCircle}>
+                  Falar agora
                 </Pilula>
               </div>
             </div>
