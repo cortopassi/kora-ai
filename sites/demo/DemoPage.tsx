@@ -219,8 +219,11 @@ const Chip: React.FC<{ children: React.ReactNode }> = ({ children }) => (
 const FotoServico: React.FC<{
   src: string;
   alt: string;
+  focoY?: string;
   icone: React.ElementType;
-}> = ({ src, alt, icone: Icone }) => {
+  /** Ajuste fino do enquadramento vertical (object-position Y), ex. '25%'. */
+  
+}> = ({ src, alt, icone: Icone, focoY }) => {
   const [falhou, setFalhou] = React.useState(false);
 
   if (!src || falhou) {
@@ -244,6 +247,7 @@ const FotoServico: React.FC<{
       height={320}
       onError={() => setFalhou(true)}
       className="h-40 w-full object-cover"
+      style={focoY ? { objectPosition: `center ${focoY}` } : undefined}
     />
   );
 };
@@ -270,7 +274,8 @@ const SERVICOS = [
   {
     icone: Syringe,
     img: FOTOS.vacina,
-    alt: 'Cachorro sendo atendido na clínica',
+    alt: 'Gato recebendo vacina na clínica',
+    focoY: '22%',
     titulo: 'Vacinação',
     desc: 'Vacinas importadas, carteirinha em dia e lembrete da próxima dose.',
     chips: ['V8 e V10', 'Antirrábica', 'Carteirinha'],
@@ -476,7 +481,8 @@ const DemoPage: React.FC = () => {
           {SERVICOS.map((s, i) => (
             <Reveal key={s.titulo} delay={i * 80} className="h-full">
               <article className="flex h-full flex-col overflow-hidden rounded-3xl bg-white ring-1 ring-[#E6EBE9] transition-shadow hover:shadow-[0_4px_16px_rgba(10,42,71,0.07)]">
-                <FotoServico src={s.img} alt={s.alt} icone={s.icone} />
+                <FotoServico src={s.img} alt={s.alt} icone={s.icone} focoY={s.focoY}
+              />
                 <div className="flex flex-1 flex-col p-6">
                   <CirculoIcone icone={s.icone} />
                   <h3 className="text-lg font-bold text-[#0A2A47]">{s.titulo}</h3>
