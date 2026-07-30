@@ -89,8 +89,10 @@ Página de venda de landing pages one-page a negócios locais, em
 `sites/` (Vite multipágina: `/sites` e `/sites/demo`). Primeiro alvo:
 clínicas veterinárias de Peruíbe, Itanhaém e Mongaguá.
 
-Preço publicado: **R$ 1.199 de montagem + R$ 199/mês** (mensalidade cobre
-domínio, hospedagem e ajustes simples). A demo é a Clínica Maré Mansa,
+Preço publicado: **R$ 1.199 de montagem (ou 3x de R$ 399,90) +
+R$ 199/mês** — plano anual R$ 1.990 (dois meses grátis), sem fidelidade.
+A mensalidade é vendida como serviço ("me chama que eu ajusto"), não como
+infraestrutura. A demo é a Clínica Maré Mansa,
 fictícia e rotulada, com `noindex`.
 
 Regras dessa página:
