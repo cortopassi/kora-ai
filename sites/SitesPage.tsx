@@ -13,7 +13,9 @@ import { Reveal } from './fx';
 
 
 const PRECO_SETUP = 'R$ 1.199';
+const PRECO_PARCELA = '3x de R$ 399,90';
 const PRECO_MENSAL = 'R$ 199';
+const PRECO_ANUAL = 'R$ 1.990';
 
 const ZAP = 'https://wa.me/5511998644004';
 const ZAP_PRINCIPAL = `${ZAP}?text=${encodeURIComponent('Oi! Quero um site para a minha clínica.')}`;
@@ -310,6 +312,7 @@ const SitesPage: React.FC = () => {
             <div>
               <p className="font-display text-5xl font-extrabold text-teal-800">{PRECO_SETUP}</p>
               <p className="mt-1 font-semibold text-stone-600">uma vez, pra montar</p>
+              <p className="mt-0.5 text-sm text-stone-500">ou {PRECO_PARCELA}</p>
             </div>
             <div className="hidden h-16 w-px bg-stone-200 sm:block" aria-hidden="true" />
             <div>
@@ -318,12 +321,32 @@ const SitesPage: React.FC = () => {
                 <span className="text-2xl font-bold text-stone-500">/mês</span>
               </p>
               <p className="mt-1 font-semibold text-stone-600">pra manter no ar</p>
+              <p className="mt-0.5 text-sm text-stone-500">ou {PRECO_ANUAL} no ano</p>
             </div>
           </div>
-          <p className="mx-auto mt-6 max-w-[46ch] leading-relaxed text-stone-600">
-            A mensalidade cobre o endereço na internet, a hospedagem e pequenos ajustes
-            quando você precisar. Sem letra miúda, sem fidelidade.
+          {/* A mensalidade é descrita como SERVIÇO, não como infraestrutura.
+              "Hospedagem e manutenção" soa custo, e custo o cliente sempre acha
+              que dá pra baratear. "Você me chama e eu ajusto" é relação — e é
+              o que o dono de clínica de bairro realmente quer comprar. */}
+          <p className="mx-auto mt-6 max-w-[48ch] leading-relaxed text-stone-600">
+            Mudou o horário? Entrou um serviço novo? Você me chama no WhatsApp e eu
+            ajusto. Uma vez por ano eu reviso tudo pra manter atualizado.
           </p>
+
+          <div className="mx-auto mt-7 max-w-[44ch] space-y-2.5 rounded-2xl bg-stone-50 p-5 text-[15px] text-stone-600">
+            <p>
+              <span className="font-semibold text-stone-800">À vista ou parcelado.</span>{' '}
+              {PRECO_SETUP} ou {PRECO_PARCELA} no cartão.
+            </p>
+            <p>
+              <span className="font-semibold text-stone-800">No plano anual,</span>{' '}
+              {PRECO_ANUAL} no ano — dois meses grátis.
+            </p>
+            <p>
+              <span className="font-semibold text-stone-800">Sem fidelidade.</span>{' '}
+              Pode sair quando quiser, o site é seu.
+            </p>
+          </div>
           <div className="mt-8">
             <CtaWhats grande>Combinar pelo WhatsApp</CtaWhats>
           </div>
