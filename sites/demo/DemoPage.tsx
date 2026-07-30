@@ -40,29 +40,42 @@ import { Reveal } from '../fx';
  * Fotos: Unsplash (licença livre, uso comercial, sem atribuição).
  */
 
-const foto = (id: string, w: number) =>
+/**
+ * Dois bancos, dois formatos de URL. Não dá para misturar num helper só.
+ *
+ * Unsplash: cuidado com o acervo Unsplash+ (plus.unsplash.com/premium_photo).
+ * É pago, exige assinatura e não serve para site de cliente. Na busca do
+ * Unsplash, ligue o filtro License → Free para ele desaparecer da lista.
+ *
+ * Pexels: acervo inteiro livre para uso comercial, sem assinatura e sem
+ * atribuição obrigatória. Não existe versão paga misturada, então não tem
+ * como escolher errado.
+ */
+const unsplash = (id: string, w: number) =>
   `https://images.unsplash.com/${id}?fm=jpg&q=75&w=${w}&auto=format&fit=crop`;
 
+const pexels = (id: number, w: number) =>
+  `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=${w}`;
+
 /**
- * Só o hero usa foto. Os cards de serviço não têm imagem de propósito.
- *
- * MOTIVO: eles já têm ícone em círculo, título, descrição e chips. A foto
- * não acrescentava informação — decorava. E foto de banco de imagem em card
- * de serviço erra o contexto com facilidade: numa versão anterior, "Exames"
- * mostrava uma mulher com cachorro na neve, num site de clínica em cidade
- * de praia.
- *
- * Compare com o Projeto Entre Patas, de onde vem esta linguagem visual: lá
- * a foto É a informação (a cara do animal que está para adoção). Aqui seria
- * enfeite. Usos diferentes.
- *
- * QUANDO ENTRA FOTO: na versão de um cliente real, com fotos da clínica
- * dele — equipe, recepção, os animais atendidos. Aí a imagem significa algo
- * e o componente FotoServico volta.
+ * Todas as quatro escolhidas pelo Bruno vendo a imagem — não por descrição.
+ * A tentativa anterior, feita lendo legenda de banco de imagem, produziu uma
+ * mulher com cachorro NA NEVE no card de Exames, num site de clínica em
+ * cidade de praia. Quem escolhe foto precisa ver a foto.
  */
 const FOTOS = {
-  // Eric Ward — "photo of man hugging tan dog". Abraço, cachorro caramelo.
-  hero: foto('photo-1522276498395-f4f68f7f8454', 1400),
+  // Eric Ward (Unsplash) — homem abraçando cachorro caramelo.
+  hero: unsplash('photo-1522276498395-f4f68f7f8454', 1400),
+
+  // Mikhail Nilov (Pexels) — consulta em ambiente clínico.
+  consulta: pexels(7470632, 800),
+  // Mikhail Nilov (Pexels) — check-up de filhote com estetoscópio.
+  vacina: pexels(7469214, 800),
+  // Tima Miroshnichenko (Pexels) — cachorro sendo examinado.
+  exames: pexels(6235240, 800),
+
+  // Hayffield L (Unsplash) — pós-banho na toalha.
+  banho: unsplash('photo-1611173622933-91942d394b04', 800),
 };
 
 const ZAP = `https://wa.me/5511998644004?text=${encodeURIComponent(
@@ -196,6 +209,45 @@ const Chip: React.FC<{ children: React.ReactNode }> = ({ children }) => (
   </span>
 );
 
+/**
+ * Slot vazio ou foto que falha viram ícone sobre fundo menta. Nos dois casos
+ * o card fica limpo e intencional — nunca imagem quebrada, nunca buraco.
+ *
+ * Sem loading="lazy" de propósito: a imagem precisa TENTAR carregar para o
+ * onError disparar.
+ */
+const FotoServico: React.FC<{
+  src: string;
+  alt: string;
+  icone: React.ElementType;
+}> = ({ src, alt, icone: Icone }) => {
+  const [falhou, setFalhou] = React.useState(false);
+
+  if (!src || falhou) {
+    return (
+      <div
+        className="flex h-40 w-full items-center justify-center bg-[#E4F5EB]"
+        role="img"
+        aria-label={alt}
+      >
+        <Icone size={40} className="text-[#157347]/45" aria-hidden="true" strokeWidth={1.5} />
+      </div>
+    );
+  }
+
+  return (
+    <img
+      src={src}
+      alt={alt}
+      decoding="async"
+      width={800}
+      height={320}
+      onError={() => setFalhou(true)}
+      className="h-40 w-full object-cover"
+    />
+  );
+};
+
 const Estrelas: React.FC = () => (
   <div className="mb-3 flex gap-0.5 text-[#E8842C]" aria-label="5 de 5 estrelas">
     {[0, 1, 2, 3, 4].map((i) => (
@@ -209,24 +261,32 @@ const Estrelas: React.FC = () => (
 const SERVICOS = [
   {
     icone: Stethoscope,
+    img: FOTOS.consulta,
+    alt: 'Atendimento de um cachorro na clínica',
     titulo: 'Consulta',
     desc: 'Clínica geral para cães e gatos, com hora marcada ou encaixe no mesmo dia.',
     chips: ['Cães', 'Gatos', 'Hora marcada'],
   },
   {
     icone: Syringe,
+    img: FOTOS.vacina,
+    alt: 'Filhote no colo depois da vacina',
     titulo: 'Vacinação',
     desc: 'Vacinas importadas, carteirinha em dia e lembrete da próxima dose.',
     chips: ['V8 e V10', 'Antirrábica', 'Carteirinha'],
   },
   {
     icone: PawPrint,
+    img: FOTOS.exames,
+    alt: 'Interior claro de uma clínica veterinária',
     titulo: 'Exames',
     desc: 'Laboratório, ultrassom e raio-X no local, sem precisar ir pra outra cidade.',
     chips: ['Ultrassom', 'Raio-X', 'Sangue'],
   },
   {
     icone: Scissors,
+    img: FOTOS.banho,
+    alt: 'Cachorro enrolado numa toalha depois do banho',
     titulo: 'Banho e tosa',
     desc: 'Higiene e tosa com quem conhece o jeito do seu pet.',
     chips: ['Tosa higiênica', 'Hidratação'],
@@ -415,8 +475,9 @@ const DemoPage: React.FC = () => {
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {SERVICOS.map((s, i) => (
             <Reveal key={s.titulo} delay={i * 80} className="h-full">
-              <article className="flex h-full flex-col rounded-3xl bg-white p-6 ring-1 ring-[#E6EBE9] transition-shadow hover:shadow-[0_4px_16px_rgba(10,42,71,0.07)]">
-                <div className="flex flex-1 flex-col">
+              <article className="flex h-full flex-col overflow-hidden rounded-3xl bg-white ring-1 ring-[#E6EBE9] transition-shadow hover:shadow-[0_4px_16px_rgba(10,42,71,0.07)]">
+                <FotoServico src={s.img} alt={s.alt} icone={s.icone} />
+                <div className="flex flex-1 flex-col p-6">
                   <CirculoIcone icone={s.icone} />
                   <h3 className="text-lg font-bold text-[#0A2A47]">{s.titulo}</h3>
                   <p className="mt-2 flex-1 text-[14px] leading-relaxed text-[#5A6B75]">
