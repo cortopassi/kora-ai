@@ -74,8 +74,8 @@ const FOTOS = {
   // Tima Miroshnichenko (Pexels) — cachorro sendo examinado.
   exames: pexels(6235240, 800),
 
-  // Hayffield L (Unsplash) — pós-banho na toalha.
-  banho: unsplash('photo-1611173622933-91942d394b04', 800),
+  // Goochie Poochie Grooming (Pexels) — profissional trabalhando na tosa.
+  banho: pexels(19145895, 800),
 };
 
 const ZAP = `https://wa.me/5511998644004?text=${encodeURIComponent(
@@ -286,7 +286,7 @@ const SERVICOS = [
   {
     icone: Scissors,
     img: FOTOS.banho,
-    alt: 'Cachorro enrolado numa toalha depois do banho',
+    alt: 'Profissional fazendo a tosa de um cachorro',
     titulo: 'Banho e tosa',
     desc: 'Higiene e tosa com quem conhece o jeito do seu pet.',
     chips: ['Tosa higiênica', 'Hidratação'],
