@@ -44,37 +44,25 @@ const foto = (id: string, w: number) =>
   `https://images.unsplash.com/${id}?fm=jpg&q=75&w=${w}&auto=format&fit=crop`;
 
 /**
- * TROCAR ESTAS FOTOS. Só o ID muda — o resto do código não.
+ * Só o hero usa foto. Os cards de serviço não têm imagem de propósito.
  *
- * O QUE PROCURAR: contato gentil, luz quente, bicho relaxado, tutor e pet
- * juntos, sala clara. Foto de clínica veterinária não vende procedimento,
- * vende a calma depois dele.
+ * MOTIVO: eles já têm ícone em círculo, título, descrição e chips. A foto
+ * não acrescentava informação — decorava. E foto de banco de imagem em card
+ * de serviço erra o contexto com facilidade: numa versão anterior, "Exames"
+ * mostrava uma mulher com cachorro na neve, num site de clínica em cidade
+ * de praia.
  *
- * DO QUE FUGIR: agulha, gaiola, aço inox, focinheira, close de dente ou
- * olho, animal com cara de susto. E escolha as quatro com temperatura de
- * luz parecida — mistura de clínico frio com quente parece colagem.
+ * Compare com o Projeto Entre Patas, de onde vem esta linguagem visual: lá
+ * a foto É a informação (a cara do animal que está para adoção). Aqui seria
+ * enfeite. Usos diferentes.
  *
- * COERÊNCIA: o depoimento fala de vira-lata caramelo. Vira-lata lê como
- * Peruíbe; cachorro de raça lê como banco de imagem gringo. Prefira SRD.
- *
- * ATENÇÃO: estes IDs foram escolhidos lendo a descrição do fotógrafo, sem
- * ver a imagem. Confira as cinco no navegador antes de considerar fechado.
- *
- * COMO TROCAR: abra unsplash.com, ache a foto, copie o trecho do endereço
- * que começa com "photo-" e cole no lugar do ID. Se errar o ID, o cartão
- * mostra o ícone sobre fundo menta em vez de imagem quebrada.
+ * QUANDO ENTRA FOTO: na versão de um cliente real, com fotos da clínica
+ * dele — equipe, recepção, os animais atendidos. Aí a imagem significa algo
+ * e o componente FotoServico volta.
  */
 const FOTOS = {
   // Eric Ward — "photo of man hugging tan dog". Abraço, cachorro caramelo.
   hero: foto('photo-1522276498395-f4f68f7f8454', 1400),
-  // Khamkéo — "person touching brown dog sleeping on sofa". A calma depois.
-  consulta: foto('photo-1568365994964-f3ed699784fe', 800),
-  // Tonmoy Iftekhar — "small puppy being held by a person". O colo, não a agulha.
-  vacina: foto('photo-1641744094775-25e555ef943d', 800),
-  // Rico Van de Voorde — "woman holding black and white dog during daytime".
-  exames: foto('photo-1612728802087-d56c04cb141b', 800),
-  // Hayffield L — "brown pomeranian wearing pink towel". Pós-banho, na toalha.
-  banho: foto('photo-1611173622933-91942d394b04', 800),
 };
 
 const ZAP = `https://wa.me/5511998644004?text=${encodeURIComponent(
@@ -208,46 +196,6 @@ const Chip: React.FC<{ children: React.ReactNode }> = ({ children }) => (
   </span>
 );
 
-/**
- * Foto que falha vira ícone sobre fundo menta em vez de imagem quebrada.
- * Mesma rede de segurança da faixa de marcas da home: ID errado do
- * Unsplash não deixa buraco na página.
- *
- * Sem loading="lazy" de propósito — a imagem precisa TENTAR carregar para
- * o onError disparar e o fallback assumir.
- */
-const FotoServico: React.FC<{
-  src: string;
-  alt: string;
-  icone: React.ElementType;
-}> = ({ src, alt, icone: Icone }) => {
-  const [falhou, setFalhou] = React.useState(false);
-
-  if (falhou) {
-    return (
-      <div
-        className="flex h-40 w-full items-center justify-center bg-[#E4F5EB]"
-        role="img"
-        aria-label={alt}
-      >
-        <Icone size={40} className="text-[#157347]/45" aria-hidden="true" strokeWidth={1.5} />
-      </div>
-    );
-  }
-
-  return (
-    <img
-      src={src}
-      alt={alt}
-      decoding="async"
-      width={800}
-      height={320}
-      onError={() => setFalhou(true)}
-      className="h-40 w-full object-cover"
-    />
-  );
-};
-
 const Estrelas: React.FC = () => (
   <div className="mb-3 flex gap-0.5 text-[#E8842C]" aria-label="5 de 5 estrelas">
     {[0, 1, 2, 3, 4].map((i) => (
@@ -260,36 +208,28 @@ const Estrelas: React.FC = () => (
 
 const SERVICOS = [
   {
-    img: FOTOS.consulta,
     icone: Stethoscope,
     titulo: 'Consulta',
     desc: 'Clínica geral para cães e gatos, com hora marcada ou encaixe no mesmo dia.',
     chips: ['Cães', 'Gatos', 'Hora marcada'],
-    alt: 'Mão acariciando um cachorro deitado, tranquilo',
   },
   {
-    img: FOTOS.vacina,
     icone: Syringe,
     titulo: 'Vacinação',
     desc: 'Vacinas importadas, carteirinha em dia e lembrete da próxima dose.',
     chips: ['V8 e V10', 'Antirrábica', 'Carteirinha'],
-    alt: 'Filhote no colo de uma pessoa, calmo',
   },
   {
-    img: FOTOS.exames,
     icone: PawPrint,
     titulo: 'Exames',
     desc: 'Laboratório, ultrassom e raio-X no local, sem precisar ir pra outra cidade.',
     chips: ['Ultrassom', 'Raio-X', 'Sangue'],
-    alt: 'Pessoa segurando um cachorro com cuidado',
   },
   {
-    img: FOTOS.banho,
     icone: Scissors,
     titulo: 'Banho e tosa',
     desc: 'Higiene e tosa com quem conhece o jeito do seu pet.',
     chips: ['Tosa higiênica', 'Hidratação'],
-    alt: 'Cachorro enrolado numa toalha depois do banho',
   },
 ];
 
@@ -475,9 +415,8 @@ const DemoPage: React.FC = () => {
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {SERVICOS.map((s, i) => (
             <Reveal key={s.titulo} delay={i * 80} className="h-full">
-              <article className="flex h-full flex-col overflow-hidden rounded-3xl bg-white ring-1 ring-[#E6EBE9]">
-                <FotoServico src={s.img} alt={s.alt} icone={s.icone} />
-                <div className="flex flex-1 flex-col p-6">
+              <article className="flex h-full flex-col rounded-3xl bg-white p-6 ring-1 ring-[#E6EBE9] transition-shadow hover:shadow-[0_4px_16px_rgba(10,42,71,0.07)]">
+                <div className="flex flex-1 flex-col">
                   <CirculoIcone icone={s.icone} />
                   <h3 className="text-lg font-bold text-[#0A2A47]">{s.titulo}</h3>
                   <p className="mt-2 flex-1 text-[14px] leading-relaxed text-[#5A6B75]">
