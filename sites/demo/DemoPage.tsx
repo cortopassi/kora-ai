@@ -69,8 +69,8 @@ const FOTOS = {
 
   // Mikhail Nilov (Pexels) — consulta em ambiente clínico.
   consulta: pexels(7470632, 800),
-  // Mikhail Nilov (Pexels) — check-up de filhote com estetoscópio.
-  vacina: pexels(7469214, 800),
+  // Gustavo Fring (Pexels) — atendimento sem máscara, luz clara.
+  vacina: pexels(6816857, 800),
   // Tima Miroshnichenko (Pexels) — cachorro sendo examinado.
   exames: pexels(6235240, 800),
 
@@ -270,7 +270,7 @@ const SERVICOS = [
   {
     icone: Syringe,
     img: FOTOS.vacina,
-    alt: 'Filhote no colo depois da vacina',
+    alt: 'Cachorro sendo atendido na clínica',
     titulo: 'Vacinação',
     desc: 'Vacinas importadas, carteirinha em dia e lembrete da próxima dose.',
     chips: ['V8 e V10', 'Antirrábica', 'Carteirinha'],
