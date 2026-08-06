@@ -27,7 +27,7 @@ const cases = [
     categoria: 'Produto · voluntário',
     descricao:
       'Site público e painel de gestão para uma ONG animal atualizar o próprio conteúdo, sem depender de desenvolvedor.',
-    imagem: '/kora-og.png',
+    imagem: '/case-entre-patas.jpg',
     href: '/cases/entre-patas/',
   },
   {
@@ -35,7 +35,7 @@ const cases = [
     categoria: 'Produto próprio',
     descricao:
       'SaaS de métricas de engenharia que integra com o Jira: DORA, visão executiva, sprint review e mapa de OKRs.',
-    imagem: '/kora-og.png',
+    imagem: '/case-agilimetro.jpg',
     href: '/cases/agilimetro/',
   },
 ];
