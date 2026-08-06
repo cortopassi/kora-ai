@@ -4,10 +4,10 @@ import {
   Check,
   X,
   Search,
-  ShieldCheck,
-  Smartphone,
   ArrowRight,
   ChevronDown,
+  Heart,
+  BarChart3,
 } from 'lucide-react';
 import { Reveal } from './fx';
 
@@ -469,6 +469,63 @@ const SitesPage: React.FC = () => {
                   <p className="min-h-0 overflow-hidden pt-3 leading-relaxed text-brand-muted">{r}</p>
                 </div>
               </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Outros trabalhos — dá visibilidade sem competir com o case principal */}
+      <section className="border-t border-brand-border bg-brand-surface">
+        <div className="mx-auto max-w-6xl px-5 py-16 md:py-20">
+          <Reveal>
+            <p className="mb-2 text-sm font-bold uppercase tracking-widest text-brand-primary">
+              Outros trabalhos
+            </p>
+            <h2 className="font-display text-2xl font-bold leading-tight tracking-tight md:text-3xl">
+              A gente também vai além de uma página
+            </h2>
+            <p className="mt-3 max-w-[56ch] leading-relaxed text-brand-muted">
+              Quando o negócio precisa de mais que um site, a KORA constrói —
+              de plataforma pra ONG a produto de software próprio.
+            </p>
+          </Reveal>
+
+          <div className="mt-10 grid gap-5 md:grid-cols-2">
+            {[
+              {
+                titulo: 'Entre Patas',
+                categoria: 'Plataforma · ONG animal',
+                texto: 'Site público e painel de gestão pra uma ONG de proteção animal atualizar tudo sozinha, sem depender de desenvolvedor.',
+                href: '/cases/entre-patas/',
+                icone: Heart,
+              },
+              {
+                titulo: 'Agilímetro',
+                categoria: 'Produto próprio · SaaS',
+                texto: 'Software de métricas de engenharia que integra com o Jira: DORA, visão executiva e mapa de OKRs.',
+                href: '/cases/agilimetro/',
+                icone: BarChart3,
+              },
+            ].map(({ titulo, categoria, texto, href, icone: Icone }) => (
+              <Reveal key={titulo} className="h-full">
+                <a
+                  href={href}
+                  className="group flex h-full flex-col rounded-2xl border border-brand-border bg-brand-bg p-7 transition-colors hover:border-brand-primary/50"
+                >
+                  <div className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brand-primary/10 text-brand-primary">
+                    <Icone size={22} aria-hidden="true" />
+                  </div>
+                  <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-brand-primary">
+                    {categoria}
+                  </p>
+                  <h3 className="mt-2 font-display text-xl font-bold">{titulo}</h3>
+                  <p className="mt-2 flex-1 leading-relaxed text-brand-muted">{texto}</p>
+                  <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-muted transition-colors group-hover:text-brand-primary">
+                    Ver o case
+                    <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                  </span>
+                </a>
+              </Reveal>
             ))}
           </div>
         </div>
