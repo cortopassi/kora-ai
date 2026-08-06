@@ -56,59 +56,77 @@ const SitesPage: React.FC = () => {
         </div>
       </header>
 
-      {/* Hero — split: texto à esquerda, celular com a demo à direita */}
-      <section className="mx-auto grid max-w-6xl items-center gap-14 px-5 pb-16 pt-10 lg:grid-cols-2 lg:gap-8 lg:pb-24 lg:pt-20">
-        <div>
-          <p className="mb-4 inline-block rounded-full bg-brand-primary/10 px-4 py-1.5 text-sm font-semibold text-brand-primary">
-            Sites para negócios locais · Litoral sul de SP
-          </p>
-          <h1 className="font-display text-4xl font-extrabold leading-[1.08] tracking-tight md:text-6xl">
-            Quando alguém procura o que você faz na sua cidade, você aparece?
-          </h1>
-          <p className="mt-6 max-w-[52ch] text-lg leading-relaxed text-brand-muted">
-            A gente monta o site do seu negócio: uma página simples e bonita, com seus
-            serviços, horários e um botão que cai direto no seu WhatsApp.
-            Você não mexe em nada — só responde as mensagens que chegarem.
-          </p>
-          <div className="mt-8 flex flex-wrap items-center gap-4">
-            <CtaWhats grande>Quero meu site</CtaWhats>
+      {/* Hero — texto forte + site do Mike num frame de navegador + faixa de prova */}
+      <section className="mx-auto max-w-6xl px-5 pb-16 pt-10 lg:pb-20 lg:pt-16">
+        <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
+          <div>
+            <p className="mb-5 inline-block rounded-full bg-brand-primary/10 px-4 py-1.5 text-sm font-semibold text-brand-primary">
+              Sites para negócios locais · Litoral sul de SP
+            </p>
+            <h1 className="font-display text-4xl font-extrabold leading-[1.04] tracking-tight md:text-[3.4rem]">
+              Seu cliente já está no Google.{' '}
+              <span className="text-brand-primary">Falta o seu negócio estar lá.</span>
+            </h1>
+            <p className="mt-6 max-w-[46ch] text-lg leading-relaxed text-brand-muted">
+              A gente monta a página do seu negócio — serviços, horário e um botão
+              que cai direto no seu WhatsApp. Você só responde quem chega.
+            </p>
+            <div className="mt-8 flex flex-wrap items-center gap-4">
+              <CtaWhats grande>Quero meu site</CtaWhats>
+              <a
+                href="#case"
+                className="inline-flex items-center gap-1.5 px-2 py-3 font-semibold text-brand-text underline decoration-brand-primary decoration-2 underline-offset-4 transition-colors hover:text-brand-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-primary"
+              >
+                Ver um site nosso no ar
+                <ArrowRight size={16} aria-hidden="true" />
+              </a>
+            </div>
+          </div>
+
+          {/* Site real do Mike num frame de navegador desktop */}
+          <div>
             <a
-              href="#case"
-              className="inline-flex items-center gap-1.5 px-2 py-3 font-semibold text-brand-text underline decoration-brand-primary decoration-2 underline-offset-4 transition-colors hover:text-brand-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-primary"
+              href="https://mwboxe.com.br"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Abrir o site do professor Mike White, no ar em mwboxe.com.br"
+              className="group block overflow-hidden rounded-xl border border-brand-border shadow-2xl shadow-black/50 transition sm:hover:shadow-black/70"
             >
-              Ver um site nosso no ar
-              <ArrowRight size={16} aria-hidden="true" />
+              <div className="flex items-center gap-1.5 border-b border-brand-border bg-brand-surfaceHighlight px-3 py-2.5">
+                <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" aria-hidden="true" />
+                <span className="h-2.5 w-2.5 rounded-full bg-[#febc2e]" aria-hidden="true" />
+                <span className="h-2.5 w-2.5 rounded-full bg-[#28c840]" aria-hidden="true" />
+                <span className="ml-2 flex-1 truncate rounded bg-brand-bg px-3 py-1 text-xs text-brand-muted">
+                  mwboxe.com.br
+                </span>
+              </div>
+              <img
+                src="/mwboxe-screenshot.jpg"
+                alt="Topo do site do professor Mike White, com o hero 'Treine onde você quiser'"
+                className="w-full"
+                width={1263}
+                height={944}
+              />
             </a>
+            <p className="mt-3 text-center text-xs text-brand-muted">
+              mwboxe.com.br — no ar, de verdade.
+            </p>
           </div>
         </div>
 
-        {/* Celular exibindo o site REAL do Mike White */}
-        <div className="flex flex-col items-center gap-4 lg:items-end">
-          <a
-            href="https://mwboxe.com.br"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Abrir o site do professor Mike White, no ar"
-            className="group relative block animate-float focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-primary"
-            style={{ animationDuration: '7s' }}
-          >
-            <div className="w-[290px] rounded-[44px] border-[10px] border-[#0a0f1a] bg-[#0a0f1a] shadow-2xl shadow-black/50 ring-1 ring-white/10 transition-transform duration-300 sm:group-hover:-translate-y-1">
-              <div className="relative h-[585px] w-[270px] overflow-hidden rounded-[34px] bg-brand-surface">
-                <div className="absolute left-1/2 top-2 z-10 h-5 w-24 -translate-x-1/2 rounded-full bg-[#0a0f1a]" aria-hidden="true" />
-                {/* PROVISÓRIO: screenshot mobile 375px de mwboxe.com.br pendente.
-                    Usando o og do site enquanto o print real não chega. */}
-                <img
-                  src="/case-mike-white.jpg"
-                  alt="Site do professor Mike White, no ar em mwboxe.com.br"
-                  className="h-full w-full object-cover"
-                />
-              </div>
+        {/* Faixa de prova */}
+        <dl className="mt-14 grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-brand-border bg-brand-border sm:grid-cols-3">
+          {[
+            ['1 página', 'direto no WhatsApp'],
+            ['No ar em dias', 'não em meses'],
+            ['R$ 199/mês', 'sem fidelidade'],
+          ].map(([valor, rotulo]) => (
+            <div key={valor} className="bg-brand-bg px-6 py-5">
+              <dt className="font-display text-xl font-extrabold text-brand-text">{valor}</dt>
+              <dd className="mt-0.5 text-sm text-brand-muted">{rotulo}</dd>
             </div>
-          </a>
-          <span className="whitespace-nowrap rounded-full bg-brand-surface px-4 py-1.5 text-xs font-semibold text-brand-text">
-            mwboxe.com.br — no ar, de verdade.
-          </span>
-        </div>
+          ))}
+        </dl>
       </section>
 
       {/* Seção farol — o case real é a maior prova da página */}
