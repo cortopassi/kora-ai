@@ -60,66 +60,66 @@ const SitesPage: React.FC = () => {
       <section className="mx-auto grid max-w-6xl items-center gap-14 px-5 pb-16 pt-10 lg:grid-cols-2 lg:gap-8 lg:pb-24 lg:pt-20">
         <div>
           <p className="mb-4 inline-block rounded-full bg-brand-primary/10 px-4 py-1.5 text-sm font-semibold text-brand-primary">
-            Sites para negócios locais
+            Sites para negócios locais · Litoral sul de SP
           </p>
           <h1 className="font-display text-4xl font-extrabold leading-[1.08] tracking-tight md:text-6xl">
-            Quando alguém procura veterinário na sua cidade, sua clínica aparece?
+            Quando alguém procura o que você faz na sua cidade, você aparece?
           </h1>
           <p className="mt-6 max-w-[52ch] text-lg leading-relaxed text-brand-muted">
-            A gente monta o site da sua clínica: uma página simples e bonita, com seus
-            serviços, horários, endereço e um botão que cai direto no seu WhatsApp.
+            A gente monta o site do seu negócio: uma página simples e bonita, com seus
+            serviços, horários e um botão que cai direto no seu WhatsApp.
             Você não mexe em nada — só responde as mensagens que chegarem.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <CtaWhats grande>Quero meu site</CtaWhats>
             <a
-              href="/sites/demo/"
+              href="#case"
               className="inline-flex items-center gap-1.5 px-2 py-3 font-semibold text-brand-text underline decoration-brand-primary decoration-2 underline-offset-4 transition-colors hover:text-brand-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-primary"
             >
-              Ver um exemplo pronto
+              Ver um site nosso no ar
               <ArrowRight size={16} aria-hidden="true" />
             </a>
           </div>
         </div>
 
-        {/* Celular com a demo real rodando dentro */}
-        <div className="flex justify-center lg:justify-end">
+        {/* Celular exibindo o site REAL do Mike White */}
+        <div className="flex flex-col items-center gap-4 lg:items-end">
           <a
-            href="/sites/demo/"
-            aria-label="Abrir o site de exemplo da Clínica Maré Mansa"
-            className="group relative block animate-float pb-5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-primary"
+            href="https://mwboxe.com.br"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Abrir o site do professor Mike White, no ar"
+            className="group relative block animate-float focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-primary"
             style={{ animationDuration: '7s' }}
           >
             <div className="w-[290px] rounded-[44px] border-[10px] border-[#0a0f1a] bg-[#0a0f1a] shadow-2xl shadow-black/50 ring-1 ring-white/10 transition-transform duration-300 sm:group-hover:-translate-y-1">
               <div className="relative h-[585px] w-[270px] overflow-hidden rounded-[34px] bg-brand-surface">
                 <div className="absolute left-1/2 top-2 z-10 h-5 w-24 -translate-x-1/2 rounded-full bg-[#0a0f1a]" aria-hidden="true" />
-                <iframe
-                  src="/sites/demo/"
-                  title="Prévia do site de exemplo"
-                  loading="lazy"
-                  tabIndex={-1}
-                  aria-hidden="true"
-                  className="pointer-events-none origin-top-left"
-                  style={{ width: '390px', height: '845px', transform: 'scale(0.6923)' }}
+                {/* PROVISÓRIO: screenshot mobile 375px de mwboxe.com.br pendente.
+                    Usando o og do site enquanto o print real não chega. */}
+                <img
+                  src="/case-mike-white.jpg"
+                  alt="Site do professor Mike White, no ar em mwboxe.com.br"
+                  className="h-full w-full object-cover"
                 />
               </div>
             </div>
-            <span className="absolute bottom-0 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-brand-surface px-4 py-1.5 text-xs font-semibold text-brand-text">
-              Toque para ver o exemplo
-            </span>
           </a>
+          <span className="whitespace-nowrap rounded-full bg-brand-surface px-4 py-1.5 text-xs font-semibold text-brand-text">
+            mwboxe.com.br — no ar, de verdade.
+          </span>
         </div>
       </section>
 
-      {/* Feito de verdade — case real no ar */}
-      <section className="border-y border-brand-border bg-brand-primary/[0.04]">
-        <div className="mx-auto grid max-w-6xl items-center gap-8 px-5 py-16 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
+      {/* Seção farol — o case real é a maior prova da página */}
+      <section id="case" className="scroll-mt-20 border-y border-brand-border bg-brand-surface">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-20 md:py-28 lg:grid-cols-2 lg:gap-14">
           <Reveal>
             <a
               href="https://mwboxe.com.br"
               target="_blank"
               rel="noopener noreferrer"
-              className="block overflow-hidden rounded-2xl border border-brand-border shadow-sm transition sm:hover:shadow-md"
+              className="block overflow-hidden rounded-3xl border border-brand-border shadow-xl shadow-black/30 transition sm:hover:shadow-2xl"
             >
               <img
                 src="/case-mike-white.jpg"
@@ -132,29 +132,98 @@ const SitesPage: React.FC = () => {
           </Reveal>
           <Reveal delay={120}>
             <div>
-              <p className="mb-3 text-sm font-bold uppercase tracking-widest text-brand-primary">
-                Feito de verdade, no ar agora
+              <p className="mb-4 text-sm font-bold uppercase tracking-widest text-brand-primary">
+                Feito de verdade
               </p>
-              <h2 className="font-display text-2xl font-bold leading-tight md:text-3xl">
-                Site do professor de boxe Mike White — no ar em mwboxe.com.br
+              <h2 className="font-display text-3xl font-extrabold leading-tight tracking-tight md:text-4xl">
+                O professor campeão que o Google não encontrava
               </h2>
-              <div className="mt-6 flex flex-wrap gap-3">
+              <p className="mt-6 max-w-[54ch] text-lg leading-relaxed text-brand-muted">
+                Mike White é campeão de boxe com mais de 2 mil seguidores no
+                Instagram — e até semana passada, invisível na busca. Hoje ele
+                tem site em domínio próprio, perfil no Google Maps com WhatsApp
+                a um toque e avaliação real de aluno publicada. Foi o primeiro
+                site do nosso braço de negócios locais. O seu pode ser o
+                próximo.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-3">
                 <a
                   href="/cases/mike-white/"
-                  className="inline-flex items-center gap-2 rounded-full bg-brand-primary px-6 py-3 font-semibold text-brand-text transition hover:bg-brand-primary"
+                  className="inline-flex items-center gap-2 rounded-full bg-brand-primary px-6 py-3 font-semibold text-white transition hover:brightness-110 active:scale-[0.98]"
                 >
-                  Ver o case
+                  Ver o case completo
                 </a>
                 <a
                   href="https://mwboxe.com.br"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full border border-brand-border px-6 py-3 font-semibold text-brand-text transition hover:bg-brand-surface"
+                  className="inline-flex items-center gap-2 rounded-full border border-brand-primary px-6 py-3 font-semibold text-brand-primary transition hover:bg-brand-primary hover:text-white"
                 >
-                  Ver o site
+                  Abrir o site ao vivo
                 </a>
               </div>
             </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Seção demo — test-drive, não prova */}
+      <section className="border-b border-brand-border">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-20 md:py-28 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:gap-14">
+          <Reveal>
+            <div>
+              <p className="mb-4 text-sm font-bold uppercase tracking-widest text-brand-primary">
+                Experimente por dentro
+              </p>
+              <h2 className="font-display text-3xl font-extrabold leading-tight tracking-tight md:text-4xl">
+                Quer ver como ficaria pro seu negócio?
+              </h2>
+              <p className="mt-6 max-w-[54ch] text-lg leading-relaxed text-brand-muted">
+                Montamos uma clínica veterinária de exemplo — a Maré Mansa —
+                pra você navegar à vontade e sentir como seu cliente vai usar:
+                serviços, horários e o botão de WhatsApp sempre à mão. É
+                fictícia, e é exatamente o padrão do que entregamos.
+              </p>
+              <div className="mt-8">
+                <a
+                  href="/sites/demo/"
+                  className="inline-flex items-center gap-2 rounded-full border border-brand-border px-6 py-3 font-semibold text-brand-text transition hover:bg-brand-surface"
+                >
+                  Navegar na demo
+                  <ArrowRight size={18} aria-hidden="true" />
+                </a>
+              </div>
+            </div>
+          </Reveal>
+
+          {/* Celular com a demo real rodando dentro */}
+          <Reveal delay={120}>
+          <div className="flex justify-center lg:justify-end">
+            <a
+              href="/sites/demo/"
+              aria-label="Abrir o site de exemplo da Clínica Maré Mansa"
+              className="group relative block animate-float pb-5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-primary"
+              style={{ animationDuration: '7s' }}
+            >
+              <div className="w-[290px] rounded-[44px] border-[10px] border-[#0a0f1a] bg-[#0a0f1a] shadow-2xl shadow-black/50 ring-1 ring-white/10 transition-transform duration-300 sm:group-hover:-translate-y-1">
+                <div className="relative h-[585px] w-[270px] overflow-hidden rounded-[34px] bg-brand-surface">
+                  <div className="absolute left-1/2 top-2 z-10 h-5 w-24 -translate-x-1/2 rounded-full bg-[#0a0f1a]" aria-hidden="true" />
+                  <iframe
+                    src="/sites/demo/"
+                    title="Prévia do site de exemplo"
+                    loading="lazy"
+                    tabIndex={-1}
+                    aria-hidden="true"
+                    className="pointer-events-none origin-top-left"
+                    style={{ width: '390px', height: '845px', transform: 'scale(0.6923)' }}
+                  />
+                </div>
+              </div>
+              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-brand-surface px-4 py-1.5 text-xs font-semibold text-brand-text">
+                Toque para navegar
+              </span>
+            </a>
+          </div>
           </Reveal>
         </div>
       </section>
