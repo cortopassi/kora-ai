@@ -37,6 +37,7 @@ const cases = [
       'SaaS de métricas de engenharia que integra com o Jira: DORA, visão executiva, sprint review e mapa de OKRs.',
     imagem: '/case-agilimetro.jpg',
     posicao: 'object-[center_35%]',
+    escurece: true,
     href: '/cases/agilimetro/',
   },
 ];
@@ -66,13 +67,16 @@ const Cases: React.FC = () => {
                   href={c.href}
                   className="group relative flex h-full flex-col overflow-hidden rounded-brand border border-brand-border bg-brand-surface transition-colors duration-500 hover:border-brand-primary/50"
                 >
-                  <div className="aspect-[1200/630] w-full overflow-hidden border-b border-brand-border">
+                  <div className="relative aspect-[1200/630] w-full overflow-hidden border-b border-brand-border">
                     <img
                       src={c.imagem}
                       alt={`Case ${c.titulo}`}
                       loading="lazy"
                       className={`h-full w-full object-cover ${c.posicao ?? ''}`}
                     />
+                    {c.escurece && (
+                      <div className="absolute inset-0 bg-brand-bg/25" aria-hidden="true" />
+                    )}
                   </div>
                   <div className="flex flex-1 flex-col p-7">
                     <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.16em] text-brand-primary">
