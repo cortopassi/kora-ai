@@ -119,7 +119,7 @@ const SitesPage: React.FC = () => {
               href="https://mwboxe.com.br"
               target="_blank"
               rel="noopener noreferrer"
-              className="block overflow-hidden rounded-2xl border border-stone-200 shadow-sm transition hover:shadow-md"
+              className="block overflow-hidden rounded-2xl border border-stone-200 shadow-sm transition sm:hover:shadow-md"
             >
               <img
                 src="/case-mike-white.jpg"

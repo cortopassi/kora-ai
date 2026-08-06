@@ -71,7 +71,7 @@ const Cases: React.FC = () => {
                       src={c.imagem}
                       alt={`Case ${c.titulo}`}
                       loading="lazy"
-                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="h-full w-full object-cover transition-transform duration-700 sm:group-hover:scale-105"
                     />
                   </div>
                   <div className="flex flex-1 flex-col p-7">
