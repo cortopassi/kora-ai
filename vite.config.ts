@@ -11,6 +11,7 @@ export default defineConfig({
         sitesDemo: path.resolve(__dirname, 'sites/demo/index.html'),
         caseEntrePatas: path.resolve(__dirname, 'cases/entre-patas/index.html'),
         caseAgilimetro: path.resolve(__dirname, 'cases/agilimetro/index.html'),
+        caseMikeWhite: path.resolve(__dirname, 'cases/mike-white/index.html'),
         atuacaoEficienciaOperacional: path.resolve(__dirname, 'atuacoes/eficiencia-operacional/index.html'),
         atuacaoTecnologiaDesenvolvimento: path.resolve(__dirname, 'atuacoes/tecnologia-desenvolvimento/index.html'),
         atuacaoSistemasDadosSap: path.resolve(__dirname, 'atuacoes/sistemas-dados-sap/index.html'),
