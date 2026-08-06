@@ -93,12 +93,17 @@ export const Tilt: React.FC<{
   className?: string;
 }> = ({ children, max = 4, className = '' }) => {
   const ref = useRef<HTMLDivElement>(null);
+  // Só liga will-change/transição quando o tilt de fato roda (desktop com
+  // mouse). No mobile o wrapper fica inerte — will-change permanente
+  // promovia a camada e causava tremor sub-pixel em telas densas.
+  const [ativo, setAtivo] = useState(false);
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     if (!window.matchMedia('(pointer: fine)').matches) return;
+    setAtivo(true);
 
     let raf = 0;
     const mover = (e: MouseEvent) => {
@@ -126,7 +131,10 @@ export const Tilt: React.FC<{
   }, [max]);
 
   return (
-    <div ref={ref} className={`transition-transform duration-300 ease-out will-change-transform ${className}`}>
+    <div
+      ref={ref}
+      className={`${ativo ? 'transition-transform duration-300 ease-out will-change-transform' : ''} ${className}`}
+    >
       {children}
     </div>
   );
