@@ -40,8 +40,8 @@ const SitesPage: React.FC = () => {
       {/* Header */}
       <header className="border-b border-stone-200 bg-stone-50/90 backdrop-blur-sm sticky top-0 z-20">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
-          <a href="/" className="flex items-baseline gap-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700">
-            <span className="font-display text-xl font-bold tracking-tight">KORA</span>
+          <a href="/" className="flex items-center gap-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700">
+            <img src="/kora-wordmark-preto.png" alt="KORA" className="h-5 w-auto" />
             <span className="hidden text-sm text-stone-500 sm:inline">para negócios locais</span>
           </a>
           <a
