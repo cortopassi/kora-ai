@@ -18,7 +18,7 @@ const PRECO_MENSAL = 'R$ 199';
 const PRECO_ANUAL = 'R$ 1.990';
 
 const ZAP = 'https://wa.me/5511998644004';
-const ZAP_PRINCIPAL = `${ZAP}?text=${encodeURIComponent('Oi! Quero um site para a minha clínica.')}`;
+const ZAP_PRINCIPAL = `${ZAP}?text=${encodeURIComponent('Oi! Quero um site para o meu negócio.')}`;
 
 const CtaWhats: React.FC<{ children: React.ReactNode; grande?: boolean }> = ({ children, grande }) => (
   <a
@@ -235,12 +235,12 @@ const SitesPage: React.FC = () => {
             {
               icone: Search,
               titulo: 'Ser encontrado',
-              texto: 'Quem precisa de veterinário procura no Google. Seu site já sai montado pra essa busca — a gente mostra como logo abaixo.',
+              texto: 'Quem precisa do que você faz procura no Google. Seu site já sai montado pra essa busca — a gente mostra como logo abaixo.',
             },
             {
               icone: ShieldCheck,
               titulo: 'Passar confiança',
-              texto: 'Um site bem feito mostra que a clínica é séria — antes mesmo do primeiro "oi" no WhatsApp.',
+              texto: 'Um site bem feito mostra que o negócio é sério — antes mesmo do primeiro "oi" no WhatsApp.',
             },
             {
               icone: Smartphone,
@@ -266,7 +266,7 @@ const SitesPage: React.FC = () => {
             Feito pra aparecer no Google
           </p>
           <h2 className="font-display text-3xl font-extrabold tracking-tight md:text-4xl">
-            Seu cliente digita "veterinário em Peruíbe". Quem ele encontra?
+            Seu cliente digita o que precisa. Quem ele encontra?
           </h2>
           <p className="mt-5 max-w-[54ch] text-lg leading-relaxed text-brand-muted">
             A maioria dos sites baratos é bonita só por fora: o Google não
@@ -305,24 +305,24 @@ const SitesPage: React.FC = () => {
             </p>
             <div className="flex items-center gap-3 rounded-full border border-stone-200 px-5 py-3 shadow-sm">
               <Search size={18} className="flex-none text-stone-400" />
-              <span className="truncate text-stone-700">veterinário em peruíbe</span>
+              <span className="truncate text-stone-700">aula de boxe em peruíbe</span>
             </div>
             <div className="mt-6 rounded-2xl border-2 border-brand-primary bg-brand-primary/5 p-5">
               <div className="flex items-center gap-2">
                 <span className="flex h-7 w-7 items-center justify-center rounded-full bg-brand-primary text-[10px] font-bold text-white">
-                  MM
+                  MW
                 </span>
                 <div className="min-w-0">
-                  <p className="truncate text-xs font-semibold text-stone-700">Clínica Maré Mansa</p>
-                  <p className="truncate text-[11px] text-stone-500">maremansa.com.br</p>
+                  <p className="truncate text-xs font-semibold text-stone-700">Mike White — Professor de Boxe</p>
+                  <p className="truncate text-[11px] text-stone-500">mwboxe.com.br</p>
                 </div>
               </div>
               <p className="mt-2 font-semibold text-brand-primary">
-                Clínica Veterinária em Peruíbe | Maré Mansa
+                Aula de Boxe e Muay Thai em Peruíbe | Prof. Mike White
               </p>
               <p className="mt-1 text-sm leading-snug text-stone-600">
-                Consultas, vacinas, banho e tosa com hora marcada. Atendemos
-                Peruíbe e região. Fale agora pelo WhatsApp.
+                Aulas de boxe e muay thai em Peruíbe: turmas infantil e adulto,
+                atendimento a domicílio e primeira aula grátis.
               </p>
             </div>
             <div className="mt-4 space-y-3 px-1 opacity-50">
@@ -345,7 +345,7 @@ const SitesPage: React.FC = () => {
         <div className="mt-10 grid gap-10 md:grid-cols-2">
           <ul className="space-y-4">
             {[
-              'Nome, fotos e a cara da sua clínica',
+              'Nome, fotos e a cara do seu negócio',
               'Seus serviços, do jeito que você oferece',
               'Horário de atendimento e endereço',
               'Botão de WhatsApp em destaque, sempre à mão',
@@ -377,7 +377,7 @@ const SitesPage: React.FC = () => {
               ))}
             </ul>
             <p className="mt-4 text-sm leading-relaxed text-brand-muted">
-              É uma página só, feita pra apresentar a clínica e trazer cliente pro seu
+              É uma página só, feita pra apresentar o negócio e trazer cliente pro seu
               WhatsApp. Simples de propósito — e por isso cabe no bolso.
             </p>
           </div>
@@ -395,14 +395,14 @@ const SitesPage: React.FC = () => {
             {[
               {
                 titulo: 'Você chama no WhatsApp',
-                texto: 'Manda o nome da clínica, os serviços, o horário e umas fotos. A gente cuida do resto.',
+                texto: 'Manda o nome do seu negócio, os serviços, o horário e umas fotos. A gente cuida do resto.',
               },
               {
                 titulo: 'A gente monta, você aprova',
                 texto: 'Em poucos dias você recebe o site pronto pra ver no celular. Pediu ajuste? A gente ajusta.',
               },
               {
-                titulo: 'Sua clínica no ar',
+                titulo: 'Seu negócio no ar',
                 texto: 'Publicamos no seu endereço e o botão de WhatsApp começa a trabalhar pra você.',
               },
             ].map(({ titulo, texto }, i) => (
@@ -492,8 +492,8 @@ const SitesPage: React.FC = () => {
                 r: 'Ajustes simples — trocar horário, foto, serviço — estão dentro da mensalidade. É só pedir.',
               },
               {
-                p: 'Serve pra outros negócios além de clínica veterinária?',
-                r: 'Serve. Começamos por clínicas veterinárias da região, mas o formato funciona pra qualquer negócio local.',
+                p: 'Serve pra clínica veterinária?',
+                r: 'Serve — inclusive montamos uma demo de clínica pra você navegar (a Maré Mansa, logo acima). E serve pra qualquer negócio local que viva de ser encontrado: professor, salão, oficina, restaurante. Se o seu cliente te procura no Google e no WhatsApp, é pra você.',
               },
             ].map(({ p, r }) => (
               <details key={p} className="group py-4">
