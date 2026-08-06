@@ -15,7 +15,10 @@ const AtuacaoPage: React.FC<{ atuacao: Atuacao }> = ({ atuacao }) => {
     <div className="bg-brand-bg text-brand-text min-h-screen font-sans">
       {/* Topo */}
       <header className="border-b border-brand-border/40">
-        <div className="max-w-container mx-auto px-6 py-5 flex items-center justify-between">
+        <div className="max-w-container mx-auto px-6 py-5 flex items-center justify-between relative">
+          <a href="/" aria-label="KORA — página inicial" className="absolute left-1/2 -translate-x-1/2 hidden sm:block">
+            <img src="/kora-wordmark-branco.png" alt="KORA" className="h-5 w-auto" />
+          </a>
           <a
             href="/"
             aria-label="Voltar para a página inicial"
