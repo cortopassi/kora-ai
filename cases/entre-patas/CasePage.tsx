@@ -104,7 +104,7 @@ const CasePage: React.FC = () => {
         </h1>
 
         <p className="text-lg md:text-xl text-brand-muted max-w-[58ch] leading-relaxed animate-slide-up" style={{ animationDelay: '0.15s' }}>
-          O Entre Patas resgata e encaminha cães e gatos para adoção no litoral
+          O Projeto Entre Patas resgata e encaminha cães e gatos para adoção no litoral
           sul de São Paulo. Precisava de presença na internet — e, mais do que
           isso, de autonomia para mantê-la sem depender de ninguém.
         </p>

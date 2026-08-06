@@ -493,7 +493,7 @@ const SitesPage: React.FC = () => {
           <div className="mt-10 grid gap-5 md:grid-cols-2">
             {[
               {
-                titulo: 'Entre Patas',
+                titulo: 'Projeto Entre Patas',
                 categoria: 'Plataforma · ONG animal',
                 texto: 'Site público e painel de gestão pra uma ONG de proteção animal atualizar tudo sozinha, sem depender de desenvolvedor.',
                 href: '/cases/entre-patas/',

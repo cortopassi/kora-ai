@@ -23,7 +23,7 @@ const cases = [
     href: '/cases/mike-white/',
   },
   {
-    titulo: 'Entre Patas',
+    titulo: 'Projeto Entre Patas',
     categoria: 'Produto · voluntário',
     descricao:
       'Site público e painel de gestão para uma ONG animal atualizar o próprio conteúdo, sem depender de desenvolvedor.',
