@@ -5,6 +5,7 @@ import Clients from './components/Clients';
 import ValueProposition from './components/ValueProposition';
 import Services from './components/Services';
 import Experience from './components/Experience';
+import Cases from './components/Cases';
 import Methodology from './components/Methodology';
 import Testimonials from './components/Testimonials';
 import FooterCTA from './components/FooterCTA';
@@ -23,6 +24,7 @@ const App: React.FC = () => {
         <ValueProposition />
         <Services />
         <Experience />
+        <Cases />
         <Methodology />
         <Testimonials />
         <FooterCTA />
