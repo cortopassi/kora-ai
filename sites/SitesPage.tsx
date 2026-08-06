@@ -129,8 +129,43 @@ const SitesPage: React.FC = () => {
         </dl>
       </section>
 
+      {/* Como funciona — sequência real, então numeração faz sentido */}
+      <section className="border-b border-brand-border bg-brand-surface">
+        <div className="mx-auto max-w-6xl px-5 py-20">
+          <h2 className="font-display text-3xl font-extrabold tracking-tight md:text-4xl">
+            Como funciona
+          </h2>
+          <ol className="mt-10 grid gap-8 md:grid-cols-3">
+            {[
+              {
+                titulo: 'Você chama no WhatsApp',
+                texto: 'Manda o nome do seu negócio, os serviços, o horário e umas fotos. A gente cuida do resto.',
+              },
+              {
+                titulo: 'A gente monta, você aprova',
+                texto: 'Em poucos dias você recebe o site pronto pra ver no celular. Pediu ajuste? A gente ajusta.',
+              },
+              {
+                titulo: 'Seu negócio no ar',
+                texto: 'Publicamos no seu endereço e o botão de WhatsApp começa a trabalhar pra você.',
+              },
+            ].map(({ titulo, texto }, i) => (
+              <li key={titulo}>
+                <Reveal delay={i * 120} className="h-full">
+                <div className="relative h-full rounded-2xl border border-brand-border bg-brand-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/20">
+                <span className="font-display text-4xl font-extrabold text-brand-primary/30">{i + 1}</span>
+                <h3 className="mt-2 font-display text-xl font-bold">{titulo}</h3>
+                <p className="mt-2 leading-relaxed text-brand-muted">{texto}</p>
+                </div>
+                </Reveal>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
       {/* Seção farol — o case real é a maior prova da página */}
-      <section id="case" className="scroll-mt-20 border-y border-brand-border bg-brand-surface">
+      <section id="case" className="scroll-mt-20 border-t-2 border-brand-primary/60 border-b border-brand-border bg-brand-bg">
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-20 md:py-28 lg:grid-cols-2 lg:gap-14">
           <Reveal>
             <a
@@ -185,95 +220,52 @@ const SitesPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Seção demo — test-drive, não prova */}
-      <section className="border-b border-brand-border">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-20 md:py-28 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:gap-14">
-          <Reveal>
-            <div>
-              <p className="mb-4 text-sm font-bold uppercase tracking-widest text-brand-primary">
-                Experimente por dentro
-              </p>
-              <h2 className="font-display text-3xl font-extrabold leading-tight tracking-tight md:text-4xl">
-                Quer ver como ficaria pro seu negócio?
-              </h2>
-              <p className="mt-6 max-w-[54ch] text-lg leading-relaxed text-brand-muted">
-                Montamos uma clínica veterinária de exemplo — a Maré Mansa —
-                pra você navegar à vontade e sentir como seu cliente vai usar:
-                serviços, horários e o botão de WhatsApp sempre à mão. É
-                fictícia, e é exatamente o padrão do que entregamos.
-              </p>
-              <div className="mt-8">
-                <a
-                  href="/sites/demo/"
-                  className="inline-flex items-center gap-2 rounded-full border border-brand-border px-6 py-3 font-semibold text-brand-text transition hover:bg-brand-surface"
-                >
-                  Navegar na demo
-                  <ArrowRight size={18} aria-hidden="true" />
-                </a>
-              </div>
-            </div>
-          </Reveal>
-
-          {/* Celular com a demo real rodando dentro */}
-          <Reveal delay={120}>
-          <div className="flex justify-center lg:justify-end">
-            <a
-              href="/sites/demo/"
-              aria-label="Abrir o site de exemplo da Clínica Maré Mansa"
-              className="group relative block animate-float pb-5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-primary"
-              style={{ animationDuration: '7s' }}
-            >
-              <div className="w-[290px] rounded-[44px] border-[10px] border-[#0a0f1a] bg-[#0a0f1a] shadow-2xl shadow-black/50 ring-1 ring-white/10 transition-transform duration-300 sm:group-hover:-translate-y-1">
-                <div className="relative h-[585px] w-[270px] overflow-hidden rounded-[34px] bg-brand-surface">
-                  <div className="absolute left-1/2 top-2 z-10 h-5 w-24 -translate-x-1/2 rounded-full bg-[#0a0f1a]" aria-hidden="true" />
-                  <iframe
-                    src="/sites/demo/"
-                    title="Prévia do site de exemplo"
-                    loading="lazy"
-                    tabIndex={-1}
-                    aria-hidden="true"
-                    className="pointer-events-none origin-top-left"
-                    style={{ width: '390px', height: '845px', transform: 'scale(0.6923)' }}
-                  />
-                </div>
-              </div>
-              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-brand-surface px-4 py-1.5 text-xs font-semibold text-brand-text">
-                Toque para navegar
-              </span>
-            </a>
+      {/* O que entra / o que não é */}
+      <section className="border-t border-brand-border bg-brand-bg">
+        <div className="mx-auto max-w-6xl px-5 py-20">
+        <h2 className="font-display text-3xl font-extrabold tracking-tight md:text-4xl">
+          O que entra no seu site
+        </h2>
+        <div className="mt-10 grid gap-10 md:grid-cols-2">
+          <ul className="space-y-4">
+            {[
+              'Nome, fotos e a cara do seu negócio',
+              'Seus serviços, do jeito que você oferece',
+              'Horário de atendimento e endereço',
+              'Botão de WhatsApp em destaque, sempre à mão',
+              'Funciona bem no celular — é onde seu cliente está',
+              'Endereço próprio na internet (seu domínio)',
+            ].map((item) => (
+              <li key={item} className="flex items-start gap-3">
+                <span className="mt-0.5 flex h-6 w-6 flex-none items-center justify-center rounded-full bg-brand-primary text-brand-text">
+                  <Check size={14} aria-hidden="true" />
+                </span>
+                <span className="leading-relaxed text-brand-text">{item}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="rounded-2xl border border-brand-border bg-brand-surface p-6">
+            <h3 className="font-display text-lg font-bold">Pra ser honesto: o que não é</h3>
+            <ul className="mt-4 space-y-3">
+              {[
+                'Não é sistema de agendamento',
+                'Não é loja virtual nem catálogo de produtos',
+                'Não tem cadastro, login ou pagamento',
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-3">
+                  <span className="mt-0.5 flex h-6 w-6 flex-none items-center justify-center rounded-full bg-brand-surfaceHighlight text-brand-muted">
+                    <X size={14} aria-hidden="true" />
+                  </span>
+                  <span className="leading-relaxed text-brand-muted">{item}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-4 text-sm leading-relaxed text-brand-muted">
+              É uma página só, feita pra apresentar o negócio e trazer cliente pro seu
+              WhatsApp. Simples de propósito — e por isso cabe no bolso.
+            </p>
           </div>
-          </Reveal>
         </div>
-      </section>
-
-      {/* Por que ter um site */}
-      <section className="border-y border-brand-border bg-brand-surface">
-        <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 md:grid-cols-3">
-          {[
-            {
-              icone: Search,
-              titulo: 'Ser encontrado',
-              texto: 'Quem precisa do que você faz procura no Google. Seu site já sai montado pra essa busca — a gente mostra como logo abaixo.',
-            },
-            {
-              icone: ShieldCheck,
-              titulo: 'Passar confiança',
-              texto: 'Um site bem feito mostra que o negócio é sério — antes mesmo do primeiro "oi" no WhatsApp.',
-            },
-            {
-              icone: Smartphone,
-              titulo: 'Cliente no seu WhatsApp',
-              texto: 'Nada de formulário ou e-mail. A pessoa toca num botão e a conversa já começa no seu celular.',
-            },
-          ].map(({ icone: Icone, titulo, texto }, i) => (
-            <Reveal key={titulo} delay={i * 120}>
-              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-primary/10 text-brand-primary">
-                <Icone size={24} aria-hidden="true" />
-              </div>
-              <h2 className="font-display text-xl font-bold">{titulo}</h2>
-              <p className="mt-2 leading-relaxed text-brand-muted">{texto}</p>
-            </Reveal>
-          ))}
         </div>
       </section>
 
@@ -354,87 +346,34 @@ const SitesPage: React.FC = () => {
         </Reveal>
       </section>
 
-      {/* O que entra / o que não é */}
-      <section className="border-t border-brand-border bg-brand-surface">
-        <div className="mx-auto max-w-6xl px-5 py-20">
-        <h2 className="font-display text-3xl font-extrabold tracking-tight md:text-4xl">
-          O que entra no seu site
-        </h2>
-        <div className="mt-10 grid gap-10 md:grid-cols-2">
-          <ul className="space-y-4">
-            {[
-              'Nome, fotos e a cara do seu negócio',
-              'Seus serviços, do jeito que você oferece',
-              'Horário de atendimento e endereço',
-              'Botão de WhatsApp em destaque, sempre à mão',
-              'Funciona bem no celular — é onde seu cliente está',
-              'Endereço próprio na internet (seu domínio)',
-            ].map((item) => (
-              <li key={item} className="flex items-start gap-3">
-                <span className="mt-0.5 flex h-6 w-6 flex-none items-center justify-center rounded-full bg-brand-primary text-brand-text">
-                  <Check size={14} aria-hidden="true" />
-                </span>
-                <span className="leading-relaxed text-brand-text">{item}</span>
-              </li>
-            ))}
-          </ul>
-          <div className="rounded-2xl border border-brand-border bg-brand-surface p-6">
-            <h3 className="font-display text-lg font-bold">Pra ser honesto: o que não é</h3>
-            <ul className="mt-4 space-y-3">
-              {[
-                'Não é sistema de agendamento',
-                'Não é loja virtual nem catálogo de produtos',
-                'Não tem cadastro, login ou pagamento',
-              ].map((item) => (
-                <li key={item} className="flex items-start gap-3">
-                  <span className="mt-0.5 flex h-6 w-6 flex-none items-center justify-center rounded-full bg-brand-surfaceHighlight text-brand-muted">
-                    <X size={14} aria-hidden="true" />
-                  </span>
-                  <span className="leading-relaxed text-brand-muted">{item}</span>
-                </li>
-              ))}
-            </ul>
-            <p className="mt-4 text-sm leading-relaxed text-brand-muted">
-              É uma página só, feita pra apresentar o negócio e trazer cliente pro seu
-              WhatsApp. Simples de propósito — e por isso cabe no bolso.
-            </p>
-          </div>
-        </div>
-        </div>
-      </section>
-
-      {/* Como funciona — sequência real, então numeração faz sentido */}
-      <section className="border-y border-brand-border bg-brand-bg">
-        <div className="mx-auto max-w-6xl px-5 py-20">
-          <h2 className="font-display text-3xl font-extrabold tracking-tight md:text-4xl">
-            Como funciona
-          </h2>
-          <ol className="mt-10 grid gap-8 md:grid-cols-3">
-            {[
-              {
-                titulo: 'Você chama no WhatsApp',
-                texto: 'Manda o nome do seu negócio, os serviços, o horário e umas fotos. A gente cuida do resto.',
-              },
-              {
-                titulo: 'A gente monta, você aprova',
-                texto: 'Em poucos dias você recebe o site pronto pra ver no celular. Pediu ajuste? A gente ajusta.',
-              },
-              {
-                titulo: 'Seu negócio no ar',
-                texto: 'Publicamos no seu endereço e o botão de WhatsApp começa a trabalhar pra você.',
-              },
-            ].map(({ titulo, texto }, i) => (
-              <li key={titulo}>
-                <Reveal delay={i * 120} className="h-full">
-                <div className="relative h-full rounded-2xl border border-brand-border bg-brand-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/20">
-                <span className="font-display text-4xl font-extrabold text-brand-primary/30">{i + 1}</span>
-                <h3 className="mt-2 font-display text-xl font-bold">{titulo}</h3>
-                <p className="mt-2 leading-relaxed text-brand-muted">{texto}</p>
-                </div>
-                </Reveal>
-              </li>
-            ))}
-          </ol>
+      {/* Seção demo — test-drive, cartão discreto (sem celular) */}
+      <section className="border-b border-brand-border">
+        <div className="mx-auto max-w-6xl px-5 py-14">
+          <Reveal>
+            <div className="flex flex-col gap-6 rounded-2xl border border-brand-border bg-brand-surface p-8 sm:flex-row sm:items-center sm:justify-between md:p-10">
+              <div className="max-w-[62ch]">
+                <p className="mb-2 text-xs font-bold uppercase tracking-widest text-brand-primary">
+                  Experimente por dentro
+                </p>
+                <h2 className="font-display text-2xl font-bold leading-tight tracking-tight">
+                  Quer ver como ficaria pro seu negócio?
+                </h2>
+                <p className="mt-3 leading-relaxed text-brand-muted">
+                  Montamos uma clínica veterinária de exemplo — a Maré Mansa —
+                  pra você navegar à vontade: serviços, horários e o botão de
+                  WhatsApp sempre à mão. É fictícia, e é exatamente o padrão do
+                  que entregamos.
+                </p>
+              </div>
+              <a
+                href="/sites/demo/"
+                className="inline-flex flex-none items-center gap-2 self-start rounded-full bg-brand-primary px-6 py-3 font-semibold text-white transition hover:brightness-110 active:scale-[0.98] sm:self-auto"
+              >
+                Abrir a demo
+                <ArrowRight size={18} aria-hidden="true" />
+              </a>
+            </div>
+          </Reveal>
         </div>
       </section>
 
