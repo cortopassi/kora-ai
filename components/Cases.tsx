@@ -36,6 +36,7 @@ const cases = [
     descricao:
       'SaaS de métricas de engenharia que integra com o Jira: DORA, visão executiva, sprint review e mapa de OKRs.',
     imagem: '/case-agilimetro.jpg',
+    posicao: 'object-[center_35%]',
     href: '/cases/agilimetro/',
   },
 ];
@@ -70,7 +71,7 @@ const Cases: React.FC = () => {
                       src={c.imagem}
                       alt={`Case ${c.titulo}`}
                       loading="lazy"
-                      className="h-full w-full object-cover"
+                      className={`h-full w-full object-cover ${c.posicao ?? ''}`}
                     />
                   </div>
                   <div className="flex flex-1 flex-col p-7">
