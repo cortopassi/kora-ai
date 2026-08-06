@@ -25,7 +25,7 @@ const CtaWhats: React.FC<{ children: React.ReactNode; grande?: boolean }> = ({ c
     href={ZAP_PRINCIPAL}
     target="_blank"
     rel="noopener noreferrer"
-    className={`inline-flex items-center justify-center gap-2 rounded-full bg-teal-700 font-semibold text-white transition-all hover:bg-teal-800 active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700 ${
+    className={`inline-flex items-center justify-center gap-2 rounded-full bg-brand-primary font-semibold text-white transition-all hover:brightness-110 active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-primary ${
       grande ? 'px-8 py-4 text-lg' : 'px-6 py-3 text-base'
     }`}
   >
@@ -36,19 +36,19 @@ const CtaWhats: React.FC<{ children: React.ReactNode; grande?: boolean }> = ({ c
 
 const SitesPage: React.FC = () => {
   return (
-    <div className="min-h-[100dvh] bg-stone-50 text-stone-900 antialiased">
+    <div className="min-h-[100dvh] bg-brand-bg text-brand-text antialiased">
       {/* Header */}
-      <header className="border-b border-stone-200 bg-stone-50/90 backdrop-blur-sm sticky top-0 z-20">
+      <header className="border-b border-brand-border bg-brand-bg/90 backdrop-blur-sm sticky top-0 z-20">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
-          <a href="/" className="flex items-center gap-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700">
-            <img src="/kora-wordmark-preto.png" alt="KORA" className="h-5 w-auto" />
-            <span className="hidden text-sm text-stone-500 sm:inline">para negócios locais</span>
+          <a href="/" className="flex items-center gap-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-primary">
+            <img src="/kora-wordmark-branco.png" alt="KORA" className="h-5 w-auto" />
+            <span className="hidden text-sm text-brand-muted sm:inline">para negócios locais</span>
           </a>
           <a
             href={ZAP_PRINCIPAL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-teal-700 px-4 py-2 text-sm font-semibold text-teal-800 transition-colors hover:bg-teal-700 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700"
+            className="inline-flex items-center gap-2 rounded-full border border-brand-primary px-4 py-2 text-sm font-semibold text-brand-primary transition-colors hover:bg-brand-primary hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-primary"
           >
             <MessageCircle size={16} aria-hidden="true" />
             Chamar no WhatsApp
@@ -59,13 +59,13 @@ const SitesPage: React.FC = () => {
       {/* Hero — split: texto à esquerda, celular com a demo à direita */}
       <section className="mx-auto grid max-w-6xl items-center gap-14 px-5 pb-16 pt-10 lg:grid-cols-2 lg:gap-8 lg:pb-24 lg:pt-20">
         <div>
-          <p className="mb-4 inline-block rounded-full bg-teal-700/10 px-4 py-1.5 text-sm font-semibold text-teal-800">
+          <p className="mb-4 inline-block rounded-full bg-brand-primary/10 px-4 py-1.5 text-sm font-semibold text-brand-primary">
             Sites para negócios locais
           </p>
           <h1 className="font-display text-4xl font-extrabold leading-[1.08] tracking-tight md:text-6xl">
             Quando alguém procura veterinário na sua cidade, sua clínica aparece?
           </h1>
-          <p className="mt-6 max-w-[52ch] text-lg leading-relaxed text-stone-600">
+          <p className="mt-6 max-w-[52ch] text-lg leading-relaxed text-brand-muted">
             A gente monta o site da sua clínica: uma página simples e bonita, com seus
             serviços, horários, endereço e um botão que cai direto no seu WhatsApp.
             Você não mexe em nada — só responde as mensagens que chegarem.
@@ -74,7 +74,7 @@ const SitesPage: React.FC = () => {
             <CtaWhats grande>Quero meu site</CtaWhats>
             <a
               href="/sites/demo/"
-              className="inline-flex items-center gap-1.5 px-2 py-3 font-semibold text-stone-700 underline decoration-teal-700 decoration-2 underline-offset-4 transition-colors hover:text-teal-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700"
+              className="inline-flex items-center gap-1.5 px-2 py-3 font-semibold text-brand-text underline decoration-brand-primary decoration-2 underline-offset-4 transition-colors hover:text-brand-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-primary"
             >
               Ver um exemplo pronto
               <ArrowRight size={16} aria-hidden="true" />
@@ -87,12 +87,12 @@ const SitesPage: React.FC = () => {
           <a
             href="/sites/demo/"
             aria-label="Abrir o site de exemplo da Clínica Maré Mansa"
-            className="group relative block animate-float pb-5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal-700"
+            className="group relative block animate-float pb-5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-primary"
             style={{ animationDuration: '7s' }}
           >
-            <div className="w-[290px] rounded-[44px] border-[10px] border-stone-900 bg-stone-900 shadow-2xl shadow-teal-900/25 transition-transform duration-300 group-hover:-translate-y-1">
-              <div className="relative h-[585px] w-[270px] overflow-hidden rounded-[34px] bg-white">
-                <div className="absolute left-1/2 top-2 z-10 h-5 w-24 -translate-x-1/2 rounded-full bg-stone-900" aria-hidden="true" />
+            <div className="w-[290px] rounded-[44px] border-[10px] border-brand-border bg-brand-surface shadow-2xl shadow-black/40 transition-transform duration-300 group-hover:-translate-y-1">
+              <div className="relative h-[585px] w-[270px] overflow-hidden rounded-[34px] bg-brand-surface">
+                <div className="absolute left-1/2 top-2 z-10 h-5 w-24 -translate-x-1/2 rounded-full bg-brand-surface" aria-hidden="true" />
                 <iframe
                   src="/sites/demo/"
                   title="Prévia do site de exemplo"
@@ -104,7 +104,7 @@ const SitesPage: React.FC = () => {
                 />
               </div>
             </div>
-            <span className="absolute bottom-0 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-stone-900 px-4 py-1.5 text-xs font-semibold text-white">
+            <span className="absolute bottom-0 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-brand-surface px-4 py-1.5 text-xs font-semibold text-brand-text">
               Toque para ver o exemplo
             </span>
           </a>
@@ -112,14 +112,14 @@ const SitesPage: React.FC = () => {
       </section>
 
       {/* Feito de verdade — case real no ar */}
-      <section className="border-y border-stone-200 bg-teal-700/[0.04]">
+      <section className="border-y border-brand-border bg-brand-primary/[0.04]">
         <div className="mx-auto grid max-w-6xl items-center gap-8 px-5 py-16 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
           <Reveal>
             <a
               href="https://mwboxe.com.br"
               target="_blank"
               rel="noopener noreferrer"
-              className="block overflow-hidden rounded-2xl border border-stone-200 shadow-sm transition sm:hover:shadow-md"
+              className="block overflow-hidden rounded-2xl border border-brand-border shadow-sm transition sm:hover:shadow-md"
             >
               <img
                 src="/case-mike-white.jpg"
@@ -132,7 +132,7 @@ const SitesPage: React.FC = () => {
           </Reveal>
           <Reveal delay={120}>
             <div>
-              <p className="mb-3 text-sm font-bold uppercase tracking-widest text-teal-700">
+              <p className="mb-3 text-sm font-bold uppercase tracking-widest text-brand-primary">
                 Feito de verdade, no ar agora
               </p>
               <h2 className="font-display text-2xl font-bold leading-tight md:text-3xl">
@@ -141,7 +141,7 @@ const SitesPage: React.FC = () => {
               <div className="mt-6 flex flex-wrap gap-3">
                 <a
                   href="/cases/mike-white/"
-                  className="inline-flex items-center gap-2 rounded-full bg-teal-700 px-6 py-3 font-semibold text-white transition hover:bg-teal-800"
+                  className="inline-flex items-center gap-2 rounded-full bg-brand-primary px-6 py-3 font-semibold text-brand-text transition hover:bg-brand-primary"
                 >
                   Ver o case
                 </a>
@@ -149,7 +149,7 @@ const SitesPage: React.FC = () => {
                   href="https://mwboxe.com.br"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full border border-stone-300 px-6 py-3 font-semibold text-stone-700 transition hover:bg-stone-100"
+                  className="inline-flex items-center gap-2 rounded-full border border-brand-border px-6 py-3 font-semibold text-brand-text transition hover:bg-brand-surface"
                 >
                   Ver o site
                 </a>
@@ -160,7 +160,7 @@ const SitesPage: React.FC = () => {
       </section>
 
       {/* Por que ter um site */}
-      <section className="border-y border-stone-200 bg-white">
+      <section className="border-y border-brand-border bg-brand-surface">
         <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 md:grid-cols-3">
           {[
             {
@@ -180,11 +180,11 @@ const SitesPage: React.FC = () => {
             },
           ].map(({ icone: Icone, titulo, texto }, i) => (
             <Reveal key={titulo} delay={i * 120}>
-              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-teal-700/10 text-teal-800">
+              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-primary/10 text-brand-primary">
                 <Icone size={24} aria-hidden="true" />
               </div>
               <h2 className="font-display text-xl font-bold">{titulo}</h2>
-              <p className="mt-2 leading-relaxed text-stone-600">{texto}</p>
+              <p className="mt-2 leading-relaxed text-brand-muted">{texto}</p>
             </Reveal>
           ))}
         </div>
@@ -193,13 +193,13 @@ const SitesPage: React.FC = () => {
       {/* SEO — aparecer no Google */}
       <section className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-20 lg:grid-cols-2">
         <Reveal>
-          <p className="mb-3 text-sm font-bold uppercase tracking-widest text-teal-700">
+          <p className="mb-3 text-sm font-bold uppercase tracking-widest text-brand-primary">
             Feito pra aparecer no Google
           </p>
           <h2 className="font-display text-3xl font-extrabold tracking-tight md:text-4xl">
             Seu cliente digita "veterinário em Peruíbe". Quem ele encontra?
           </h2>
-          <p className="mt-5 max-w-[54ch] text-lg leading-relaxed text-stone-600">
+          <p className="mt-5 max-w-[54ch] text-lg leading-relaxed text-brand-muted">
             A maioria dos sites baratos é bonita só por fora: o Google não
             entende o que tem dentro, e a página nunca aparece pra ninguém. O
             seu já sai montado pra busca — é isso que transforma site em
@@ -213,10 +213,10 @@ const SitesPage: React.FC = () => {
               'Pronto pra ligar no seu Perfil da Empresa no Google, o mapinha que aparece nas buscas da região',
             ].map((item) => (
               <li key={item} className="flex items-start gap-3">
-                <span className="mt-0.5 flex h-6 w-6 flex-none items-center justify-center rounded-full bg-teal-700 text-white">
+                <span className="mt-0.5 flex h-6 w-6 flex-none items-center justify-center rounded-full bg-brand-primary text-brand-text">
                   <Check size={14} aria-hidden="true" />
                 </span>
-                <span className="leading-relaxed text-stone-700">{item}</span>
+                <span className="leading-relaxed text-brand-text">{item}</span>
               </li>
             ))}
           </ul>
@@ -225,7 +225,7 @@ const SitesPage: React.FC = () => {
         {/* Mock de resultado de busca */}
         <Reveal delay={150} className="select-none">
         <div aria-hidden="true">
-          <div className="rounded-3xl border border-stone-200 bg-white p-6 shadow-xl shadow-teal-900/5 md:p-8">
+          <div className="rounded-3xl border border-brand-border bg-white p-6 shadow-xl shadow-black/20 md:p-8">
             <p className="mb-4 text-center font-sans text-3xl font-medium tracking-tight">
               <span className="text-[#4285F4]">G</span>
               <span className="text-[#EA4335]">o</span>
@@ -238,17 +238,17 @@ const SitesPage: React.FC = () => {
               <Search size={18} className="flex-none text-stone-400" />
               <span className="truncate text-stone-700">veterinário em peruíbe</span>
             </div>
-            <div className="mt-6 rounded-2xl border-2 border-teal-700 bg-teal-700/5 p-5">
+            <div className="mt-6 rounded-2xl border-2 border-brand-primary bg-brand-primary/5 p-5">
               <div className="flex items-center gap-2">
-                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-teal-700 text-[10px] font-bold text-white">
+                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-brand-primary text-[10px] font-bold text-white">
                   MM
                 </span>
                 <div className="min-w-0">
                   <p className="truncate text-xs font-semibold text-stone-700">Clínica Maré Mansa</p>
-                  <p className="truncate text-[11px] text-stone-400">maremansa.com.br</p>
+                  <p className="truncate text-[11px] text-stone-500">maremansa.com.br</p>
                 </div>
               </div>
-              <p className="mt-2 font-semibold text-teal-900">
+              <p className="mt-2 font-semibold text-brand-primary">
                 Clínica Veterinária em Peruíbe | Maré Mansa
               </p>
               <p className="mt-1 text-sm leading-snug text-stone-600">
@@ -262,13 +262,13 @@ const SitesPage: React.FC = () => {
               <div className="h-3 w-4/5 rounded-full bg-stone-200" />
             </div>
           </div>
-          <p className="mt-3 text-center text-xs text-stone-400">Simulação ilustrativa de resultado de busca</p>
+          <p className="mt-3 text-center text-xs text-brand-muted">Simulação ilustrativa de resultado de busca</p>
         </div>
         </Reveal>
       </section>
 
       {/* O que entra / o que não é */}
-      <section className="border-t border-stone-200 bg-white">
+      <section className="border-t border-brand-border bg-brand-surface">
         <div className="mx-auto max-w-6xl px-5 py-20">
         <h2 className="font-display text-3xl font-extrabold tracking-tight md:text-4xl">
           O que entra no seu site
@@ -284,14 +284,14 @@ const SitesPage: React.FC = () => {
               'Endereço próprio na internet (seu domínio)',
             ].map((item) => (
               <li key={item} className="flex items-start gap-3">
-                <span className="mt-0.5 flex h-6 w-6 flex-none items-center justify-center rounded-full bg-teal-700 text-white">
+                <span className="mt-0.5 flex h-6 w-6 flex-none items-center justify-center rounded-full bg-brand-primary text-brand-text">
                   <Check size={14} aria-hidden="true" />
                 </span>
-                <span className="leading-relaxed text-stone-700">{item}</span>
+                <span className="leading-relaxed text-brand-text">{item}</span>
               </li>
             ))}
           </ul>
-          <div className="rounded-2xl border border-stone-200 bg-white p-6">
+          <div className="rounded-2xl border border-brand-border bg-brand-surface p-6">
             <h3 className="font-display text-lg font-bold">Pra ser honesto: o que não é</h3>
             <ul className="mt-4 space-y-3">
               {[
@@ -300,14 +300,14 @@ const SitesPage: React.FC = () => {
                 'Não tem cadastro, login ou pagamento',
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3">
-                  <span className="mt-0.5 flex h-6 w-6 flex-none items-center justify-center rounded-full bg-stone-200 text-stone-500">
+                  <span className="mt-0.5 flex h-6 w-6 flex-none items-center justify-center rounded-full bg-brand-surfaceHighlight text-brand-muted">
                     <X size={14} aria-hidden="true" />
                   </span>
-                  <span className="leading-relaxed text-stone-600">{item}</span>
+                  <span className="leading-relaxed text-brand-muted">{item}</span>
                 </li>
               ))}
             </ul>
-            <p className="mt-4 text-sm leading-relaxed text-stone-500">
+            <p className="mt-4 text-sm leading-relaxed text-brand-muted">
               É uma página só, feita pra apresentar a clínica e trazer cliente pro seu
               WhatsApp. Simples de propósito — e por isso cabe no bolso.
             </p>
@@ -317,7 +317,7 @@ const SitesPage: React.FC = () => {
       </section>
 
       {/* Como funciona — sequência real, então numeração faz sentido */}
-      <section className="border-y border-stone-200 bg-stone-50">
+      <section className="border-y border-brand-border bg-brand-bg">
         <div className="mx-auto max-w-6xl px-5 py-20">
           <h2 className="font-display text-3xl font-extrabold tracking-tight md:text-4xl">
             Como funciona
@@ -339,10 +339,10 @@ const SitesPage: React.FC = () => {
             ].map(({ titulo, texto }, i) => (
               <li key={titulo}>
                 <Reveal delay={i * 120} className="h-full">
-                <div className="relative h-full rounded-2xl border border-stone-200 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-teal-900/5">
-                <span className="font-display text-4xl font-extrabold text-teal-700/30">{i + 1}</span>
+                <div className="relative h-full rounded-2xl border border-brand-border bg-brand-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/20">
+                <span className="font-display text-4xl font-extrabold text-brand-primary/30">{i + 1}</span>
                 <h3 className="mt-2 font-display text-xl font-bold">{titulo}</h3>
-                <p className="mt-2 leading-relaxed text-stone-600">{texto}</p>
+                <p className="mt-2 leading-relaxed text-brand-muted">{texto}</p>
                 </div>
                 </Reveal>
               </li>
@@ -354,44 +354,44 @@ const SitesPage: React.FC = () => {
       {/* Preço */}
       <section className="mx-auto max-w-6xl px-5 py-20">
         <Reveal>
-        <div className="mx-auto max-w-2xl rounded-3xl border-2 border-teal-700 bg-white p-8 text-center md:p-12 shadow-xl shadow-teal-900/5">
+        <div className="mx-auto max-w-2xl rounded-3xl border-2 border-brand-primary bg-brand-surface p-8 text-center md:p-12 shadow-xl shadow-black/20">
           <h2 className="font-display text-3xl font-extrabold tracking-tight">Quanto custa</h2>
           <div className="mt-8 flex flex-col items-center justify-center gap-6 sm:flex-row sm:gap-12">
             <div>
-              <p className="font-display text-5xl font-extrabold text-teal-800">{PRECO_SETUP}</p>
-              <p className="mt-1 font-semibold text-stone-600">uma vez, pra montar</p>
-              <p className="mt-0.5 text-sm text-stone-500">ou {PRECO_PARCELA}</p>
+              <p className="font-display text-5xl font-extrabold text-brand-primary">{PRECO_SETUP}</p>
+              <p className="mt-1 font-semibold text-brand-muted">uma vez, pra montar</p>
+              <p className="mt-0.5 text-sm text-brand-muted">ou {PRECO_PARCELA}</p>
             </div>
-            <div className="hidden h-16 w-px bg-stone-200 sm:block" aria-hidden="true" />
+            <div className="hidden h-16 w-px bg-brand-surfaceHighlight sm:block" aria-hidden="true" />
             <div>
-              <p className="font-display text-5xl font-extrabold text-teal-800">
+              <p className="font-display text-5xl font-extrabold text-brand-primary">
                 {PRECO_MENSAL}
-                <span className="text-2xl font-bold text-stone-500">/mês</span>
+                <span className="text-2xl font-bold text-brand-muted">/mês</span>
               </p>
-              <p className="mt-1 font-semibold text-stone-600">pra manter no ar</p>
-              <p className="mt-0.5 text-sm text-stone-500">ou {PRECO_ANUAL} no ano</p>
+              <p className="mt-1 font-semibold text-brand-muted">pra manter no ar</p>
+              <p className="mt-0.5 text-sm text-brand-muted">ou {PRECO_ANUAL} no ano</p>
             </div>
           </div>
           {/* A mensalidade é descrita como SERVIÇO, não como infraestrutura.
               "Hospedagem e manutenção" soa custo, e custo o cliente sempre acha
               que dá pra baratear. "Você me chama e eu ajusto" é relação — e é
               o que o dono de clínica de bairro realmente quer comprar. */}
-          <p className="mx-auto mt-6 max-w-[48ch] leading-relaxed text-stone-600">
+          <p className="mx-auto mt-6 max-w-[48ch] leading-relaxed text-brand-muted">
             Mudou o horário? Entrou um serviço novo? Você me chama no WhatsApp e eu
             ajusto. Uma vez por ano eu reviso tudo pra manter atualizado.
           </p>
 
-          <div className="mx-auto mt-7 max-w-[44ch] space-y-2.5 rounded-2xl bg-stone-50 p-5 text-[15px] text-stone-600">
+          <div className="mx-auto mt-7 max-w-[44ch] space-y-2.5 rounded-2xl bg-brand-bg p-5 text-[15px] text-brand-muted">
             <p>
-              <span className="font-semibold text-stone-800">À vista ou parcelado.</span>{' '}
+              <span className="font-semibold text-brand-text">À vista ou parcelado.</span>{' '}
               {PRECO_SETUP} ou {PRECO_PARCELA} no cartão.
             </p>
             <p>
-              <span className="font-semibold text-stone-800">No plano anual,</span>{' '}
+              <span className="font-semibold text-brand-text">No plano anual,</span>{' '}
               {PRECO_ANUAL} no ano — dois meses grátis.
             </p>
             <p>
-              <span className="font-semibold text-stone-800">Sem fidelidade.</span>{' '}
+              <span className="font-semibold text-brand-text">Sem fidelidade.</span>{' '}
               Pode sair quando quiser, o site é seu.
             </p>
           </div>
@@ -403,12 +403,12 @@ const SitesPage: React.FC = () => {
       </section>
 
       {/* FAQ */}
-      <section className="border-t border-stone-200 bg-white">
+      <section className="border-t border-brand-border bg-brand-surface">
         <div className="mx-auto max-w-3xl px-5 py-20">
           <h2 className="font-display text-3xl font-extrabold tracking-tight md:text-4xl">
             Perguntas comuns
           </h2>
-          <div className="mt-8 divide-y divide-stone-200">
+          <div className="mt-8 divide-y divide-brand-border">
             {[
               {
                 p: 'Em quanto tempo fica pronto?',
@@ -433,14 +433,14 @@ const SitesPage: React.FC = () => {
                   <ChevronDown
                     size={20}
                     aria-hidden="true"
-                    className="flex-none text-teal-700 transition-transform group-open:rotate-180"
+                    className="flex-none text-brand-primary transition-transform group-open:rotate-180"
                   />
                 </summary>
                 {/* Truque do grid-rows: <details> não anima height (0 -> auto),
                     mas grid-template-rows 0fr -> 1fr anima. Semântica nativa
                     preservada: leitor de tela, Ctrl+F e teclado seguem OK. */}
                 <div className="grid grid-rows-[0fr] transition-all duration-300 ease-out group-open:grid-rows-[1fr]">
-                  <p className="min-h-0 overflow-hidden pt-3 leading-relaxed text-stone-600">{r}</p>
+                  <p className="min-h-0 overflow-hidden pt-3 leading-relaxed text-brand-muted">{r}</p>
                 </div>
               </details>
             ))}
@@ -449,13 +449,13 @@ const SitesPage: React.FC = () => {
       </section>
 
       {/* Quem faz — KORA assina embaixo */}
-      <footer className="bg-stone-900 text-stone-300">
+      <footer className="bg-brand-surface text-brand-muted">
         <div className="mx-auto max-w-6xl px-5 py-14">
           <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
             <div className="max-w-xl">
               <img src="/kora-wordmark-branco.png" alt="KORA" className="h-6 w-auto mb-5" />
-              <p className="font-display text-2xl font-bold text-white">Feito pela KORA</p>
-              <p className="mt-2 leading-relaxed text-stone-400">
+              <p className="font-display text-2xl font-bold text-brand-text">Feito pela KORA</p>
+              <p className="mt-2 leading-relaxed text-brand-muted">
                 Consultoria de inteligência de negócios, com experiência do time em
                 empresas como Magalu, Samsung e Brasilprev. O mesmo cuidado dos projetos
                 grandes, no tamanho do seu negócio.
@@ -465,19 +465,19 @@ const SitesPage: React.FC = () => {
               <CtaWhats>Falar com a KORA</CtaWhats>
               <a
                 href="/cases/entre-patas/"
-                className="px-2 text-sm text-stone-400 underline underline-offset-4 transition-colors hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-500"
+                className="px-2 text-sm text-brand-muted underline underline-offset-4 transition-colors hover:text-brand-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-primary"
               >
                 Veja um projeto completo que fizemos
               </a>
               <a
                 href="/"
-                className="px-2 text-sm text-stone-400 underline underline-offset-4 transition-colors hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-500"
+                className="px-2 text-sm text-brand-muted underline underline-offset-4 transition-colors hover:text-brand-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-primary"
               >
                 Conhecer a KORA completa
               </a>
             </div>
           </div>
-          <p className="mt-10 border-t border-white/10 pt-6 text-xs text-stone-500">
+          <p className="mt-10 border-t border-white/10 pt-6 text-xs text-brand-muted">
             © {new Date().getFullYear()} Kora AI. Todos os direitos reservados.
           </p>
         </div>
