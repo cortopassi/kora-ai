@@ -111,6 +111,54 @@ const SitesPage: React.FC = () => {
         </div>
       </section>
 
+      {/* Feito de verdade — case real no ar */}
+      <section className="border-y border-stone-200 bg-teal-700/[0.04]">
+        <div className="mx-auto grid max-w-6xl items-center gap-8 px-5 py-16 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
+          <Reveal>
+            <a
+              href="https://mwboxe.com.br"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block overflow-hidden rounded-2xl border border-stone-200 shadow-sm transition hover:shadow-md"
+            >
+              <img
+                src="/case-mike-white.jpg"
+                alt="Site do professor de boxe Mike White, no ar em mwboxe.com.br"
+                className="w-full"
+                width={1200}
+                height={630}
+              />
+            </a>
+          </Reveal>
+          <Reveal delay={120}>
+            <div>
+              <p className="mb-3 text-sm font-bold uppercase tracking-widest text-teal-700">
+                Feito de verdade, no ar agora
+              </p>
+              <h2 className="font-display text-2xl font-bold leading-tight md:text-3xl">
+                Site do professor de boxe Mike White — no ar em mwboxe.com.br
+              </h2>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <a
+                  href="/cases/mike-white/"
+                  className="inline-flex items-center gap-2 rounded-full bg-teal-700 px-6 py-3 font-semibold text-white transition hover:bg-teal-800"
+                >
+                  Ver o case
+                </a>
+                <a
+                  href="https://mwboxe.com.br"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border border-stone-300 px-6 py-3 font-semibold text-stone-700 transition hover:bg-stone-100"
+                >
+                  Ver o site
+                </a>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* Por que ter um site */}
       <section className="border-y border-stone-200 bg-white">
         <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 md:grid-cols-3">
