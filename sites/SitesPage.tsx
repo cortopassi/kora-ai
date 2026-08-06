@@ -90,9 +90,9 @@ const SitesPage: React.FC = () => {
             className="group relative block animate-float pb-5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-primary"
             style={{ animationDuration: '7s' }}
           >
-            <div className="w-[290px] rounded-[44px] border-[10px] border-brand-border bg-brand-surface shadow-2xl shadow-black/40 transition-transform duration-300 group-hover:-translate-y-1">
+            <div className="w-[290px] rounded-[44px] border-[10px] border-[#0a0f1a] bg-[#0a0f1a] shadow-2xl shadow-black/50 ring-1 ring-white/10 transition-transform duration-300 group-hover:-translate-y-1">
               <div className="relative h-[585px] w-[270px] overflow-hidden rounded-[34px] bg-brand-surface">
-                <div className="absolute left-1/2 top-2 z-10 h-5 w-24 -translate-x-1/2 rounded-full bg-brand-surface" aria-hidden="true" />
+                <div className="absolute left-1/2 top-2 z-10 h-5 w-24 -translate-x-1/2 rounded-full bg-[#0a0f1a]" aria-hidden="true" />
                 <iframe
                   src="/sites/demo/"
                   title="Prévia do site de exemplo"
