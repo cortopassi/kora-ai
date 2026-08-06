@@ -1,6 +1,6 @@
 import React from 'react';
 import { MoveRight, ArrowUpRight } from 'lucide-react';
-import { Reveal, Tilt } from '../sites/fx';
+import { Reveal } from '../sites/fx';
 
 /**
  * Seção de cases da home.
@@ -61,7 +61,6 @@ const Cases: React.FC = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {cases.map((c, index) => (
             <Reveal key={c.titulo} delay={index * 100} className="h-full">
-              <Tilt className="h-full">
                 <a
                   href={c.href}
                   className="group relative flex h-full flex-col overflow-hidden rounded-brand border border-brand-border bg-brand-surface transition-colors duration-500 hover:border-brand-primary/50"
@@ -71,7 +70,7 @@ const Cases: React.FC = () => {
                       src={c.imagem}
                       alt={`Case ${c.titulo}`}
                       loading="lazy"
-                      className="h-full w-full object-cover transition-transform duration-700 sm:group-hover:scale-105"
+                      className="h-full w-full object-cover"
                     />
                   </div>
                   <div className="flex flex-1 flex-col p-7">
@@ -90,7 +89,6 @@ const Cases: React.FC = () => {
                     </span>
                   </div>
                 </a>
-              </Tilt>
             </Reveal>
           ))}
         </div>

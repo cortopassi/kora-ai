@@ -1,6 +1,6 @@
 import React from 'react';
 import { MonitorSmartphone, GitMerge, Database, TrendingUp, MoveRight } from 'lucide-react';
-import { Reveal, Tilt } from '../sites/fx';
+import { Reveal } from '../sites/fx';
 
 const Services: React.FC = () => {
   const services = [
@@ -57,7 +57,6 @@ const Services: React.FC = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => (
             <Reveal key={index} delay={index * 100} className="h-full">
-            <Tilt className="h-full">
             <div 
               className="group relative h-full bg-brand-surface rounded-brand p-8 border border-brand-border hover:border-brand-primary/50 transition-colors duration-500 overflow-hidden flex flex-col"
             >
@@ -94,7 +93,6 @@ const Services: React.FC = () => {
                 </div>
               </div>
             </div>
-            </Tilt>
             </Reveal>
           ))}
         </div>
