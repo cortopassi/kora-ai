@@ -175,7 +175,7 @@ const SitesPage: React.FC = () => {
               className="block overflow-hidden rounded-3xl border border-brand-border shadow-xl shadow-black/30 transition sm:hover:shadow-2xl"
             >
               <img
-                src="/case-mike-white.jpg"
+                src="/mwboxe-screenshot.jpg"
                 alt="Site do professor de boxe Mike White, no ar em mwboxe.com.br"
                 className="w-full"
                 width={1200}

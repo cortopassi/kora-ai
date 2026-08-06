@@ -19,7 +19,7 @@ const cases = [
     categoria: 'Negócios locais',
     descricao:
       'Site, marca e presença no Google pro professor de boxe — de invisível na busca a encontrado em Peruíbe.',
-    imagem: '/case-mike-white.jpg',
+    imagem: '/mwboxe-screenshot.jpg',
     href: '/cases/mike-white/',
   },
   {
