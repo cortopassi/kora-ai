@@ -29,7 +29,8 @@ const FooterCTA: React.FC = () => {
         </div>
         </Reveal>
 
-        <div className="flex justify-center items-center pt-8 border-t border-white/5">
+        <div className="flex flex-col items-center gap-4 pt-8 border-t border-white/5">
+           <img src="/kora-wordmark-branco.png" alt="KORA" className="h-6 w-auto opacity-80" />
            <p className="text-xs text-brand-muted">© {new Date().getFullYear()} Kora AI. Todos os direitos reservados.</p>
         </div>
       </div>

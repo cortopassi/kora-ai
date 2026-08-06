@@ -287,11 +287,16 @@ const CasePage: React.FC = () => {
       </section>
 
       <footer className="border-t border-brand-border/40">
-        <div className="max-w-container mx-auto px-6 py-8 flex flex-wrap gap-4 justify-between text-sm text-brand-muted">
-          <span>© 2026 Kora</span>
-          <a href="/" className="hover:text-brand-text transition-colors">
-            kora-ia.com
+        <div className="max-w-container mx-auto px-6 py-8 flex flex-wrap items-center gap-4 justify-between text-sm text-brand-muted">
+          <a href="/" aria-label="KORA — página inicial">
+            <img src="/kora-wordmark-branco.png" alt="KORA" className="h-5 w-auto" />
           </a>
+          <div className="flex items-center gap-4">
+            <span>© 2026 Kora</span>
+            <a href="/" className="hover:text-brand-text transition-colors">
+              kora-ia.com
+            </a>
+          </div>
         </div>
       </footer>
     </div>

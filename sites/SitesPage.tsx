@@ -453,6 +453,7 @@ const SitesPage: React.FC = () => {
         <div className="mx-auto max-w-6xl px-5 py-14">
           <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
             <div className="max-w-xl">
+              <img src="/kora-wordmark-branco.png" alt="KORA" className="h-6 w-auto mb-5" />
               <p className="font-display text-2xl font-bold text-white">Feito pela KORA</p>
               <p className="mt-2 leading-relaxed text-stone-400">
                 Consultoria de inteligência de negócios, com experiência do time em
