@@ -48,8 +48,7 @@ const Navbar: React.FC = () => {
         `}>
           {/* Logo */}
           <a href="/" className="flex items-center gap-2 group z-50">
-             <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center text-brand-bg font-bold font-heading">K</div>
-             <span className="font-heading font-bold text-lg tracking-tight text-white">Kora</span>
+             <img src="/kora-wordmark-branco.png" alt="KORA" className="h-7 w-auto" />
           </a>
           
           {/* Desktop Nav */}
