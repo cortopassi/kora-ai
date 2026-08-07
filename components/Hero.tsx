@@ -60,14 +60,21 @@ const Hero: React.FC = () => {
           </div>
 
           <div className="flex justify-center lg:justify-end">
-            <img
-              src="/kora-hero-hub.jpg"
-              alt="Diagrama: a KORA conectando ERP, IA, dados, processos e produtos digitais a um dashboard executivo"
-              width={1536}
-              height={1024}
-              fetchPriority="high"
-              className="w-full max-w-[640px] rounded-brand"
-            />
+            <div className="relative w-full max-w-[640px]">
+              {/* Glow azul atrás — integra o hub ao navy em vez de bloco colado */}
+              <div
+                className="pointer-events-none absolute inset-0 -z-10 scale-110 bg-brand-primary/20 blur-3xl"
+                aria-hidden="true"
+              />
+              <img
+                src="/kora-hero-hub.jpg"
+                alt="Diagrama: a KORA conectando ERP, IA, dados, processos e produtos digitais a um dashboard executivo"
+                width={1536}
+                height={1024}
+                fetchPriority="high"
+                className="w-full [-webkit-mask-image:radial-gradient(ellipse_at_center,black_60%,transparent_100%)] [mask-image:radial-gradient(ellipse_at_center,black_60%,transparent_100%)]"
+              />
+            </div>
           </div>
         </div>
 
