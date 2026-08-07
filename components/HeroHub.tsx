@@ -40,11 +40,14 @@ const CardHub: React.FC<{ card: Card }> = ({ card: { titulo, sub, icone: Icone }
 );
 
 const TileCentral: React.FC = () => (
-  <div
-    className="relative flex flex-col items-center justify-center gap-2 rounded-3xl border border-brand-primary/50 bg-brand-surface px-8 py-8 ring-1 ring-brand-primary/30"
-    style={{ boxShadow: '0 0 50px rgba(47,107,255,0.4)' }}
-  >
-    <img src="/kora-favicon-512.png" alt="" aria-hidden="true" className="h-14 w-14 rounded-xl" />
+  <div className="flex flex-col items-center justify-center gap-3">
+    <img
+      src="/kora-favicon-512.png"
+      alt=""
+      aria-hidden="true"
+      className="h-24 w-24 rounded-3xl"
+      style={{ boxShadow: '0 0 55px rgba(47,107,255,0.45)' }}
+    />
     <img src="/kora-wordmark-branco.png" alt="" aria-hidden="true" className="h-4 w-auto" />
     <span className="text-[11px] font-medium text-brand-muted">Business First</span>
   </div>
@@ -59,7 +62,7 @@ const CardDashboard: React.FC = () => (
         <svg viewBox="0 0 60 30" className="h-8 w-full" aria-hidden="true">
           <polyline points="2,26 14,18 26,22 38,10 50,14 58,4" fill="none" stroke="#2F6BFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
-        <p className="mt-1 text-center text-[9px] text-brand-muted">Indicadores</p>
+        <p className="mt-1 truncate text-center text-[8px] text-brand-muted">Indicadores</p>
       </div>
       <div className="rounded-lg bg-brand-bg/60 p-2">
         <svg viewBox="0 0 60 30" className="h-8 w-full" aria-hidden="true">
@@ -68,7 +71,7 @@ const CardDashboard: React.FC = () => (
           <rect x="34" y="13" width="8" height="15" rx="1" fill="#2F6BFF" opacity="0.7" />
           <rect x="48" y="6" width="8" height="22" rx="1" fill="#2F6BFF" />
         </svg>
-        <p className="mt-1 text-center text-[9px] text-brand-muted">Performance</p>
+        <p className="mt-1 truncate text-center text-[8px] text-brand-muted">Performance</p>
       </div>
       <div className="rounded-lg bg-brand-bg/60 p-2">
         <svg viewBox="0 0 36 36" className="mx-auto h-8 w-8" aria-hidden="true">
@@ -76,7 +79,7 @@ const CardDashboard: React.FC = () => (
           <circle cx="18" cy="18" r="15" fill="none" stroke="#2F6BFF" strokeWidth="4" strokeLinecap="round" strokeDasharray="73.5 94" transform="rotate(-90 18 18)" />
           <text x="18" y="22" textAnchor="middle" className="fill-white" style={{ fontSize: '11px', fontWeight: 700 }}>78%</text>
         </svg>
-        <p className="mt-1 text-center text-[9px] text-brand-muted">Resultados</p>
+        <p className="mt-1 truncate text-center text-[8px] text-brand-muted">Resultados</p>
       </div>
     </div>
   </div>
@@ -96,8 +99,8 @@ const HeroHub: React.FC = () => {
           <div className="flex flex-col gap-4">
             {esquerda.map((c) => <CardHub key={c.titulo} card={c} />)}
           </div>
-          {/* centro: dashboard + tile */}
-          <div className="flex flex-col gap-5">
+          {/* centro: dashboard + tile, centralizado na coluna */}
+          <div className="flex flex-col items-center gap-6">
             <CardDashboard />
             <TileCentral />
           </div>
