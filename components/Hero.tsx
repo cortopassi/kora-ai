@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight, Target, Award, Workflow, TrendingUp } from 'lucide-react';
 import { smoothScrollToId } from './smoothScroll';
+import HeroHub from './HeroHub';
 
 const ZAP_DIAGNOSTICO =
   'https://wa.me/5511998644004?text=' +
@@ -59,22 +60,8 @@ const Hero: React.FC = () => {
             </div>
           </div>
 
-          <div className="flex justify-center lg:justify-end">
-            <div className="relative w-full">
-              {/* Glow sutil atrás — profundidade sem lavar contraste */}
-              <div
-                className="pointer-events-none absolute inset-[10%] -z-10 bg-brand-primary/12 blur-2xl"
-                aria-hidden="true"
-              />
-              <img
-                src="/kora-hero-hub.jpg"
-                alt="Diagrama: a KORA conectando ERP, IA, dados, processos e produtos digitais a um dashboard executivo"
-                width={1536}
-                height={1024}
-                fetchPriority="high"
-                className="w-full rounded-2xl"
-              />
-            </div>
+          <div className="w-full">
+            <HeroHub />
           </div>
         </div>
 
