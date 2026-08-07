@@ -20,7 +20,7 @@ const Hero: React.FC = () => {
       <div className="pointer-events-none absolute bottom-[10%] left-[-12%] h-[440px] w-[440px] rounded-full bg-indigo-900/10 blur-[120px]" />
 
       <div className="relative z-10 mx-auto w-full max-w-container px-6">
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+        <div className="grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14">
           <div className="space-y-8">
             <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 backdrop-blur-sm animate-fade-in">
               <span className="h-2 w-2 animate-pulse rounded-full bg-brand-primary" />
@@ -60,10 +60,10 @@ const Hero: React.FC = () => {
           </div>
 
           <div className="flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-[640px]">
-              {/* Glow contido atrás — profundidade sem lavar o contraste */}
+            <div className="relative w-full">
+              {/* Glow sutil atrás — profundidade sem lavar contraste */}
               <div
-                className="pointer-events-none absolute inset-[8%] -z-10 bg-brand-primary/12 blur-2xl"
+                className="pointer-events-none absolute inset-[10%] -z-10 bg-brand-primary/12 blur-2xl"
                 aria-hidden="true"
               />
               <img
@@ -72,7 +72,7 @@ const Hero: React.FC = () => {
                 width={1536}
                 height={1024}
                 fetchPriority="high"
-                className="w-full rounded-2xl [-webkit-mask-image:radial-gradient(ellipse_at_center,black_88%,transparent_100%)] [mask-image:radial-gradient(ellipse_at_center,black_88%,transparent_100%)]"
+                className="w-full rounded-2xl"
               />
             </div>
           </div>
