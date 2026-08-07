@@ -61,9 +61,9 @@ const Hero: React.FC = () => {
 
           <div className="flex justify-center lg:justify-end">
             <div className="relative w-full max-w-[640px]">
-              {/* Glow azul atrás — integra o hub ao navy em vez de bloco colado */}
+              {/* Glow contido atrás — profundidade sem lavar o contraste */}
               <div
-                className="pointer-events-none absolute inset-0 -z-10 scale-110 bg-brand-primary/20 blur-3xl"
+                className="pointer-events-none absolute inset-[8%] -z-10 bg-brand-primary/12 blur-2xl"
                 aria-hidden="true"
               />
               <img
@@ -72,7 +72,7 @@ const Hero: React.FC = () => {
                 width={1536}
                 height={1024}
                 fetchPriority="high"
-                className="w-full [-webkit-mask-image:radial-gradient(ellipse_at_center,black_60%,transparent_100%)] [mask-image:radial-gradient(ellipse_at_center,black_60%,transparent_100%)]"
+                className="w-full rounded-2xl [-webkit-mask-image:radial-gradient(ellipse_at_center,black_88%,transparent_100%)] [mask-image:radial-gradient(ellipse_at_center,black_88%,transparent_100%)]"
               />
             </div>
           </div>
