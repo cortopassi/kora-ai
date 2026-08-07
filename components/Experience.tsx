@@ -3,7 +3,7 @@ import { Reveal } from '../sites/fx';
 
 const Experience: React.FC = () => {
   return (
-    <section className="py-12 bg-brand-bg border-b border-brand-border/30">
+    <section id="sobre" className="py-12 bg-brand-bg border-b border-brand-border/30">
       <div className="max-w-container mx-auto px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <Reveal delay={0} className="text-center md:text-left space-y-2">

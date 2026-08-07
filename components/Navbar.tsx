@@ -53,7 +53,7 @@ const Navbar: React.FC = () => {
           
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-1 bg-[#16283F]/60 p-1 rounded-full border border-white/5">
-            {['Serviços', 'Método', 'Contato'].map((item) => {
+            {['Serviços', 'Método', 'Cases', 'Sobre'].map((item) => {
               const id = item.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
               const ativa = secaoAtiva === id;
               return (
